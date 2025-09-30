@@ -1,108 +1,378 @@
 [
   {
     "filename": "M-PIN CBZ TOUCH_filled.pdf",
-    "timestamp": "2025-09-30T12:40:18.386281",
-    "model": "gpt-4o",
-    "extractions_count": 2,
+    "timestamp": "2025-09-30T13:00:52.773354",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 1,
+    "text_length": 572,
+    "extractions_count": 14,
     "key_values": {
+      "account_info": {
+        "Account Name": "William Burkley",
+        "Account Number": "7654345"
+      },
       "other_info": {
-        "TO": "CUSTOMER CENTRE",
-        "SUBJECT": "M-PIN RESET"
+        "Bank": "CBZ BANK LIMITED",
+        "Slogan": "Partners For Success",
+        "Form Type": "CBZ TOUCH M-PIN RESET",
+        "To": "CUSTOMER CENTRE",
+        "Location": "Manchester city",
+        "Date": "04/12/2024",
+        "Subject": "M-PIN RESET",
+        "Request": "Kindly reset my CBZ TOUCH M-PIN.",
+        "Email Address": "wil.b@email.com",
+        "Phone/Cell": "071234551627",
+        "Customer’s Signature": "William Burkley",
+        "DATE": "04/12/2024"
       }
     },
     "raw_extractions": [
       {
-        "class": "form_info",
-        "text": "TO: CUSTOMER CENTRE",
+        "class": "institution_info",
+        "text": "CBZ BANK LIMITED",
         "attributes": {
-          "field": "TO",
+          "field": "Bank",
+          "value": "CBZ BANK LIMITED"
+        }
+      },
+      {
+        "class": "institution_info",
+        "text": "Partners For Success",
+        "attributes": {
+          "field": "Slogan",
+          "value": "Partners For Success"
+        }
+      },
+      {
+        "class": "form_type",
+        "text": "CBZ TOUCH M-PIN RESET",
+        "attributes": {
+          "field": "Form Type",
+          "value": "CBZ TOUCH M-PIN RESET"
+        }
+      },
+      {
+        "class": "recipient_info",
+        "text": "CUSTOMER CENTRE",
+        "attributes": {
+          "field": "To",
           "value": "CUSTOMER CENTRE"
         }
       },
       {
-        "class": "form_info",
+        "class": "location_info",
+        "text": "Manchester city",
+        "attributes": {
+          "field": "Location",
+          "value": "Manchester city"
+        }
+      },
+      {
+        "class": "date_info",
+        "text": "04/12/2024",
+        "attributes": {
+          "field": "Date",
+          "value": "04/12/2024"
+        }
+      },
+      {
+        "class": "subject_info",
         "text": "M-PIN RESET",
         "attributes": {
-          "field": "SUBJECT",
+          "field": "Subject",
           "value": "M-PIN RESET"
+        }
+      },
+      {
+        "class": "action_requested",
+        "text": "Kindly reset my CBZ TOUCH M-PIN.",
+        "attributes": {
+          "field": "Request",
+          "value": "Kindly reset my CBZ TOUCH M-PIN."
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "William Burkley",
+        "attributes": {
+          "field": "Account Name",
+          "value": "William Burkley"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "7654345",
+        "attributes": {
+          "field": "Account Number",
+          "value": "7654345"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "wil.b@email.com",
+        "attributes": {
+          "field": "Email Address",
+          "value": "wil.b@email.com"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "071234551627",
+        "attributes": {
+          "field": "Phone/Cell",
+          "value": "071234551627"
+        }
+      },
+      {
+        "class": "signature_info",
+        "text": "William Burkley",
+        "attributes": {
+          "field": "Customer’s Signature",
+          "value": "William Burkley"
+        }
+      },
+      {
+        "class": "date",
+        "text": "04/12/2024",
+        "attributes": {
+          "field": "DATE",
+          "value": "04/12/2024"
         }
       }
     ]
   },
   {
     "filename": "Personal Loan Application Form_filled.pdf",
-    "timestamp": "2025-09-30T12:40:42.627996",
-    "model": "gpt-4o",
-    "extractions_count": 77,
+    "timestamp": "2025-09-30T13:03:16.222894",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 5,
+    "text_length": 9844,
+    "extractions_count": 59,
     "key_values": {
       "personal_info": {
         "Title": "Mr",
-        "Surname": "",
-        "Forename(s)": "",
-        "Date of Birth": "",
-        "I.D Card No.": "",
-        "Passport No.": "",
-        "Level of Education": "",
-        "No of Dependants": "",
-        "Nationality": "",
-        "Residential Address": "",
-        "Period of residence": "",
-        "Tel": "",
-        "Cell": "",
-        "e-mail": "",
-        "Accommodation": "",
-        "Rent/Mortgage Repayment": "",
-        "Postal Address": "",
-        "Bank": "CBZ",
-        "Branch": "Selous"
+        "Surname": "Smith",
+        "Forename(s)": "Jon",
+        "Date of Birth": "15/08/1983",
+        "Marital Status": "Married",
+        "Gender": "Male",
+        "I.D Card No.": "1234523456",
+        "Level of Education": "Degree",
+        "No of Dependants": "2",
+        "Nationality": "British",
+        "Residential Address": "17 Alfred Way, Wirrington, Dossex, DX2 8PC",
+        "Period of residence": "13 years",
+        "Tel": "+44 7777 777777",
+        "e-mail": "jon@smith.co.uk"
       },
       "employment_info": {
-        "Employer’s name and address": "",
-        "Period in current employment": "",
-        "Tel": "",
-        "Cell": "",
-        "Occupation": "",
-        "unknown_field": "Should I change employment, I must advise my CBZ branch manager of the change within seven working days of such an event and I undertake to obtain the necessary letter of comfort from the new employer confirming that my salary will be deposited direct into my Account with CBZ.",
-        "Position": "HUMAN RESOUCES MANAGER"
+        "Bank": "CBZ",
+        "Employer’s name and address": "Automatic Studios, The Shard, Southwark, London, SE1 9SG",
+        "Period in current employment": "2.5 years",
+        "Occupation": "Studio Automator"
       },
       "financial_info": {
-        "Gross monthly income": "",
-        "Net monthly income": "",
-        "Other monthly income and source": ""
+        "Rent/Mortgage Repayment": "£1,500 pm",
+        "Gross monthly income": "$ 42,000",
+        "Other monthly income and source": "$ 5,000",
+        "Monthly salary date (approximate)": "14th"
       },
       "account_info": {
-        "Account": "Account number to be debited"
+        "Account number to be debited": null,
+        "Account number": "93934950",
+        "Account Name & No.": "1123444"
       },
       "other_info": {
-        "Current or previous credit facilities with CBZ Bank": "Nil",
-        "Full name": "",
-        "Employer's name and address": "",
-        "Name and residential address of close relative (not spouse)": "",
-        "Section": "Declaration",
-        "Bank Name": "CBZ Bank Limited",
-        "Direct Debit Agreement": "I authorize the Bank to debit my account each month with the amount of interest and loan installments.",
-        "Declaration Agreement": "I hereby certify that the above statements are true and complete and authorize CBZ Bank Limited to make any enquiries which may be considered necessary for confirmation of these facts and credit assessment.",
-        "Instruction": "This instruction/authority is to remain in force until the full loan amount including interest has been satisfactorily repaid.",
-        "Jurisdiction Clause": "I choose domicilium citandi et executandi at the residential address shown above and hereby submit myself to the jurisdiction of the courts of Zimbabwe in any dispute arising from this agreement, notwithstanding that at the time that proceedings are commenced I am domiciled outside Zimbabwe.",
-        "unknown_field": "Monthly Salary payments",
-        "CBZ Bank Limited Banking Details": "None",
-        "Other Bank Account Details": "None",
-        "Spouse Details": "None",
-        "Next of Kin (Other than spouse)": "None",
-        "Documents": "Latest Salary Advice Slip, Latest Water / ZESA Bill, Letter from Employer",
-        "Approving Manager's name and Signature": "Not filled",
-        "Date": "Not filled",
-        "CBZ Loan Scheme Account Terms & Conditions": "I hereby request the CBZ Bank Limited (CBZ or 'the bank') to open a CBZ Loan Scheme Account ('the loan') in my name and I hereby agree to abide by the following terms and conditions as well as any other conditions as may come into being from time to time.",
-        "Monthly interest rate": "interest rate",
-        "Should I change employment": "advise my CBZ branch manager of the change within seven working days",
-        "New employer requirement": "obtain the necessary letter of comfort",
-        "Monthly loan requirements": "debited to my Account each month",
-        "Failure to meet payment": "full outstanding loan balance and accrued interest to become immediately due and payable",
-        "Early repayment": "full loan plus interest accrued may be permitted",
-        "Loan repayment commencement": "salary payday immediately following the loan drawn down date"
+        "Signature": "Jon",
+        "Date application received": null,
+        "Credit History": null,
+        "Civil Judgements": null,
+        "Application recommended": null,
+        "Officer’s Name, Signature": null,
+        "Application approved": null,
+        "Approving Manager’s name, Signature": null,
+        "Branch Manager": "CBZ Bank, Selous Branch",
+        "Salutation": "Dear Sir/Madam",
+        "REF": "CONFIRMATION OF EMPLOYMENT AND UNDERTAKING IN RESPECT OF A LOAN APPLICATION BY",
+        "Title": "HUMAN RESOURCES MANAGER",
+        "Accommodation": "Owned but Mortgaged",
+        "Branch": "Southwark",
+        "Credit Facility Limit": "$ 1000",
+        "Present balance": "$ -12",
+        "Bank Name": "Piggy Bank",
+        "Facilities with other Bank": "Credit Card",
+        "Full name": "Jane Smith",
+        "Name and residential address of close relative": "Jim Smith",
+        "Tel Nos. Home": "+44 20 9933211",
+        "Relationship": "Uncle",
+        "Loan Amount Required": "$ 50,000",
+        "Term preferred": "12",
+        "Officer’s Name": ""
       }
     },
     "raw_extractions": [
+      {
+        "class": "personal_details",
+        "text": "{'Title': 'Mr', 'Surname': 'Smith', 'Forename(s)': 'Jon', 'Date of Birth': '15/08/1983', 'Married': 'Yes', 'Gender': 'Male', 'ID Card No.': '1234523456', 'Passport No.': '098098098', 'Level of Education': 'Degree', 'No of Dependants': '2', 'Nationality': 'British', 'Residential Address': '17 Alfred Way, Wirrington, Dossex, DX2 8PC', 'Period of residence': '13 years', 'Tel': '+44 7777 777777', 'Cell': 'Same', 'Email': 'jon@smith.co.uk', 'Accommodation': 'Owned but Mortgaged', 'Rent/Mortgage Repayment': '£1,500 pm', 'Postal Address': 'Same as above'}",
+        "attributes": null
+      },
+      {
+        "class": "employment_details",
+        "text": "{'Employer’s name and address': 'Automatic Studios, The Shard, Southwark, London, SE1 9SG', 'Period in current employment': '2.5 years', 'Occupation': 'Studio Automator', 'Gross monthly income': '$42,000', 'Other monthly income and source': '$5,000', 'Monthly salary date': '14th'}",
+        "attributes": null
+      },
+      {
+        "class": "cbz_banking_details",
+        "text": "{'Branch': 'Southwark', 'Account number': '93934950', 'Limit': '$1000', 'Present balance': '$-12'}",
+        "attributes": null
+      },
+      {
+        "class": "other_bank_account_details",
+        "text": "{'Bank Name': 'Piggy Bank', 'Account Name & No.': '1123444', 'Facilities': 'Credit Card'}",
+        "attributes": null
+      },
+      {
+        "class": "spouse_details",
+        "text": "{'Full name': 'Jane Smith'}",
+        "attributes": null
+      },
+      {
+        "class": "next_of_kin_details",
+        "text": "{'Name': 'Jim Smith', 'Tel Nos Home': '+44 20 9933211', 'Relationship': 'Uncle'}",
+        "attributes": null
+      },
+      {
+        "class": "loan_amount_required",
+        "text": "{'Amount': '$50,000', 'Term preferred': '12 months'}",
+        "attributes": null
+      },
+      {
+        "class": "loan_purpose",
+        "text": "Buying baseball cards",
+        "attributes": null
+      },
+      {
+        "class": "account_info",
+        "text": "None",
+        "attributes": {
+          "field": "Account number to be debited",
+          "value": null,
+          "notes": "Field is empty"
+        }
+      },
+      {
+        "class": "signature",
+        "text": "Jon",
+        "attributes": {
+          "field": "Signature",
+          "value": "Jon"
+        }
+      },
+      {
+        "class": "application_info",
+        "text": "None",
+        "attributes": {
+          "field": "Date application received",
+          "value": null,
+          "notes": "Field is empty"
+        }
+      },
+      {
+        "class": "credit_history",
+        "text": "None",
+        "attributes": {
+          "field": "Credit History",
+          "value": null,
+          "notes": "Field is empty"
+        }
+      },
+      {
+        "class": "civil_judgements",
+        "text": "None",
+        "attributes": {
+          "field": "Civil Judgements",
+          "value": null,
+          "notes": "Field is empty"
+        }
+      },
+      {
+        "class": "application_decision",
+        "text": "None",
+        "attributes": {
+          "field": "Application recommended",
+          "value": null,
+          "notes": "Field options were not checked"
+        }
+      },
+      {
+        "class": "officer_info",
+        "text": "None",
+        "attributes": {
+          "field": "Officer’s Name, Signature",
+          "value": null,
+          "notes": "Field is empty"
+        }
+      },
+      {
+        "class": "manager_approval",
+        "text": "None",
+        "attributes": {
+          "field": "Application approved",
+          "value": null,
+          "notes": "Field options were not checked"
+        }
+      },
+      {
+        "class": "manager_info",
+        "text": "None",
+        "attributes": {
+          "field": "Approving Manager’s name, Signature",
+          "value": null,
+          "notes": "Field is empty"
+        }
+      },
+      {
+        "class": "employment_reference",
+        "text": "CBZ Bank, Selous Branch",
+        "attributes": {
+          "field": "Branch Manager",
+          "value": "CBZ Bank, Selous Branch"
+        }
+      },
+      {
+        "class": "addressed_to",
+        "text": "Dear Sir/Madam",
+        "attributes": {
+          "field": "Salutation",
+          "value": "Dear Sir/Madam"
+        }
+      },
+      {
+        "class": "document_reference",
+        "text": "CONFIRMATION OF EMPLOYMENT AND UNDERTAKING IN RESPECT OF A LOAN APPLICATION BY",
+        "attributes": {
+          "field": "REF",
+          "value": "CONFIRMATION OF EMPLOYMENT AND UNDERTAKING IN RESPECT OF A LOAN APPLICATION BY"
+        }
+      },
+      {
+        "class": "employment_info",
+        "text": "Bank CBZ",
+        "attributes": {
+          "field": "Bank",
+          "value": "CBZ"
+        }
+      },
+      {
+        "class": "signoff_info",
+        "text": "HUMAN RESOURCES MANAGER",
+        "attributes": {
+          "field": "Title",
+          "value": "HUMAN RESOURCES MANAGER"
+        }
+      },
       {
         "class": "personal_info",
         "text": "Mr",
@@ -113,1324 +383,810 @@
       },
       {
         "class": "personal_info",
-        "text": "",
+        "text": "Smith",
         "attributes": {
           "field": "Surname",
-          "value": ""
+          "value": "Smith"
         }
       },
       {
         "class": "personal_info",
-        "text": "",
+        "text": "Jon",
         "attributes": {
           "field": "Forename(s)",
-          "value": ""
+          "value": "Jon"
         }
       },
       {
         "class": "personal_info",
-        "text": "",
+        "text": "15/08/1983",
         "attributes": {
           "field": "Date of Birth",
-          "value": ""
+          "value": "15/08/1983"
         }
       },
       {
         "class": "personal_info",
-        "text": "",
+        "text": "Married",
+        "attributes": {
+          "field": "Marital Status",
+          "value": "Married"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "Male",
+        "attributes": {
+          "field": "Gender",
+          "value": "Male"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "1234523456",
         "attributes": {
           "field": "I.D Card No.",
-          "value": ""
+          "value": "1234523456"
         }
       },
       {
         "class": "personal_info",
-        "text": "",
-        "attributes": {
-          "field": "Passport No.",
-          "value": ""
-        }
-      },
-      {
-        "class": "personal_info",
-        "text": "",
+        "text": "Degree",
         "attributes": {
           "field": "Level of Education",
-          "value": ""
+          "value": "Degree"
         }
       },
       {
         "class": "personal_info",
-        "text": "",
+        "text": "2",
         "attributes": {
           "field": "No of Dependants",
-          "value": ""
+          "value": "2"
         }
       },
       {
         "class": "personal_info",
-        "text": "",
+        "text": "British",
         "attributes": {
           "field": "Nationality",
-          "value": ""
+          "value": "British"
         }
       },
       {
         "class": "personal_info",
-        "text": "",
+        "text": "17 Alfred Way, Wirrington, Dossex, DX2 8PC",
         "attributes": {
           "field": "Residential Address",
-          "value": ""
+          "value": "17 Alfred Way, Wirrington, Dossex, DX2 8PC"
         }
       },
       {
         "class": "personal_info",
-        "text": "",
+        "text": "13 years",
         "attributes": {
           "field": "Period of residence",
-          "value": ""
+          "value": "13 years"
         }
       },
       {
         "class": "personal_info",
-        "text": "",
+        "text": "+44 7777 777777",
         "attributes": {
           "field": "Tel",
-          "value": ""
+          "value": "+44 7777 777777"
         }
       },
       {
         "class": "personal_info",
-        "text": "",
-        "attributes": {
-          "field": "Cell",
-          "value": ""
-        }
-      },
-      {
-        "class": "personal_info",
-        "text": "",
+        "text": "jon@smith.co.uk",
         "attributes": {
           "field": "e-mail",
-          "value": ""
+          "value": "jon@smith.co.uk"
         }
       },
       {
-        "class": "personal_info",
-        "text": "",
+        "class": "accommodation_info",
+        "text": "Owned but Mortgaged",
         "attributes": {
           "field": "Accommodation",
-          "value": ""
+          "value": "Owned but Mortgaged"
         }
       },
       {
-        "class": "personal_info",
-        "text": "",
+        "class": "financial_info",
+        "text": "£1,500 pm",
         "attributes": {
           "field": "Rent/Mortgage Repayment",
-          "value": ""
-        }
-      },
-      {
-        "class": "personal_info",
-        "text": "",
-        "attributes": {
-          "field": "Postal Address",
-          "value": ""
+          "value": "£1,500 pm"
         }
       },
       {
         "class": "employment_info",
-        "text": "",
+        "text": "Automatic Studios, The Shard, Southwark, London, SE1 9SG",
         "attributes": {
           "field": "Employer’s name and address",
-          "value": ""
+          "value": "Automatic Studios, The Shard, Southwark, London, SE1 9SG"
         }
       },
       {
         "class": "employment_info",
-        "text": "",
+        "text": "2.5 years",
         "attributes": {
           "field": "Period in current employment",
-          "value": ""
+          "value": "2.5 years"
         }
       },
       {
         "class": "employment_info",
-        "text": "",
-        "attributes": {
-          "field": "Tel",
-          "value": ""
-        }
-      },
-      {
-        "class": "employment_info",
-        "text": "",
-        "attributes": {
-          "field": "Cell",
-          "value": ""
-        }
-      },
-      {
-        "class": "employment_info",
-        "text": "",
+        "text": "Studio Automator",
         "attributes": {
           "field": "Occupation",
-          "value": ""
+          "value": "Studio Automator"
         }
       },
       {
         "class": "financial_info",
-        "text": "",
+        "text": "$ 42,000",
         "attributes": {
           "field": "Gross monthly income",
-          "value": ""
+          "value": "$ 42,000"
         }
       },
       {
         "class": "financial_info",
-        "text": "",
-        "attributes": {
-          "field": "Net monthly income",
-          "value": ""
-        }
-      },
-      {
-        "class": "financial_info",
-        "text": "",
+        "text": "$ 5,000",
         "attributes": {
           "field": "Other monthly income and source",
-          "value": ""
+          "value": "$ 5,000"
         }
       },
       {
-        "class": "credit_info",
-        "text": "Nil",
+        "class": "financial_info",
+        "text": "14th",
         "attributes": {
-          "field": "Current or previous credit facilities with CBZ Bank",
-          "value": "Nil"
+          "field": "Monthly salary date (approximate)",
+          "value": "14th"
         }
       },
       {
-        "class": "spouse_details",
-        "text": "",
+        "class": "bank_info",
+        "text": "Southwark",
         "attributes": {
-          "field": "Full name",
-          "value": ""
-        }
-      },
-      {
-        "class": "employer_info",
-        "text": "",
-        "attributes": {
-          "field": "Employer's name and address",
-          "value": ""
-        }
-      },
-      {
-        "class": "spouse_contact_number",
-        "text": "",
-        "attributes": null
-      },
-      {
-        "class": "spouse_cell_number",
-        "text": "",
-        "attributes": null
-      },
-      {
-        "class": "next_of_kin",
-        "text": "",
-        "attributes": {
-          "field": "Name and residential address of close relative (not spouse)",
-          "value": ""
-        }
-      },
-      {
-        "class": "next_of_kin_home_phone",
-        "text": "",
-        "attributes": null
-      },
-      {
-        "class": "next_of_kin_business_phone",
-        "text": "",
-        "attributes": null
-      },
-      {
-        "class": "next_of_kin_cell_phone",
-        "text": "",
-        "attributes": null
-      },
-      {
-        "class": "next_of_kin_relationship",
-        "text": "",
-        "attributes": null
-      },
-      {
-        "class": "loan_amount",
-        "text": "",
-        "attributes": null
-      },
-      {
-        "class": "loan_term_preferred",
-        "text": "",
-        "attributes": null
-      },
-      {
-        "class": "document_info",
-        "text": "Direct Debit Authority",
-        "attributes": {
-          "field": "Section",
-          "value": "Direct Debit Authority"
-        }
-      },
-      {
-        "class": "document_info",
-        "text": "Declaration",
-        "attributes": {
-          "field": "Section",
-          "value": "Declaration"
-        }
-      },
-      {
-        "class": "document_info",
-        "text": "CBZ Bank Limited",
-        "attributes": {
-          "field": "Bank Name",
-          "value": "CBZ Bank Limited"
+          "field": "Branch",
+          "value": "Southwark"
         }
       },
       {
         "class": "account_info",
-        "text": "Account number to be debited",
+        "text": "93934950",
         "attributes": {
-          "field": "Account",
-          "value": "Account number to be debited"
+          "field": "Account number",
+          "value": "93934950"
         }
       },
       {
-        "class": "statement_info",
-        "text": "I authorize the Bank to debit my account each month with the amount of interest and loan installments.",
+        "class": "bank_info",
+        "text": "$ 1000",
         "attributes": {
-          "field": "Direct Debit Agreement",
-          "value": "I authorize the Bank to debit my account each month with the amount of interest and loan installments."
+          "field": "Credit Facility Limit",
+          "value": "$ 1000"
         }
       },
       {
-        "class": "statement_info",
-        "text": "I hereby certify that the above statements are true and complete and authorize CBZ Bank Limited to make any enquiries which may be considered necessary for confirmation of these facts and credit assessment.",
+        "class": "bank_info",
+        "text": "$ -12",
         "attributes": {
-          "field": "Declaration Agreement",
-          "value": "I hereby certify that the above statements are true and complete and authorize CBZ Bank Limited to make any enquiries which may be considered necessary for confirmation of these facts and credit assessment."
+          "field": "Present balance",
+          "value": "$ -12"
         }
       },
       {
-        "class": "authority_info",
-        "text": "This instruction/authority is to remain in force until the full loan amount including interest has been satisfactorily repaid.",
+        "class": "other_bank_info",
+        "text": "Piggy Bank",
         "attributes": {
-          "field": "Instruction",
-          "value": "This instruction/authority is to remain in force until the full loan amount including interest has been satisfactorily repaid."
+          "field": "Bank Name",
+          "value": "Piggy Bank"
         }
       },
       {
-        "class": "jurisdiction_info",
-        "text": "I choose domicilium citandi et executandi at the residential address shown above and hereby submit myself to the jurisdiction of the courts of Zimbabwe in any dispute arising from this agreement, notwithstanding that at the time that proceedings are commenced I am domiciled outside Zimbabwe.",
+        "class": "account_info",
+        "text": "1123444",
         "attributes": {
-          "field": "Jurisdiction Clause",
-          "value": "I choose domicilium citandi et executandi at the residential address shown above and hereby submit myself to the jurisdiction of the courts of Zimbabwe in any dispute arising from this agreement, notwithstanding that at the time that proceedings are commenced I am domiciled outside Zimbabwe."
+          "field": "Account Name & No.",
+          "value": "1123444"
         }
       },
       {
-        "class": "employment_info",
-        "text": "Should I change employment, I must advise my CBZ branch manager of the change within seven working days of such an event and I undertake to obtain the necessary letter of comfort from the new employer confirming that my salary will be deposited direct into my Account with CBZ.",
+        "class": "other_bank_info",
+        "text": "Credit Card",
         "attributes": {
-          "section": "Employment Change Advisory",
-          "details": "Requirement to inform CBZ of employment change and obtain a letter from new employer."
+          "field": "Facilities with other Bank",
+          "value": "Credit Card"
+        }
+      },
+      {
+        "class": "spouse_info",
+        "text": "Jane Smith",
+        "attributes": {
+          "field": "Full name",
+          "value": "Jane Smith"
+        }
+      },
+      {
+        "class": "next_of_kin_info",
+        "text": "Jim Smith",
+        "attributes": {
+          "field": "Name and residential address of close relative",
+          "value": "Jim Smith"
+        }
+      },
+      {
+        "class": "next_of_kin_info",
+        "text": "+44 20 9933211",
+        "attributes": {
+          "field": "Tel Nos. Home",
+          "value": "+44 20 9933211"
+        }
+      },
+      {
+        "class": "next_of_kin_info",
+        "text": "Uncle",
+        "attributes": {
+          "field": "Relationship",
+          "value": "Uncle"
         }
       },
       {
         "class": "loan_info",
-        "text": "[{'term': '4.1', 'condition': 'Loan repayments shall be debited to my Account each month.'}, {'term': '4.2', 'condition': 'Failure to meet any one payment of the loan plus interest on due date shall cause the full outstanding loan balance and accrued interest to become immediately due and payable.'}, {'term': '4.3', 'condition': 'Early repayment of the full loan plus interest accrued may be permitted.'}, {'term': '4.4', 'condition': 'Loan repayments shall commence on the salary payday immediately following the loan drawn down date.'}]",
+        "text": "$ 50,000",
         "attributes": {
-          "section": "Monthly Loan Requirements",
-          "description": "Details terms and conditions related to loan repayments and associated responsibilities."
+          "field": "Loan Amount Required",
+          "value": "$ 50,000"
         }
       },
       {
-        "class": "bank_rights",
-        "text": "[{'term': '5.1', 'condition': 'CBZ shall be entitled in its sole discretion and without notice, to reduce or settle the loan account by appropriating any amount held by the bank on my behalf or standing to the credit of any other account I may have with the bank.'}, {'term': '5.2', 'condition': 'The bank shall be entitled in its sole discretion and without notice to realize any security lodged with the bank and use the proceeds thereof towards the reduction or full payment of my loan balance.'}, {'term': '5.3', 'condition': 'A statement or demand signed by the bank’s authorized officer addressed to me, shall for all purposes be conclusive evidence of a sum of money owing by me to the bank.'}]",
+        "class": "loan_info",
+        "text": "12",
         "attributes": {
-          "section": "Right of Setoff",
-          "description": "Describes CBZ's rights to offset loan balances using customer’s held amounts or securities."
+          "field": "Term preferred",
+          "value": "12"
         }
       },
       {
-        "class": "general_conditions",
-        "text": "[{'term': '6.1', 'condition': 'I shall be liable for the payment of all expenses incurred by the bank in exercising any right against me in respect of any breach of these conditions, including all legal charges on the attorney/client scale, debt collection/attorney collection charges and tracing charges.'}, {'term': '6.2', 'condition': 'No delay, indulgence or relaxation in the exercising of any of the bank’s right under these terms and conditions shall constitute a waiver of such rights.'}]",
+        "class": "bank_use_info",
+        "text": "",
         "attributes": {
-          "section": "General",
-          "description": "Outlines liabilities and rights related to expenses and enforcement actions by the bank."
+          "field": "Officer’s Name",
+          "value": ""
         }
-      },
-      {
-        "class": "form_type",
-        "text": "Consent Declaration",
-        "attributes": null
-      },
-      {
-        "class": "clauses",
-        "text": "[{'clause_number': 3, 'content': 'I consent to the jurisdiction of the Magistrate’s Court notwithstanding the fact that the bank’s claim at any time may otherwise exceed the jurisdiction of that court.'}]",
-        "attributes": null
-      },
-      {
-        "class": "signature_section",
-        "text": "{'fields': [{'field': 'Full name', 'value': None}, {'field': 'Signature', 'value': None}, {'field': 'Date', 'value': '…………….. 2019'}]}",
-        "attributes": null
-      },
-      {
-        "class": "form_type",
-        "text": "Employment Confirmation and Loan Undertaking",
-        "attributes": null
-      },
-      {
-        "class": "addressee",
-        "text": "{'title': 'Branch Manager', 'bank': 'CBZ Bank', 'branch': 'Selous Branch'}",
-        "attributes": null
-      },
-      {
-        "class": "reference",
-        "text": "{'type': 'Loan Application', 'applicant': {'name': None, 'id_number': None, 'ec_number': None}}",
-        "attributes": null
-      },
-      {
-        "class": "confirmation",
-        "text": "[{'statement': 'We confirm that Mr …………………………………… is permanently employed by …………………………………. as a …………………………….. .'}, {'statement': 'He has been employed by us for ………… … years.'}, {'statement': 'We undertake to direct his/her monthly net salary to the following account until the loan he/she is applying for is paid up.', 'account_details': {'account_name': None, 'account_number': None, 'bank': 'CBZ', 'branch': None}}, {'statement': 'We also confirm that we have no pending disciplinary procedures against him/her.'}, {'statement': \"Should the employee be retrenched/resign due to unforeseen reasons we promise to pay the employee's terminal benefits through the account number stated under section 3 above, unless he/she provides us with a clearance letter from CBZ Bank that he/she is no longer indebted to the bank.\"}]",
-        "attributes": null
-      },
-      {
-        "class": "on_behalf_of",
-        "text": "{'entity': None, 'signatory': 'HUMAN RESOURCES MANAGER'}",
-        "attributes": null
       },
       {
         "class": "bank_details",
-        "text": "None",
-        "attributes": {
-          "field": "CBZ Bank Limited Banking Details",
-          "values": {
-            "Branch": "______________________________",
-            "Account number": "_______________",
-            "Time with current bank": "___________________________________________________ ___"
-          }
-        }
-      },
-      {
-        "class": "other_bank_account_details",
-        "text": "None",
-        "attributes": {
-          "field": "Other Bank Account Details",
-          "values": {
-            "Bank Name": "_______________________",
-            "Account Name & No": "_______________",
-            "Facilities with other Bank": {
-              "Overdraft": "_________",
-              "Loan": "_________",
-              "Credit Card": "______________________"
-            }
-          }
-        }
-      },
-      {
-        "class": "spouse_details",
-        "text": "None",
-        "attributes": {
-          "field": "Spouse Details",
-          "values": {
-            "Full name": "_________________________________________________________________________ _",
-            "Employer's name and address": "_________________________________________________________ __",
-            "Tel No.": "_____________________________________",
-            "Cell": "_____________________________ _____"
-          }
-        }
-      },
-      {
-        "class": "next_of_kin_details",
-        "text": "None",
-        "attributes": {
-          "field": "Next of Kin (Other than spouse)",
-          "values": {
-            "Name and residential address": "__________________________________________________ ______________________",
-            "Tel Nos. Home": "________________",
-            "Bus": "_______ _________",
-            "Cell": "______________________ _____",
-            "Relationship": "_______________________________________________________________________ _",
-            "Employer's name and address": "_________________________________________________________"
-          }
-        }
-      },
-      {
-        "class": "document_info",
-        "text": "Latest Salary Advice Slip, Latest Water / ZESA Bill, Letter from Employer",
-        "attributes": {
-          "field": "Documents",
-          "value": "Latest Salary Advice Slip, Latest Water / ZESA Bill, Letter from Employer"
-        }
-      },
-      {
-        "class": "section_info",
-        "text": "Approving Manager’s name and",
-        "attributes": {
-          "field": "Approving Manager's name and Signature",
-          "value": "Not filled"
-        }
-      },
-      {
-        "class": "section_info",
-        "text": "Date",
-        "attributes": {
-          "field": "Date",
-          "value": "Not filled"
-        }
-      },
-      {
-        "class": "terms_conditions",
-        "text": "terms and conditions",
-        "attributes": {
-          "field": "CBZ Loan Scheme Account Terms & Conditions",
-          "value": "I hereby request the CBZ Bank Limited (CBZ or 'the bank') to open a CBZ Loan Scheme Account ('the loan') in my name and I hereby agree to abide by the following terms and conditions as well as any other conditions as may come into being from time to time."
-        }
-      },
-      {
-        "class": "terms_conditions",
-        "text": "interest rate",
-        "attributes": {
-          "field": "Monthly interest rate",
-          "clauses": [
-            "Interest shall be accrued daily, charged and capitalized monthly at Libor plus a margin to be advised by the Bank in the offer letter and as reviewed from time to time.",
-            "CBZ is hereby authorized to apportion the monthly repayments between interest and capital loan reductions as the bank may desire and to debit my Account with all such monthly repayments."
-          ]
-        }
-      },
-      {
-        "class": "fees",
-        "text": "Establishment/administration fees",
-        "attributes": {
-          "clauses": [
-            "To be recovered upon establishment and/or on re-advancement of the loan at 3.5% or a minimum of USD 17.50.",
-            "The above fees will be paid in cash as a deduction from the loan proceeds.",
-            "A non-refundable loan processing fee of USD7.50 shall be recoverable upfront from applicant’s account upon submission of loan form and the loan processing fee is not a guarantee that the application will be successful."
-          ]
-        }
-      },
-      {
-        "class": "salary_payments",
-        "text": "Monthly Salary payments",
-        "attributes": {
-          "clauses": [
-            "My salary is to be paid directly from my employer into Account on a monthly basis.",
-            "Failure by me to meet the requirements of 3.1 above shall render the outstanding loan balance plus accrued interest immediately due and payable, notwithstanding the fact that my monthly repayments may be up to date at the time the breach is committed."
-          ]
-        }
-      },
-      {
-        "class": "employment_policy",
-        "text": "advise my CBZ branch manager of the change within seven working days",
-        "attributes": {
-          "field": "Should I change employment",
-          "value": "advise my CBZ branch manager of the change within seven working days"
-        }
-      },
-      {
-        "class": "employment_policy",
-        "text": "obtain the necessary letter of comfort from the new employer confirming that my salary will be deposited direct into my Account with CBZ",
-        "attributes": {
-          "field": "New employer requirement",
-          "value": "obtain the necessary letter of comfort"
-        }
-      },
-      {
-        "class": "loan_info",
-        "text": "Loan repayments shall be debited to my Account each month",
-        "attributes": {
-          "field": "Monthly loan requirements",
-          "value": "debited to my Account each month"
-        }
-      },
-      {
-        "class": "loan_info",
-        "text": "Failure by me to meet any one payment of the loan plus interest on due date shall cause the full outstanding loan balance and accrued interest to become immediately due and payable",
-        "attributes": {
-          "field": "Failure to meet payment",
-          "value": "full outstanding loan balance and accrued interest to become immediately due and payable"
-        }
-      },
-      {
-        "class": "loan_info",
-        "text": "Early repayment of the full loan plus interest accrued may be permitted",
-        "attributes": {
-          "field": "Early repayment",
-          "value": "full loan plus interest accrued may be permitted"
-        }
-      },
-      {
-        "class": "loan_info",
-        "text": "My loan repayments shall commence on the salary payday immediately following the loan drawn down date",
-        "attributes": {
-          "field": "Loan repayment commencement",
-          "value": "salary payday immediately following the loan drawn down date"
-        }
-      },
-      {
-        "class": "personal_info",
-        "text": "CBZ Bank",
-        "attributes": {
-          "field": "Bank",
-          "value": "CBZ"
-        }
-      },
-      {
-        "class": "personal_info",
-        "text": "Selous",
-        "attributes": {
-          "field": "Branch",
-          "value": "Selous"
-        }
-      },
-      {
-        "class": "employment_info",
-        "text": "HUMAN RESOUCES MANAGER",
-        "attributes": {
-          "field": "Position",
-          "value": "HUMAN RESOUCES MANAGER"
-        }
+        "text": "{'branch': 'Selous Branch', 'address': 'The Branch Manager, CBZ Bank, Selous Branch'}",
+        "attributes": null
       }
     ]
   },
   {
     "filename": "FUNDS RECALL FORM_filled.pdf",
-    "timestamp": "2025-09-30T12:40:44.032356",
-    "model": "gpt-4o",
-    "extractions_count": 0,
+    "timestamp": "2025-09-30T13:03:48.289794",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 2,
+    "text_length": 1208,
+    "extractions_count": 14,
     "key_values": {
-      "personal_info": {},
-      "employment_info": {},
-      "financial_info": {},
-      "account_info": {},
-      "other_info": {}
+      "personal_info": {
+        "CUSTOMER NAME": "Garry Gordon"
+      },
+      "account_info": {
+        "ACCOUNT NUMBER": "TI81729731"
+      },
+      "other_info": {
+        "DATE": "2023/05/23",
+        "CONTACT NUMBER": "+44 4444 444444",
+        "NATIONAL ID NUMBER": "98765432",
+        "BRANCH NAME": "Bristol River Side",
+        "TRANSACTION DATE": "2024/05/20",
+        "TRANSACTION VALUE": "£1,592.00",
+        "TRANSACTION REFERENCE NUMBER": "192171363619",
+        "NATURE OF TRANSFER": "INTERNAL",
+        "BENEFICIARY’S FULL NAME": "Tom Lumper",
+        "BENEFICIARY’S/DESTINATION BANK": "ATM Bank",
+        "BENEFICIARY’S ACCOUNT NUMBER": "987654",
+        "REASONS FOR RECALLING FUNDS": "Accidental duplicate transaction was initiated by the customer."
+      }
     },
-    "raw_extractions": []
+    "raw_extractions": [
+      {
+        "class": "date_info",
+        "text": "2023/05/23",
+        "attributes": {
+          "field": "DATE",
+          "value": "2023/05/23"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "Garry Gordon",
+        "attributes": {
+          "field": "CUSTOMER NAME",
+          "value": "Garry Gordon"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "+44 4444 444444",
+        "attributes": {
+          "field": "CONTACT NUMBER",
+          "value": "+44 4444 444444"
+        }
+      },
+      {
+        "class": "id_info",
+        "text": "98765432",
+        "attributes": {
+          "field": "NATIONAL ID NUMBER",
+          "value": "98765432"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "TI81729731",
+        "attributes": {
+          "field": "ACCOUNT NUMBER",
+          "value": "TI81729731"
+        }
+      },
+      {
+        "class": "branch_info",
+        "text": "Bristol River Side",
+        "attributes": {
+          "field": "BRANCH NAME",
+          "value": "Bristol River Side"
+        }
+      },
+      {
+        "class": "transaction_info",
+        "text": "2024/05/20",
+        "attributes": {
+          "field": "TRANSACTION DATE",
+          "value": "2024/05/20"
+        }
+      },
+      {
+        "class": "transaction_value_info",
+        "text": "£1,592.00",
+        "attributes": {
+          "field": "TRANSACTION VALUE",
+          "value": "£1,592.00"
+        }
+      },
+      {
+        "class": "transaction_reference_info",
+        "text": "192171363619",
+        "attributes": {
+          "field": "TRANSACTION REFERENCE NUMBER",
+          "value": "192171363619"
+        }
+      },
+      {
+        "class": "transfer_nature_info",
+        "text": "INTERNAL",
+        "attributes": {
+          "field": "NATURE OF TRANSFER",
+          "value": "INTERNAL"
+        }
+      },
+      {
+        "class": "beneficiary_info",
+        "text": "Tom Lumper",
+        "attributes": {
+          "field": "BENEFICIARY’S FULL NAME",
+          "value": "Tom Lumper"
+        }
+      },
+      {
+        "class": "beneficiary_bank_info",
+        "text": "ATM Bank",
+        "attributes": {
+          "field": "BENEFICIARY’S/DESTINATION BANK",
+          "value": "ATM Bank"
+        }
+      },
+      {
+        "class": "beneficiary_account_info",
+        "text": "987654",
+        "attributes": {
+          "field": "BENEFICIARY’S ACCOUNT NUMBER",
+          "value": "987654"
+        }
+      },
+      {
+        "class": "recall_reason_info",
+        "text": "Accidental duplicate transaction was initiated by the customer.",
+        "attributes": {
+          "field": "REASONS FOR RECALLING FUNDS",
+          "value": "Accidental duplicate transaction was initiated by the customer."
+        }
+      }
+    ]
   },
   {
     "filename": "PROOF OF PAYMENT REQUISITION FORM_filled.pdf",
-    "timestamp": "2025-09-30T12:40:46.183163",
-    "model": "gpt-4o",
-    "extractions_count": 0,
+    "timestamp": "2025-09-30T13:04:26.459723",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 1,
+    "text_length": 1580,
+    "extractions_count": 13,
     "key_values": {
-      "personal_info": {},
-      "employment_info": {},
-      "financial_info": {},
-      "account_info": {},
-      "other_info": {}
+      "personal_info": {
+        "CUSTOMER NAME": "Laura Lauren",
+        "ID NUMBER": "34568654"
+      },
+      "account_info": {
+        "ACCOUNT NUMBER": "5468912"
+      },
+      "other_info": {
+        "DATE": "2020-01-03",
+        "CONTACT NUMBER": "07123 432432",
+        "EMAIL ADDRESS": "lauren_laura@email.com",
+        "BRANCH NAME": "Oxford st London",
+        "TRANSACTION DATE": "2019-12-25",
+        "TRANSACTION VALUE": "654.12",
+        "TRANSACTION REFERENCE NUMBER": "08123456789345",
+        "NATURE OF TRANSFER": "Bill Payment",
+        "BENEFICIARY’S FULL NAME": "Darius Gumber",
+        "DECLARATION SIGNATURE": "Laura Lauren"
+      }
     },
-    "raw_extractions": []
+    "raw_extractions": [
+      {
+        "class": "form_info",
+        "text": "2020-01-03",
+        "attributes": {
+          "field": "DATE",
+          "value": "2020-01-03"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "Laura Lauren",
+        "attributes": {
+          "field": "CUSTOMER NAME",
+          "value": "Laura Lauren"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "34568654",
+        "attributes": {
+          "field": "ID NUMBER",
+          "value": "34568654"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "07123 432432",
+        "attributes": {
+          "field": "CONTACT NUMBER",
+          "value": "07123 432432"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "lauren_laura@email.com",
+        "attributes": {
+          "field": "EMAIL ADDRESS",
+          "value": "lauren_laura@email.com"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "5468912",
+        "attributes": {
+          "field": "ACCOUNT NUMBER",
+          "value": "5468912"
+        }
+      },
+      {
+        "class": "branch_info",
+        "text": "Oxford st London",
+        "attributes": {
+          "field": "BRANCH NAME",
+          "value": "Oxford st London"
+        }
+      },
+      {
+        "class": "transaction_info",
+        "text": "2019-12-25",
+        "attributes": {
+          "field": "TRANSACTION DATE",
+          "value": "2019-12-25"
+        }
+      },
+      {
+        "class": "transaction_info",
+        "text": "654.12",
+        "attributes": {
+          "field": "TRANSACTION VALUE",
+          "value": "654.12"
+        }
+      },
+      {
+        "class": "transaction_reference_info",
+        "text": "08123456789345",
+        "attributes": {
+          "field": "TRANSACTION REFERENCE NUMBER",
+          "value": "08123456789345"
+        }
+      },
+      {
+        "class": "transfer_info",
+        "text": "Bill Payment",
+        "attributes": {
+          "field": "NATURE OF TRANSFER",
+          "value": "Bill Payment"
+        }
+      },
+      {
+        "class": "beneficiary_info",
+        "text": "Darius Gumber",
+        "attributes": {
+          "field": "BENEFICIARY’S FULL NAME",
+          "value": "Darius Gumber"
+        }
+      },
+      {
+        "class": "declaration_info",
+        "text": "Laura Lauren",
+        "attributes": {
+          "field": "DECLARATION SIGNATURE",
+          "value": "Laura Lauren"
+        }
+      }
+    ]
   },
   {
     "filename": "FNOL-form-MOTOR-v10_filled.pdf",
-    "timestamp": "2025-09-30T12:40:56.336544",
-    "model": "gpt-4o",
-    "extractions_count": 13,
+    "timestamp": "2025-09-30T13:06:18.966743",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 6,
+    "text_length": 6619,
+    "extractions_count": 53,
     "key_values": {
+      "employment_info": {
+        "Business Description / Occupation(s)": "Accountant"
+      },
       "other_info": {
-        "Full Licence": "Yes",
+        "Complex accident circumstances or potential recovery action from third party": "If the claim involves complex circumstances or is a non-fault accident with potential recovery action from a responsible third party, please provide a written & signed statement from the driver.",
+        "Date of Claim Notification": "2025/05/02",
+        "Lycetts Claims Handler": "Jenny Lauren",
+        "Lycetts Ref": "A827100GV",
+        "Client Name": "Penelope Tulley",
+        "Client Address": "123 Little Village St., Cambridge, UK",
+        "Postcode": "CB1 234",
+        "VAT Registered": "☑ Yes",
+        "Policy Number": "098271283",
+        "Telephone": "+44 1234 567823",
+        "Email": "penelopetulley123@gmail.com",
+        "Type of incident / claim": "☑ Accident",
+        "Date of Incident": "2024/03/23",
+        "Time of Incident": "14:00",
+        "Location of Incident": "Cambridge mall",
+        "Use of vehicle at time of or prior to incident": "yes",
+        "Used for contracting": "☑ No",
+        "Accident details": "Narrow road, another car drove past and scratched on the side.",
+        "Who is at fault for the incident": "Penelope",
+        "Vehicle Make & Model": "Ford Focus 1",
+        "Details of Damage": "Big scratch on the side of the car",
+        "Is Vehicle / Trailer / Agricultural attachment subject to Finance / Lease / Hire": "☑ No",
+        "Is the Vehicle / Trailer / Agricultural attachment still in use / drivable": "☑ No",
+        "Name of Driver": "Timmy Landren",
+        "Is the driver an employee of the policyholder": "☑ No",
+        "Date of birth": "1975/04/11",
+        "Full Licence": "☑ Yes",
+        "Prosecutions pending": "No",
+        "Accidents in last 3 yrs": "Yes",
+        "Medical or physical conditions reportable to DVLA": "No",
+        "Details of any injuries sustained": "N/A",
         "Did the Fire Brigade attend the incident": "No",
-        "unknown_field": "When you have completed the form please save it and email it to ukclaims@lycetts.co.uk"
+        "Additional Information": "If the claim involves complex circumstances or is a non-fault accident with potential recovery action from a responsible third party, please provide a written & signed statement from the driver. Please include full details of the incident circumstances and provide a diagram showing the positions of the vehicles prior to the accident and at the point of impact."
       }
     },
     "raw_extractions": [
       {
-        "class": "license_info",
-        "text": "Full Licence Yes",
+        "class": "broker_details",
+        "text": "{'date_of_claim_notification': '2025/05/02', 'lycetts_claims_handler': 'Jenny Lauren', 'lycetts_ref': 'A827100GV'}",
+        "attributes": null
+      },
+      {
+        "class": "client_details",
+        "text": "{'client_name': 'Penelope Tulley', 'client_address': '123 Little Village St., Cambridge, UK', 'postcode': 'CB1 234', 'vat_registered': 'Yes', 'occupation': 'Accountant', 'policy_number': '098271283'}",
+        "attributes": null
+      },
+      {
+        "class": "contact_details",
+        "text": "{'telephone': '+44 1234 567823', 'email': 'penelopetulley123@gmail.com'}",
+        "attributes": null
+      },
+      {
+        "class": "incident_details",
+        "text": "{'type_of_incident': 'Accident', 'date_of_incident': '2024/03/23', 'time_of_incident': '14:00', 'location_of_incident': 'Cambridge mall', 'use_of_vehicle_prior_to_incident': 'yes', 'used_for_contracting': 'No', 'description_of_accident': 'Narrow road, another car drove past and scratched on the side.', 'fault_for_incident': 'Penelope'}",
+        "attributes": null
+      },
+      {
+        "class": "vehicle_details",
+        "text": "{'vehicle_make_model': 'Ford Focus 1', 'details_of_damage': 'Big scratch on the side of the car', 'subject_to_finance_lease_hire': 'No', 'vehicle_drivable': 'No'}",
+        "attributes": null
+      },
+      {
+        "class": "driver_details",
+        "text": "{'name_of_driver': 'Timmy Landren', 'is_driver_employee': 'No', 'date_of_birth': '1975/04/11', 'full_licence': 'Yes', 'prosecutions_pending': 'No', 'accidents_in_last_3_years': 'Yes', 'medical_conditions_reportable_to_DVLA': 'No', 'details_of_injuries': 'N/A', 'passenger_injuries': 'No injuries'}",
+        "attributes": null
+      },
+      {
+        "class": "additional_info",
+        "text": "If the claim involves complex circumstances or is a non-fault accident with potential recovery action from a responsible third party, please provide a written & signed statement from the driver.",
         "attributes": {
-          "field": "Full Licence",
-          "value": "Yes"
+          "field": "Complex accident circumstances or potential recovery action from third party",
+          "value": "If the claim involves complex circumstances or is a non-fault accident with potential recovery action from a responsible third party, please provide a written & signed statement from the driver."
         }
       },
       {
-        "class": "fire_brigade_info",
-        "text": "Did the Fire Brigade attend",
-        "attributes": {
-          "field": "Did the Fire Brigade attend the incident",
-          "value": "No"
-        }
-      },
-      {
-        "class": "misc_info",
-        "text": "Customs and Excise in the usual way.",
-        "attributes": {
-          "section": "General Information",
-          "context": "Explanation related to the payment of VAT balance."
-        }
-      },
-      {
-        "class": "misc_info",
-        "text": "Insurers shall pay the balance of the account including any proportion of VAT which you cannot recover.",
-        "attributes": {
-          "section": "Payment Details",
-          "context": "Payment responsibilities of insurers."
-        }
-      },
-      {
-        "class": "info_sharing",
-        "text": "Insurers pass information to the Claims and Underwriting Exchange Register, run by Insurance Database Services (IDS) Ltd and the Motor Insurance Anti-Fraud and Theft Register, run by the Association of British Insurers (ABI).",
-        "attributes": {
-          "reason": "Help Insurers check information provided and prevent fraudulent claims."
-        }
-      },
-      {
-        "class": "policy_conditions",
-        "text": "Under the conditions of your policy, you must tell Insurers about any incident (such as an accident or theft) which may or may not give rise to a claim.",
-        "attributes": {
-          "requirement": "Report any relevant incident to the Insurers."
-        }
+        "class": "instructions",
+        "text": "[{'note': 'a. To protect your interests, it may be necessary for Insurers to instruct solicitors or other professional people on your behalf. Where it is considered such services are necessary Insurers will pay the cost. The services provided attract VAT'}, {'note': 'b. These services are treated as being supplied to a policyholder and not to their Insurer. If you are registered for VAT purposes you will be able to recover VAT or a proportion of it.'}, {'note': 'c. If you tell us that you can recover VAT, Insurers will ask the solicitors or other professional person instructed, to send their VAT invoice to you when their costs are due. The VAT element should be paid by you and recovered from H.M. Customs and Excise in the usual way.'}, {'note': 'd. Insurers shall pay the balance of the account including any proportion of VAT which you cannot recover.'}]",
+        "attributes": null
       },
       {
         "class": "declaration",
-        "text": "I/We understand that my Insurer will handle this claim on my/our behalf and that I/We give our consent to the claim being handled on this basis.",
-        "attributes": {
-          "statement": "Consent for the insurer to handle the claim."
-        }
+        "text": "[{'statement': 'I/We understand that my Insurer will handle this claim on my/our behalf and that I/We give our consent to the claim being handled on this basis.'}, {'statement': 'I/We understand that by providing untrue information resulting in a fraudulent claim is a criminal offence likely to lead to prosecution.'}, {'statement': 'I/We confirm that the information given on this form is to the best of my knowledge and belief, true in every respect.'}, {'statement': 'I/We confirm no amount claimed has been refunded from any other source.'}]",
+        "attributes": null
       },
       {
-        "class": "declaration",
-        "text": "I/We understand that by providing untrue information resulting in a fraudulent claim is a criminal offence likely to lead to prosecution.",
-        "attributes": {
-          "statement": "Warning against providing false information."
-        }
+        "class": "declaration_fields",
+        "text": "{'Print name': '____________________________________________________________', 'Relationship to policyholder': '______________________________', 'Signed': '____________________________________________________________', 'Date': '_______________________________________________________________'}",
+        "attributes": null
       },
       {
-        "class": "confirmation",
-        "text": "I/We confirm that the information given on this form is to the best of my knowledge and belief, true in every respect.",
-        "attributes": {
-          "authenticity": "Claim of truthfulness regarding the information provided."
-        }
+        "class": "privacy_notice",
+        "text": "Data Privacy Notice",
+        "attributes": null
       },
       {
-        "class": "confirmation",
-        "text": "I/We confirm no amount claimed has been refunded from any other source.",
-        "attributes": {
-          "refund_status": "Claimed amount has not been refunded elsewhere."
-        }
+        "class": "privacy_notice_details",
+        "text": "{'field': 'Title', 'value': 'Data Privacy Notice'}",
+        "attributes": null
       },
       {
-        "class": "personal_data_notice",
+        "class": "privacy_notice",
         "text": "Your privacy is important to us. We will process your personal data in accordance with data protection laws.",
-        "attributes": {
-          "data_protection": "Conformance with data protection legislation."
-        }
+        "attributes": null
       },
       {
-        "class": "data_processing_notice",
+        "class": "privacy_notice_details",
+        "text": "{'field': 'Statement', 'value': 'Your privacy is important to us. We will process your personal data in accordance with data protection laws.'}",
+        "attributes": null
+      },
+      {
+        "class": "privacy_notice",
         "text": "To provide insurance related services we will need to share the personal data collected with your Insurance company, their service providers and professional advisors and loss adjusters.",
-        "attributes": {
-          "sharing_reason": "Necessary for insurance-related services."
-        }
+        "attributes": null
+      },
+      {
+        "class": "privacy_notice_details",
+        "text": "{'field': 'Sharing Statement', 'value': 'To provide insurance related services we will need to share the personal data collected with your Insurance company, their service providers and professional advisors and loss adjusters.'}",
+        "attributes": null
+      },
+      {
+        "class": "privacy_notice",
+        "text": "For further information on how your personal data is used and your rights in relation to your personal data please refer to our privacy policy at www.lycetts.co.uk/privacy-policy/ and our Terms of Business Agreement.",
+        "attributes": null
+      },
+      {
+        "class": "privacy_notice_details",
+        "text": "{'field': 'Information Sources', 'value': 'For further information on how your personal data is used and your rights in relation to your personal data please refer to our privacy policy at www.lycetts.co.uk/privacy-policy/ and our Terms of Business Agreement.'}",
+        "attributes": null
       },
       {
         "class": "contact_info",
-        "text": "When you have completed the form please save it and email it to ukclaims@lycetts.co.uk",
-        "attributes": {
-          "instruction": "Submission details for the completed form."
-        }
-      }
-    ]
-  },
-  {
-    "filename": "INTERNET BANKING REGISTRATION FORM1_filled.pdf",
-    "timestamp": "2025-09-30T12:41:04.069550",
-    "model": "gpt-4o",
-    "extractions_count": 23,
-    "key_values": {
-      "personal_info": {
-        "Cell": "",
-        "ID Number": "",
-        "Date of Birth": ""
-      },
-      "other_info": {
-        "Form Type": "Personal Internet Banking Registration Form",
-        "Branch Type": "Individual",
-        "Account Action": "Delete",
-        "Services Required": "Bill Payments (BP)",
-        "Main Account Number": "",
-        "Contact Address": "",
-        "E-mail Address": "",
-        "Fax Number(s)": "",
-        "Customer’s Signature": "__________________ _______",
-        "Signing Arrangement (s)": "___________________ ____________ ________________ _______________"
-      }
-    },
-    "raw_extractions": [
-      {
-        "class": "form_info",
-        "text": "Personal Internet Banking Registration Form",
-        "attributes": {
-          "field": "Form Type",
-          "value": "Personal Internet Banking Registration Form"
-        }
-      },
-      {
-        "class": "branch_info",
-        "text": "Corporate",
-        "attributes": {
-          "field": "Branch Type",
-          "value": "Corporate"
-        }
-      },
-      {
-        "class": "branch_info",
-        "text": "Individual",
-        "attributes": {
-          "field": "Branch Type",
-          "value": "Individual"
-        }
-      },
-      {
-        "class": "account_action",
-        "text": "New",
-        "attributes": {
-          "field": "Account Action",
-          "value": "New"
-        }
-      },
-      {
-        "class": "account_action",
-        "text": "Amend",
-        "attributes": {
-          "field": "Account Action",
-          "value": "Amend"
-        }
-      },
-      {
-        "class": "account_action",
-        "text": "Delete",
-        "attributes": {
-          "field": "Account Action",
-          "value": "Delete"
-        }
-      },
-      {
-        "class": "service_required",
-        "text": "Statement Request (STR)",
-        "attributes": {
-          "field": "Services Required",
-          "value": "Statement Request (STR)"
-        }
-      },
-      {
-        "class": "service_required",
-        "text": "Inter-Account Transfers (IAT)",
-        "attributes": {
-          "field": "Services Required",
-          "value": "Inter-Account Transfers (IAT)"
-        }
-      },
-      {
-        "class": "service_required",
-        "text": "Inter-Bank Transfers (IBT)",
-        "attributes": {
-          "field": "Services Required",
-          "value": "Inter-Bank Transfers (IBT)"
-        }
-      },
-      {
-        "class": "service_required",
-        "text": "Third Party Payment (TPP)",
-        "attributes": {
-          "field": "Services Required",
-          "value": "Third Party Payment (TPP)"
-        }
-      },
-      {
-        "class": "service_required",
-        "text": "Bill Payments (BP)",
-        "attributes": {
-          "field": "Services Required",
-          "value": "Bill Payments (BP)"
-        }
-      },
-      {
-        "class": "form_info",
-        "text": "Main Account Number",
-        "attributes": {
-          "field": "Main Account Number",
-          "value": ""
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "Contact Address",
-        "attributes": {
-          "field": "Contact Address",
-          "value": ""
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "Email Address",
-        "attributes": {
-          "field": "E-mail Address",
-          "value": ""
-        }
-      },
-      {
-        "class": "personal_info",
-        "text": "Cell",
-        "attributes": {
-          "field": "Cell",
-          "value": ""
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "Fax Number(s)",
-        "attributes": {
-          "field": "Fax Number(s)",
-          "value": ""
-        }
-      },
-      {
-        "class": "personal_info",
-        "text": "ID Number",
-        "attributes": {
-          "field": "ID Number",
-          "value": ""
-        }
-      },
-      {
-        "class": "personal_info",
-        "text": "Date of Birth",
-        "attributes": {
-          "field": "Date of Birth",
-          "value": ""
-        }
-      },
-      {
-        "class": "agreement_info",
-        "text": "I/We agree to the Terms and Conditions for the use of this facility provided herewith, and agree to abide by them and such other rules, which may come into force from time to time. I/We agree to be liable for any unauthorized overdraft or debt, which may arise due to the use of this facility.",
+        "text": "ukclaims@lycetts.co.uk",
         "attributes": null
       },
       {
-        "class": "signature_info",
-        "text": "Customer’s Signature: _______________ ______ _________",
-        "attributes": {
-          "field": "Customer’s Signature",
-          "value": "_______________ ______ _________"
-        }
-      },
-      {
-        "class": "signature_info",
-        "text": "Customer’s Signature  ___________________ ____________________________________ ___",
-        "attributes": {
-          "field": "Customer’s Signature",
-          "value": "___________________ ____________________________________ ___"
-        }
-      },
-      {
-        "class": "signature_info",
-        "text": "Customer’s Signature __________________ _______",
-        "attributes": {
-          "field": "Customer’s Signature",
-          "value": "__________________ _______"
-        }
-      },
-      {
-        "class": "signing_arrangement",
-        "text": "Signing Arrangement (s) ___________________ ____________ ________________ _______________",
-        "attributes": {
-          "field": "Signing Arrangement (s)",
-          "value": "___________________ ____________ ________________ _______________"
-        }
-      }
-    ]
-  },
-  {
-    "filename": "INTERNET PASSWORD RESET APPLICATION FORM_filled.pdf",
-    "timestamp": "2025-09-30T12:41:09.914956",
-    "model": "gpt-4o",
-    "extractions_count": 7,
-    "key_values": {
-      "other_info": {
-        "TO: THE MANAGER": "CBZ BANK LIMITED",
-        "Location": "HARARE",
-        "SUBJECT": "REQUEST FOR INTERNET BANKING PASSWORD RESET",
-        "DATE": "____/_____/2018",
-        "PASSWORD TO BE RESET": "Second Password"
-      }
-    },
-    "raw_extractions": [
-      {
-        "class": "bank_info",
-        "text": "CBZ BANK LIMITED",
-        "attributes": {
-          "field": "TO: THE MANAGER",
-          "value": "CBZ BANK LIMITED"
-        }
-      },
-      {
-        "class": "location_info",
-        "text": "HARARE",
-        "attributes": {
-          "field": "Location",
-          "value": "HARARE"
-        }
-      },
-      {
-        "class": "request_info",
-        "text": "REQUEST FOR INTERNET BANKING PASSWORD RESET",
-        "attributes": {
-          "field": "SUBJECT",
-          "value": "REQUEST FOR INTERNET BANKING PASSWORD RESET"
-        }
-      },
-      {
-        "class": "date_info",
-        "text": "____/_____/2018",
-        "attributes": {
-          "field": "DATE",
-          "value": "____/_____/2018"
-        }
-      },
-      {
-        "class": "password_reset_info",
-        "text": "First Password",
-        "attributes": {
-          "field": "PASSWORD TO BE RESET",
-          "value": "First Password"
-        }
-      },
-      {
-        "class": "password_reset_info",
-        "text": "Second Password",
-        "attributes": {
-          "field": "PASSWORD TO BE RESET",
-          "value": "Second Password"
-        }
-      },
-      {
-        "class": "applicant_declaration",
-        "text": "I authorise CBZ Bank to send my new password (one time use) to my registered mobile/cell number or email address and the following terms and conditions will apply...",
-        "attributes": null
-      }
-    ]
-  },
-  {
-    "filename": "MORTGAGE APPLICATION FORM_filled.pdf",
-    "timestamp": "2025-09-30T12:41:26.880396",
-    "model": "gpt-4o",
-    "extractions_count": 36,
-    "key_values": {
-      "other_info": {
-        "Document Title": "APPLICATION FOR A MORTGAGE LOAN",
-        "ARE YOU A PERMANENT RESIDENT OF ZIMBABWE?": "Yes",
-        "Sewerage": "Septic Tank",
-        "Water": "Borehole",
-        "Electricity": "Mains",
-        "Immediate cash resources for": "Yes",
-        "Advance required": "on completion or as building progresses",
-        "Do you have immediate cash resources for transfer fees, bond registration fees and Valuation fees?": "Yes No",
-        "Guarantor information": "Details not provided",
-        "Declaration": "4. Agree to society rules"
-      }
-    },
-    "raw_extractions": [
-      {
-        "class": "mortgage_application_info",
-        "text": "APPLICATION FOR A MORTGAGE LOAN",
-        "attributes": {
-          "field": "Document Title",
-          "value": "APPLICATION FOR A MORTGAGE LOAN"
-        }
-      },
-      {
-        "class": "personal_details",
-        "text": "Yes",
-        "attributes": {
-          "field": "ARE YOU A PERMANENT RESIDENT OF ZIMBABWE?",
-          "value": "Yes"
-        }
-      },
-      {
-        "class": "services_info",
-        "text": "Mains",
-        "attributes": {
-          "field": "Sewerage",
-          "value": "Mains"
-        }
-      },
-      {
-        "class": "services_info",
-        "text": "Mains",
-        "attributes": {
-          "field": "Water",
-          "value": "Mains"
-        }
-      },
-      {
-        "class": "services_info",
-        "text": "Mains",
-        "attributes": {
-          "field": "Electricity",
-          "value": "Mains"
-        }
-      },
-      {
-        "class": "section_info",
-        "text": "Transfer fees, bond registration fees and Valuation fees",
-        "attributes": {
-          "field": "Immediate cash resources for",
-          "value": "Yes"
-        }
-      },
-      {
-        "class": "investment_info",
-        "text": "[{'type': 'Unnamed', 'amount': 'Unnamed', 'account_number': 'Unnamed'}, {'type': 'Unnamed', 'amount': 'Unnamed', 'account_number': 'Unnamed'}, {'type': 'Unnamed', 'amount': 'Unnamed', 'account_number': 'Unnamed'}]",
-        "attributes": null
-      },
-      {
-        "class": "personal_references",
-        "text": "[{'name': 'Unnamed', 'position': 'Unnamed', 'address': 'Unnamed', 'tel_no': 'Unnamed'}, {'name': 'Unnamed', 'position': 'Unnamed', 'address': 'Unnamed', 'tel_no': 'Unnamed'}, {'name': 'Unnamed', 'position': 'Unnamed', 'address': 'Unnamed', 'tel_no': 'Unnamed'}, {'name': 'Unnamed', 'position': 'Unnamed', 'address': 'Unnamed', 'tel_no': 'Unnamed'}]",
-        "attributes": null
-      },
-      {
-        "class": "form_section",
-        "text": "Bankers - Borrower",
-        "attributes": null
-      },
-      {
-        "class": "details",
-        "text": "[{'field': 'NAME & BRANCH', 'value': 'Not filled'}, {'field': 'ACCOUNT NO', 'value': 'Not filled'}]",
-        "attributes": null
-      },
-      {
-        "class": "details",
-        "text": "[{'field': 'NAME & BRANCH', 'value': 'Not filled'}, {'field': 'ACCOUNT NO', 'value': 'Not filled'}]",
-        "attributes": null
-      },
-      {
-        "class": "form_section",
-        "text": "Income Declaration Requirements",
-        "attributes": null
-      },
-      {
-        "class": "details",
-        "text": "[{'field': 'Documents required', 'value': ['Salary advice slip', 'Letter from employer confirming your salary', 'Copies of audited financial statements for the last two years if company or self-employed']}]",
-        "attributes": null
-      },
-      {
-        "class": "form_section",
-        "text": "Loan Details",
-        "attributes": null
-      },
-      {
-        "class": "subfields",
-        "text": "[{'field': 'Purchase Price', 'value': 'Not filled'}, {'field': 'Cash deposit available from own resources', 'value': 'Not filled'}, {'field': 'Amount of loan required', 'value': 'Not filled'}, {'field': 'Repayment period required', 'value': 'Not filled'}, {'field': 'Purpose for which loan is required', 'value': 'Not filled'}]",
-        "attributes": null
-      },
-      {
-        "class": "form_section",
-        "text": "Property Details",
-        "attributes": null
-      },
-      {
-        "class": "subfields",
-        "text": "[{'field': 'Exact location of the property to be mortgaged', 'value': 'Not filled'}]",
-        "attributes": null
-      },
-      {
-        "class": "premises_info",
-        "text": "{'nature_of_premises': {'field': 'Nature of premises', 'value': ''}, 'occupation_details': {'field': 'Will you occupy the whole or part of the premises?', 'value': ''}, 'tenancy_details': {'field': 'If the property is let or to be let, give details of tenancies', 'value': ''}}",
-        "attributes": null
-      },
-      {
-        "class": "ownership_info",
-        "text": "{'ownership_type': {'field': 'State if freehold or leasehold', 'value': ''}, 'land_area': {'field': 'Area of land', 'value': ''}, 'storeys_info': {'field': 'No of storeys', 'value': ''}, 'room_description': {'field': 'Number and description of rooms', 'value': ''}, 'wall_construction': {'field': 'Construction of walls', 'value': ''}, 'roof_construction': {'field': 'Construction of roof', 'value': ''}}",
-        "attributes": null
-      },
-      {
-        "class": "road_info",
-        "text": "{'road_status': {'field': 'Are roads made up and tarred', 'value': 'Yes/No'}}",
-        "attributes": null
-      },
-      {
-        "class": "owner_contact_info",
-        "text": "{'owner_name': {'field': 'Name and address of present owner', 'value': ''}, 'telephone_number': {'field': 'Telephone Number', 'value': ''}}",
-        "attributes": null
-      },
-      {
-        "class": "deeds_info",
-        "text": "{'deeds_possession': {'field': 'In whose possessions are the title deeds?', 'value': ''}}",
-        "attributes": null
-      },
-      {
-        "class": "attorneys_info",
-        "text": "{'attorney_name': {'field': 'Name of attorneys passing transfer', 'value': ''}}",
-        "attributes": null
-      },
-      {
-        "class": "property_info",
-        "text": "{'additional_property': {'field': 'What other property do you own in Zimbabwe?', 'value': ''}}",
-        "attributes": null
-      },
-      {
-        "class": "occupation_certificate",
-        "text": "{'certificate_granted': {'field': 'Has an Occupation Certificate been granted?', 'value': ''}}",
+        "class": "contact_info_details",
+        "text": "{'field': 'Email', 'value': 'ukclaims@lycetts.co.uk'}",
         "attributes": null
       },
       {
         "class": "insurance_info",
-        "text": "{'insurance_details': {'field': 'Is the property insured? Company', 'value': ''}}",
-        "attributes": null
-      },
-      {
-        "class": "alterations_info",
-        "text": "{'alterations_intention': {'field': 'Do you intend to make any structural alterations or additions to the premises?', 'value': ''}}",
-        "attributes": null
-      },
-      {
-        "class": "service_info",
-        "text": "Septic Tank",
+        "text": "2025/05/02",
         "attributes": {
-          "field": "Sewerage",
-          "value": "Septic Tank"
+          "field": "Date of Claim Notification",
+          "value": "2025/05/02"
         }
       },
       {
-        "class": "service_info",
-        "text": "Borehole",
+        "class": "insurance_info",
+        "text": "Jenny Lauren",
         "attributes": {
-          "field": "Water",
-          "value": "Borehole"
+          "field": "Lycetts Claims Handler",
+          "value": "Jenny Lauren"
         }
       },
       {
-        "class": "construction_info",
-        "text": "on completion or as building progresses",
+        "class": "insurance_info",
+        "text": "A827100GV",
         "attributes": {
-          "field": "Advance required",
-          "value": "on completion or as building progresses"
+          "field": "Lycetts Ref",
+          "value": "A827100GV"
         }
       },
       {
-        "class": "additional_info",
-        "text": "Yes No",
+        "class": "client_info",
+        "text": "Penelope Tulley",
         "attributes": {
-          "field": "Do you have immediate cash resources for transfer fees, bond registration fees and Valuation fees?",
-          "value": "Yes No"
+          "field": "Client Name",
+          "value": "Penelope Tulley"
         }
       },
       {
-        "class": "guarantee_info",
-        "text": "indicating willingness to act as guarantor",
+        "class": "client_info",
+        "text": "123 Little Village St., Cambridge, UK",
         "attributes": {
-          "field": "Guarantor information",
-          "value": "Details not provided"
+          "field": "Client Address",
+          "value": "123 Little Village St., Cambridge, UK"
         }
       },
       {
-        "class": "declaration",
-        "text": "shall provide title deeds within 14 days after loan approval",
+        "class": "client_info",
+        "text": "CB1 234",
         "attributes": {
-          "field": "Declaration",
-          "value": "1. Delivery of necessary title deeds"
+          "field": "Postcode",
+          "value": "CB1 234"
         }
       },
       {
-        "class": "declaration",
-        "text": "society's valuer report is confidential",
-        "attributes": {
-          "field": "Declaration",
-          "value": "2. Confidential valuer report"
-        }
-      },
-      {
-        "class": "declaration",
-        "text": "aware of property insurance terms",
-        "attributes": {
-          "field": "Declaration",
-          "value": "3. Society will insure property"
-        }
-      },
-      {
-        "class": "declaration",
-        "text": "agree to be bound by society rules",
-        "attributes": {
-          "field": "Declaration",
-          "value": "4. Agree to society rules"
-        }
-      }
-    ]
-  },
-  {
-    "filename": "FNOL-form-MOTOR-v10 filled2.pdf",
-    "timestamp": "2025-09-30T12:41:39.989975",
-    "model": "gpt-4o",
-    "extractions_count": 24,
-    "key_values": {
-      "other_info": {
-        "Full Licence": "Yes",
-        "Claims and Underwriting Exchange Register": "Insurance Database Services Ltd",
-        "Motor Insurance Anti-Fraud and Theft Register": "Association of British Insurers",
-        "If not the policyholder, please state your relationship to them": "Policyholder",
-        "Email": "ukclaims@lycetts.co.uk",
-        "Type of incident / claim": "Accident",
-        "Use of vehicle at time of or prior to incident": "Yes",
-        "If Theft, was the vehicle locked and keys removed": "Yes",
-        "If Theft, has the vehicle been recovered": "Yes",
-        "Is Vehicle / Trailer / Agricultural attachment subject to Finance / Lease / Hire": "Yes",
-        "Is the Vehicle / Trailer / Agricultural attachment still in use / drivable": "Yes",
-        "Would you like your vehicle repaired by your Insurer’s approved repairer network": "Yes",
-        "Own repairer’s quotation to follow": "Yes",
-        "Is the driver an employee of the policyholder": "Yes",
-        "Did the Fire Brigade attend the incident": "Yes"
-      }
-    },
-    "raw_extractions": [
-      {
-        "class": "license_info",
+        "class": "client_info",
         "text": "Yes",
         "attributes": {
-          "field": "Full Licence",
-          "value": "Yes"
+          "field": "VAT Registered",
+          "value": "☑ Yes"
         }
       },
       {
-        "class": "organization",
-        "text": "Insurance Database Services Ltd",
+        "class": "employment_info",
+        "text": "Accountant",
         "attributes": {
-          "field": "Claims and Underwriting Exchange Register",
-          "value": "Insurance Database Services Ltd"
+          "field": "Business Description / Occupation(s)",
+          "value": "Accountant"
         }
       },
       {
-        "class": "organization",
-        "text": "Association of British Insurers",
+        "class": "insurance_info",
+        "text": "098271283",
         "attributes": {
-          "field": "Motor Insurance Anti-Fraud and Theft Register",
-          "value": "Association of British Insurers"
+          "field": "Policy Number",
+          "value": "098271283"
         }
       },
       {
-        "class": "policy_info",
-        "text": "Policyholder",
+        "class": "contact_info",
+        "text": "+44 1234 567823",
         "attributes": {
-          "field": "If not the policyholder, please state your relationship to them",
-          "value": "Policyholder"
+          "field": "Telephone",
+          "value": "+44 1234 567823"
         }
       },
       {
-        "class": "communication",
-        "text": "ukclaims@lycetts.co.uk",
+        "class": "contact_info",
+        "text": "penelopetulley123@gmail.com",
         "attributes": {
           "field": "Email",
-          "value": "ukclaims@lycetts.co.uk"
+          "value": "penelopetulley123@gmail.com"
         }
       },
       {
@@ -1438,637 +1194,2161 @@
         "text": "Accident",
         "attributes": {
           "field": "Type of incident / claim",
-          "value": "Accident"
+          "value": "☑ Accident"
+        }
+      },
+      {
+        "class": "incident_info",
+        "text": "2024/03/23",
+        "attributes": {
+          "field": "Date of Incident",
+          "value": "2024/03/23"
+        }
+      },
+      {
+        "class": "incident_info",
+        "text": "14:00",
+        "attributes": {
+          "field": "Time of Incident",
+          "value": "14:00"
+        }
+      },
+      {
+        "class": "incident_info",
+        "text": "Cambridge mall",
+        "attributes": {
+          "field": "Location of Incident",
+          "value": "Cambridge mall"
+        }
+      },
+      {
+        "class": "incident_info",
+        "text": "yes",
+        "attributes": {
+          "field": "Use of vehicle at time of or prior to incident",
+          "value": "yes"
+        }
+      },
+      {
+        "class": "incident_info",
+        "text": "No",
+        "attributes": {
+          "field": "Used for contracting",
+          "value": "☑ No"
+        }
+      },
+      {
+        "class": "incident_info",
+        "text": "Narrow road, another car drove past and scratched on the side.",
+        "attributes": {
+          "field": "Accident details",
+          "value": "Narrow road, another car drove past and scratched on the side."
+        }
+      },
+      {
+        "class": "incident_info",
+        "text": "Penelope",
+        "attributes": {
+          "field": "Who is at fault for the incident",
+          "value": "Penelope"
         }
       },
       {
         "class": "vehicle_info",
-        "text": "Used for contracting",
+        "text": "Ford Focus 1",
         "attributes": {
-          "field": "Use of vehicle at time of or prior to incident",
+          "field": "Vehicle Make & Model",
+          "value": "Ford Focus 1"
+        }
+      },
+      {
+        "class": "damage_info",
+        "text": "Big scratch on the side of the car",
+        "attributes": {
+          "field": "Details of Damage",
+          "value": "Big scratch on the side of the car"
+        }
+      },
+      {
+        "class": "vehicle_info",
+        "text": "No",
+        "attributes": {
+          "field": "Is Vehicle / Trailer / Agricultural attachment subject to Finance / Lease / Hire",
+          "value": "☑ No"
+        }
+      },
+      {
+        "class": "vehicle_info",
+        "text": "No",
+        "attributes": {
+          "field": "Is the Vehicle / Trailer / Agricultural attachment still in use / drivable",
+          "value": "☑ No"
+        }
+      },
+      {
+        "class": "driver_info",
+        "text": "Timmy Landren",
+        "attributes": {
+          "field": "Name of Driver",
+          "value": "Timmy Landren"
+        }
+      },
+      {
+        "class": "driver_info",
+        "text": "No",
+        "attributes": {
+          "field": "Is the driver an employee of the policyholder",
+          "value": "☑ No"
+        }
+      },
+      {
+        "class": "driver_info",
+        "text": "1975/04/11",
+        "attributes": {
+          "field": "Date of birth",
+          "value": "1975/04/11"
+        }
+      },
+      {
+        "class": "driver_info",
+        "text": "Yes",
+        "attributes": {
+          "field": "Full Licence",
+          "value": "☑ Yes"
+        }
+      },
+      {
+        "class": "driver_info",
+        "text": "No",
+        "attributes": {
+          "field": "Prosecutions pending",
+          "value": "No"
+        }
+      },
+      {
+        "class": "driver_info",
+        "text": "Yes",
+        "attributes": {
+          "field": "Accidents in last 3 yrs",
           "value": "Yes"
         }
       },
       {
-        "class": "theft_info",
-        "text": "locked and keys removed",
+        "class": "driver_info",
+        "text": "No",
+        "attributes": {
+          "field": "Medical or physical conditions reportable to DVLA",
+          "value": "No"
+        }
+      },
+      {
+        "class": "passenger_info",
+        "text": "No injuries",
+        "attributes": {
+          "field": "Details of any injuries sustained",
+          "value": "N/A"
+        }
+      },
+      {
+        "class": "fire_brigade_attendance",
+        "text": "No",
+        "attributes": {
+          "field": "Did the Fire Brigade attend the incident",
+          "value": "No"
+        }
+      },
+      {
+        "class": "additional_info",
+        "text": "Complex accident circumstances or potential recovery action from third party",
+        "attributes": {
+          "field": "Additional Information",
+          "value": "If the claim involves complex circumstances or is a non-fault accident with potential recovery action from a responsible third party, please provide a written & signed statement from the driver. Please include full details of the incident circumstances and provide a diagram showing the positions of the vehicles prior to the accident and at the point of impact."
+        }
+      }
+    ]
+  },
+  {
+    "filename": "INTERNET BANKING REGISTRATION FORM1_filled.pdf",
+    "timestamp": "2025-09-30T13:07:12.782632",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 1,
+    "text_length": 2103,
+    "extractions_count": 29,
+    "key_values": {
+      "personal_info": {
+        "Name": "Josie Jordan",
+        "ID Number": "345678421",
+        "Date of Birth": "1982/08/12"
+      },
+      "account_info": {
+        "Main Account Number": "3433323233332",
+        "Other Account Number": "6252222333444",
+        "Other Account Name": "Savings Account"
+      },
+      "other_info": {
+        "Bank Name": "CBZ BANK LIMITED",
+        "Branch": "342",
+        "Date": "2025/01/12",
+        "Form Type": "New",
+        "Contact Address": "1 Tower Block, Manchester, United Kingdom",
+        "E-mail Address": "tomj@email.com",
+        "Cell": "+44 999 1111111",
+        "Service Required": "Inter-Account Transfers (IAT)",
+        "User Name": "Tom Jordan",
+        "ID Number": "12345678",
+        "Mobile Number": "+44 8274 18375",
+        "Signature": "Tom.Jordan"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "bank_info",
+        "text": "CBZ BANK LIMITED",
+        "attributes": {
+          "field": "Bank Name",
+          "value": "CBZ BANK LIMITED"
+        }
+      },
+      {
+        "class": "bank_info",
+        "text": "342",
+        "attributes": {
+          "field": "Branch",
+          "value": "342"
+        }
+      },
+      {
+        "class": "date_info",
+        "text": "2025/01/12",
+        "attributes": {
+          "field": "Date",
+          "value": "2025/01/12"
+        }
+      },
+      {
+        "class": "form_info",
+        "text": "New",
+        "attributes": {
+          "field": "Form Type",
+          "value": "New"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "Josie Jordan",
+        "attributes": {
+          "field": "Name",
+          "value": "Josie Jordan"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "3433323323332",
+        "attributes": {
+          "field": "Main Account Number",
+          "value": "3433323323332"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "1 Tower Block, Manchester, United Kingdom",
+        "attributes": {
+          "field": "Contact Address",
+          "value": "1 Tower Block, Manchester, United Kingdom"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "JosieJordan12@gmail.com",
+        "attributes": {
+          "field": "E-mail Address",
+          "value": "JosieJordan12@gmail.com"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "+44 999 1111111",
+        "attributes": {
+          "field": "Cell",
+          "value": "+44 999 1111111"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "345678421",
+        "attributes": {
+          "field": "ID Number",
+          "value": "345678421"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "1982/08/12",
+        "attributes": {
+          "field": "Date of Birth",
+          "value": "1982/08/12"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "6252222333444",
+        "attributes": {
+          "field": "Other Account Number",
+          "value": "6252222333444"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "Savings Account",
+        "attributes": {
+          "field": "Other Account Name",
+          "value": "Savings Account"
+        }
+      },
+      {
+        "class": "service_info",
+        "text": "Statement Request (STR)",
+        "attributes": {
+          "field": "Service Required",
+          "value": "Statement Request (STR)"
+        }
+      },
+      {
+        "class": "service_info",
+        "text": "Inter-Account Transfers (IAT)",
+        "attributes": {
+          "field": "Service Required",
+          "value": "Inter-Account Transfers (IAT)"
+        }
+      },
+      {
+        "class": "user_info",
+        "text": "Josie Jordan",
+        "attributes": {
+          "field": "User Name",
+          "value": "Josie Jordan"
+        }
+      },
+      {
+        "class": "user_info",
+        "text": "345678421",
+        "attributes": {
+          "field": "ID Number",
+          "value": "345678421"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "+44 999 1111111",
+        "attributes": {
+          "field": "Mobile Number",
+          "value": "+44 999 1111111"
+        }
+      },
+      {
+        "class": "user_info",
+        "text": "J.Jordan",
+        "attributes": {
+          "field": "Signature",
+          "value": "J.Jordan"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "JosieJordan123@gmail.com",
+        "attributes": {
+          "field": "E-mail Address",
+          "value": "JosieJordan123@gmail.com"
+        }
+      },
+      {
+        "class": "user_info",
+        "text": "Tom Jordan",
+        "attributes": {
+          "field": "User Name",
+          "value": "Tom Jordan"
+        }
+      },
+      {
+        "class": "user_info",
+        "text": "12345678",
+        "attributes": {
+          "field": "ID Number",
+          "value": "12345678"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "+44 8274 18375",
+        "attributes": {
+          "field": "Mobile Number",
+          "value": "+44 8274 18375"
+        }
+      },
+      {
+        "class": "user_info",
+        "text": "Tom.Jordan",
+        "attributes": {
+          "field": "Signature",
+          "value": "Tom.Jordan"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "tomj@email.com",
+        "attributes": {
+          "field": "E-mail Address",
+          "value": "tomj@email.com"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "3433323233332",
+        "attributes": {
+          "field": "Main Account Number",
+          "value": "3433323233332"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "6252222333444",
+        "attributes": {
+          "field": "Other Account Number",
+          "value": "6252222333444"
+        }
+      },
+      {
+        "class": "user_details",
+        "text": "{'user_1': {'User Name': 'Josie Jordan', 'ID Number': '345678421', 'Mobile Number': '+44 999 1111111', 'Signature': 'J.Jordan', 'E-mail Address': 'JosieJordan123@gmail.com'}}",
+        "attributes": null
+      },
+      {
+        "class": "user_details",
+        "text": "{'user_2': {'User Name': 'Tom Jordan', 'ID Number': '12345678', 'Mobile Number': '+44 8274 18375', 'Signature': 'Tom.Jordan', 'E-mail Address': 'tomj@email.com'}}",
+        "attributes": null
+      }
+    ]
+  },
+  {
+    "filename": "INTERNET PASSWORD RESET APPLICATION FORM_filled.pdf",
+    "timestamp": "2025-09-30T13:07:38.795989",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 2,
+    "text_length": 2297,
+    "extractions_count": 13,
+    "key_values": {
+      "account_info": {
+        "User ID": "US98172",
+        "Account Name": "Taylor Red",
+        "Account Number": "55544443222"
+      },
+      "other_info": {
+        "Branch": "London Battersea BRANCH",
+        "Location": "HARARE",
+        "Date": "11 / 09 /2018",
+        "Subject": "REQUEST FOR INTERNET BANKING PASSWORD RESET",
+        "Registered Cell Number": "+44 1111 111199",
+        "Password to be reset": "First Password",
+        "Authorised Signatory Name": "Taylor Red",
+        "Authorised Signature": "T.Red",
+        "TO": "THE MANAGER CBZ BANK LIMITED London Battersea BRANCH HARARE",
+        "Declaration by the applicant": "Full text of the declaration"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "bank_info",
+        "text": "London Battersea BRANCH",
+        "attributes": {
+          "field": "Branch",
+          "value": "London Battersea BRANCH"
+        }
+      },
+      {
+        "class": "bank_info",
+        "text": "Harare",
+        "attributes": {
+          "field": "Location",
+          "value": "HARARE"
+        }
+      },
+      {
+        "class": "date_info",
+        "text": "11 / 09 /2018",
+        "attributes": {
+          "field": "Date",
+          "value": "11 / 09 /2018"
+        }
+      },
+      {
+        "class": "subject_info",
+        "text": "REQUEST FOR INTERNET BANKING PASSWORD RESET",
+        "attributes": {
+          "field": "Subject",
+          "value": "REQUEST FOR INTERNET BANKING PASSWORD RESET"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "US98172",
+        "attributes": {
+          "field": "User ID",
+          "value": "US98172"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "Taylor Red",
+        "attributes": {
+          "field": "Account Name",
+          "value": "Taylor Red"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "55544443222",
+        "attributes": {
+          "field": "Account Number",
+          "value": "55544443222"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "+44 1111 111199",
+        "attributes": {
+          "field": "Registered Cell Number",
+          "value": "+44 1111 111199"
+        }
+      },
+      {
+        "class": "password_info",
+        "text": "First Password",
+        "attributes": {
+          "field": "Password to be reset",
+          "value": "First Password"
+        }
+      },
+      {
+        "class": "authorized_info",
+        "text": "Taylor Red",
+        "attributes": {
+          "field": "Authorised Signatory Name",
+          "value": "Taylor Red"
+        }
+      },
+      {
+        "class": "authorized_signature_info",
+        "text": "T.Red",
+        "attributes": {
+          "field": "Authorised Signature",
+          "value": "T.Red"
+        }
+      },
+      {
+        "class": "bank_info",
+        "text": "CBZ Bank Limited, London Battersea Branch, Harare",
+        "attributes": {
+          "field": "TO",
+          "value": "THE MANAGER CBZ BANK LIMITED London Battersea BRANCH HARARE"
+        }
+      },
+      {
+        "class": "declaration",
+        "text": "I authorise CBZ Bank to send my new password (one time use) to my registered mobile/cell number or email address and the following terms and conditions will apply in addition to the general terms and conditions in the earlier contract",
+        "attributes": {
+          "field": "Declaration by the applicant",
+          "value": "Full text of the declaration"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "MORTGAGE APPLICATION FORM_filled.pdf",
+    "timestamp": "2025-09-30T13:10:17.577927",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 5,
+    "text_length": 11206,
+    "extractions_count": 56,
+    "key_values": {
+      "other_info": {
+        "BRANCH": "Tottenham Court, London",
+        "ESTATE AGENT": "Buy Sell Quick",
+        "VETTING OFFICER": "Daniel Poultney",
+        "DATE": "2024/01/02",
+        "SURNAME/ COMPANY NAME": "Runder",
+        "TITLE (MR/ MRS/ REV etc.)": "Mr",
+        "FIRST NAMES (S)": "Tim James",
+        "DATE OF BIRTH": "1991-02-24",
+        "NATIONALITY": "Irish",
+        "I.D. NUMBER (S)": "76543234",
+        "ARE YOU A PERMANENT RESIDENT OF ZIMBABWE?": "No",
+        "TOTAL NUMBER OF PERSONS INCLUDING SPOUSE": "1",
+        "MARITAL STATUS": "Single",
+        "CURRENT RESIDENTIAL ADDRESS": "101 High Rise Flats, London, United Kingdom",
+        "POSTAL ADDRESS": "CM1 421",
+        "TELEPHONE NUMBER (S) Home": "+44 0011 1110000",
+        "OCCUPATION/ LINE OF BUSINESS": "Shop Assistant",
+        "CURRENT EMPLOYER": "Tesco",
+        "From-To": "2023/01/05 - Current",
+        "Previous Employer Name (i)": "M&S",
+        "From-To (i)": "2018/04/12 - 2023/01/01",
+        "Declared Insolvent": "No",
+        "Civil Judgment Details": "N/A",
+        "Other Financial Commitments": "N/A",
+        "Bankers": "{'category': 'Borrower', 'branches': [{'branch': 'Peckham branch, London', 'account_number': '987432356'}]}",
+        "Income Details": "{'category': 'Borrowers', 'income_details': {'Present Annual Salary': '$65,000', 'Annual Bonus': '$2,000', 'Total': '$67,000'}}",
+        "Purchase Price": "$250,000",
+        "Cash Deposit": "$25,000",
+        "Amount of loan required": "$225,000",
+        "Repayment period required": "32 Years",
+        "Purpose for which loan is required": "purchase for a resident property",
+        "Street Address": "55 Big building st",
+        "Town/City": "Harare",
+        "Nature of premises": "private dwelling house",
+        "Will you occupy the whole or part of the premises?": "whole premises",
+        "If the property is let or to be let, give details of tenancies": "N/A",
+        "State if freehold or leasehold": "freehold",
+        "Area of land": "210sqm",
+        "No of storeys": "2",
+        "Number and description of rooms": "2 bedrooms, 1 living room",
+        "Construction of walls": "bricks",
+        "Construction of roof": "tiles",
+        "Are roads made up and tarred": "Yes [x] No [ ]",
+        "Name and address of present owner": "Rory Ruddy, 22 Landmark road, Norwich, United Kingdom, N3,321",
+        "Telephone Number": "07827.7381837",
+        "In whose possessions are the title deeds?": "Rory Ruddy",
+        "Name of attorneys passing transfer": "Linda London",
+        "What other property do you own in Zimbabwe?": "N/A",
+        "INCOME DETAILS": "{'borrowers': {'present_annual_salary': '$65,000', 'annual_bonus': '$2,000', 'total': '$67,000'}, 'co_borrowers': {'present_annual_salary': '', 'annual_bonus': '', 'total': ''}}",
+        "LOAN DETAILS": "{'purchase_price': '$250,000', 'cash_deposit_available': '$25,000'}",
+        "unknown_field": "{'location': {'street_address': '55 Big building st', 'town_city': 'Harare'}, 'nature_of_premises': 'private dwelling house', 'occupancy_details': 'whole premises', 'tenancies_details': 'N/A', 'ownership_type': 'freehold', 'land_area': '210sqm', 'number_of_storeys': '2', 'rooms_description': '2 bedrooms, 1 living room', 'walls_construction': 'bricks', 'roof_construction': 'tiles', 'roads_tarrred': 'Yes'}"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "branch_info",
+        "text": "Tottenham Court, London",
+        "attributes": {
+          "field": "BRANCH",
+          "value": "Tottenham Court, London"
+        }
+      },
+      {
+        "class": "estate_agent_info",
+        "text": "Buy Sell Quick",
+        "attributes": {
+          "field": "ESTATE AGENT",
+          "value": "Buy Sell Quick"
+        }
+      },
+      {
+        "class": "vetting_officer_info",
+        "text": "Daniel Poultney",
+        "attributes": {
+          "field": "VETTING OFFICER",
+          "value": "Daniel Poultney"
+        }
+      },
+      {
+        "class": "date_info",
+        "text": "2024/01/02",
+        "attributes": {
+          "field": "DATE",
+          "value": "2024/01/02"
+        }
+      },
+      {
+        "class": "borrower_info",
+        "text": "Runder",
+        "attributes": {
+          "field": "SURNAME/ COMPANY NAME",
+          "value": "Runder"
+        }
+      },
+      {
+        "class": "title_info",
+        "text": "Mr",
+        "attributes": {
+          "field": "TITLE (MR/ MRS/ REV etc.)",
+          "value": "Mr"
+        }
+      },
+      {
+        "class": "forename_info",
+        "text": "Tim James",
+        "attributes": {
+          "field": "FIRST NAMES (S)",
+          "value": "Tim James"
+        }
+      },
+      {
+        "class": "dob_info",
+        "text": "1991-02-24",
+        "attributes": {
+          "field": "DATE OF BIRTH",
+          "value": "1991-02-24"
+        }
+      },
+      {
+        "class": "nationality_info",
+        "text": "Irish",
+        "attributes": {
+          "field": "NATIONALITY",
+          "value": "Irish"
+        }
+      },
+      {
+        "class": "id_number_info",
+        "text": "76543234",
+        "attributes": {
+          "field": "I.D. NUMBER (S)",
+          "value": "76543234"
+        }
+      },
+      {
+        "class": "zimbabwe_residency_info",
+        "text": "No",
+        "attributes": {
+          "field": "ARE YOU A PERMANENT RESIDENT OF ZIMBABWE?",
+          "value": "No"
+        }
+      },
+      {
+        "class": "total_persons_info",
+        "text": "1",
+        "attributes": {
+          "field": "TOTAL NUMBER OF PERSONS INCLUDING SPOUSE",
+          "value": "1"
+        }
+      },
+      {
+        "class": "marital_status_info",
+        "text": "Single",
+        "attributes": {
+          "field": "MARITAL STATUS",
+          "value": "Single"
+        }
+      },
+      {
+        "class": "residential_address_info",
+        "text": "101 High Rise Flats, London, United Kingdom",
+        "attributes": {
+          "field": "CURRENT RESIDENTIAL ADDRESS",
+          "value": "101 High Rise Flats, London, United Kingdom"
+        }
+      },
+      {
+        "class": "postal_address_info",
+        "text": "CM1 421",
+        "attributes": {
+          "field": "POSTAL ADDRESS",
+          "value": "CM1 421"
+        }
+      },
+      {
+        "class": "home_telephone_info",
+        "text": "+44 0011 1110000",
+        "attributes": {
+          "field": "TELEPHONE NUMBER (S) Home",
+          "value": "+44 0011 1110000"
+        }
+      },
+      {
+        "class": "occupation_info",
+        "text": "Shop Assistant",
+        "attributes": {
+          "field": "OCCUPATION/ LINE OF BUSINESS",
+          "value": "Shop Assistant"
+        }
+      },
+      {
+        "class": "current_employer_info",
+        "text": "Tesco",
+        "attributes": {
+          "field": "CURRENT EMPLOYER",
+          "value": "Tesco"
+        }
+      },
+      {
+        "class": "employment_period_info",
+        "text": "{'from': '2023/01/05', 'to': 'Current'}",
+        "attributes": {
+          "field": "From-To",
+          "value": "2023/01/05 - Current"
+        }
+      },
+      {
+        "class": "previous_employer_1_info",
+        "text": "M&S",
+        "attributes": {
+          "field": "Previous Employer Name (i)",
+          "value": "M&S"
+        }
+      },
+      {
+        "class": "previous_employment_period_1_info",
+        "text": "{'from': '2018/04/12', 'to': '2023/01/01'}",
+        "attributes": {
+          "field": "From-To (i)",
+          "value": "2018/04/12 - 2023/01/01"
+        }
+      },
+      {
+        "class": "policy_info",
+        "text": "No",
+        "attributes": {
+          "field": "Declared Insolvent",
+          "value": "No"
+        }
+      },
+      {
+        "class": "judgement_info",
+        "text": "N/A",
+        "attributes": {
+          "field": "Civil Judgment Details",
+          "value": "N/A"
+        }
+      },
+      {
+        "class": "financial_commitments_info",
+        "text": "N/A",
+        "attributes": {
+          "field": "Other Financial Commitments",
+          "value": "N/A"
+        }
+      },
+      {
+        "class": "banker_info",
+        "text": "{'category': 'Borrower', 'branches': [{'branch': 'Peckham branch, London', 'account_number': '987432356'}]}",
+        "attributes": {
+          "field": "Bankers"
+        }
+      },
+      {
+        "class": "income_info",
+        "text": "{'category': 'Borrowers', 'income_details': {'Present Annual Salary': '$65,000', 'Annual Bonus': '$2,000', 'Total': '$67,000'}}",
+        "attributes": {
+          "field": "Income Details"
+        }
+      },
+      {
+        "class": "loan_details",
+        "text": "250,000",
+        "attributes": {
+          "field": "Purchase Price",
+          "value": "$250,000"
+        }
+      },
+      {
+        "class": "loan_details",
+        "text": "25,000",
+        "attributes": {
+          "field": "Cash Deposit",
+          "value": "$25,000"
+        }
+      },
+      {
+        "class": "loan_info",
+        "text": "225,000",
+        "attributes": {
+          "field": "Amount of loan required",
+          "value": "$225,000"
+        }
+      },
+      {
+        "class": "loan_info",
+        "text": "32",
+        "attributes": {
+          "field": "Repayment period required",
+          "value": "32 Years"
+        }
+      },
+      {
+        "class": "loan_info",
+        "text": "purchase for a resident property",
+        "attributes": {
+          "field": "Purpose for which loan is required",
+          "value": "purchase for a resident property"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "55 Big building st",
+        "attributes": {
+          "field": "Street Address",
+          "value": "55 Big building st"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "Harare",
+        "attributes": {
+          "field": "Town/City",
+          "value": "Harare"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "private dwelling house",
+        "attributes": {
+          "field": "Nature of premises",
+          "value": "private dwelling house"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "whole premises",
+        "attributes": {
+          "field": "Will you occupy the whole or part of the premises?",
+          "value": "whole premises"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "N/A",
+        "attributes": {
+          "field": "If the property is let or to be let, give details of tenancies",
+          "value": "N/A"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "freehold",
+        "attributes": {
+          "field": "State if freehold or leasehold",
+          "value": "freehold"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "210sqm",
+        "attributes": {
+          "field": "Area of land",
+          "value": "210sqm"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "2",
+        "attributes": {
+          "field": "No of storeys",
+          "value": "2"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "2 bedrooms, 1 living room",
+        "attributes": {
+          "field": "Number and description of rooms",
+          "value": "2 bedrooms, 1 living room"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "bricks",
+        "attributes": {
+          "field": "Construction of walls",
+          "value": "bricks"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "tiles",
+        "attributes": {
+          "field": "Construction of roof",
+          "value": "tiles"
+        }
+      },
+      {
+        "class": "property_info",
+        "text": "Yes",
+        "attributes": {
+          "field": "Are roads made up and tarred",
+          "value": "Yes [x] No [ ]"
+        }
+      },
+      {
+        "class": "owner_info",
+        "text": "Rory Ruddy, 22 Landmark road, Norwich, United Kingdom, N3,321",
+        "attributes": {
+          "field": "Name and address of present owner",
+          "value": "Rory Ruddy, 22 Landmark road, Norwich, United Kingdom, N3,321"
+        }
+      },
+      {
+        "class": "owner_info",
+        "text": "07827.7381837",
+        "attributes": {
+          "field": "Telephone Number",
+          "value": "07827.7381837"
+        }
+      },
+      {
+        "class": "title_deeds_info",
+        "text": "Rory Ruddy",
+        "attributes": {
+          "field": "In whose possessions are the title deeds?",
+          "value": "Rory Ruddy"
+        }
+      },
+      {
+        "class": "attorney_info",
+        "text": "Linda London",
+        "attributes": {
+          "field": "Name of attorneys passing transfer",
+          "value": "Linda London"
+        }
+      },
+      {
+        "class": "property_ownership_info",
+        "text": "N/A",
+        "attributes": {
+          "field": "What other property do you own in Zimbabwe?",
+          "value": "N/A"
+        }
+      },
+      {
+        "class": "employment_period_from",
+        "text": "2023/01/05",
+        "attributes": null
+      },
+      {
+        "class": "employment_period_to",
+        "text": "Current",
+        "attributes": null
+      },
+      {
+        "class": "previous_employment_period_from",
+        "text": "2018/04/12",
+        "attributes": null
+      },
+      {
+        "class": "previous_employment_period_to",
+        "text": "2023/01/01",
+        "attributes": null
+      },
+      {
+        "class": "bankers_info",
+        "text": "{'borrower_information': [{'name_and_branch': 'Peckham branch, London', 'account_no': '987432356'}], 'co_borrower_information': []}",
+        "attributes": null
+      },
+      {
+        "class": "income_details",
+        "text": "{'borrowers': {'present_annual_salary': '$65,000', 'annual_bonus': '$2,000', 'total': '$67,000'}, 'co_borrowers': {'present_annual_salary': '', 'annual_bonus': '', 'total': ''}}",
+        "attributes": {
+          "field": "INCOME DETAILS"
+        }
+      },
+      {
+        "class": "loan_details",
+        "text": "{'purchase_price': '$250,000', 'cash_deposit_available': '$25,000'}",
+        "attributes": {
+          "field": "LOAN DETAILS"
+        }
+      },
+      {
+        "class": "property_details",
+        "text": "{'location': {'street_address': '55 Big building st', 'town_city': 'Harare'}, 'nature_of_premises': 'private dwelling house', 'occupancy_details': 'whole premises', 'tenancies_details': 'N/A', 'ownership_type': 'freehold', 'land_area': '210sqm', 'number_of_storeys': '2', 'rooms_description': '2 bedrooms, 1 living room', 'walls_construction': 'bricks', 'roof_construction': 'tiles', 'roads_tarrred': 'Yes'}",
+        "attributes": {
+          "section": "Property details",
+          "fields": [
+            {
+              "field": "Exact location of the property to be mortgaged",
+              "value": {
+                "street_address": "55 Big building st",
+                "town_city": "Harare"
+              }
+            },
+            {
+              "field": "Nature of premises",
+              "value": "private dwelling house"
+            },
+            {
+              "field": "Will you occupy the whole or part of the premises",
+              "value": "whole premises"
+            },
+            {
+              "field": "If the property is let or to be let, give details of tenancies",
+              "value": "N/A"
+            },
+            {
+              "field": "State if freehold or leasehold",
+              "value": "freehold"
+            },
+            {
+              "field": "Area of land",
+              "value": "210sqm"
+            },
+            {
+              "field": "No of storeys",
+              "value": "2"
+            },
+            {
+              "field": "Number and description of rooms",
+              "value": "2 bedrooms, 1 living room"
+            },
+            {
+              "field": "Construction of walls",
+              "value": "bricks"
+            },
+            {
+              "field": "Construction of roof",
+              "value": "tiles"
+            },
+            {
+              "field": "Are roads made up and tarred",
+              "value": "Yes"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "filename": "FNOL-form-MOTOR-v10 filled2.pdf",
+    "timestamp": "2025-09-30T13:12:23.301974",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 6,
+    "text_length": 6694,
+    "extractions_count": 44,
+    "key_values": {
+      "other_info": {
+        "Date of Claim Notification": "2021-06-23",
+        "Lycetts Claims Handler": "Gary Liam",
+        "Lycetts Ref": "234567890",
+        "Client Name": "Emma Munteri",
+        "Client Address": "55 terrace house st, York, United Kingdom",
+        "Postcode": "Y9 093",
+        "VAT Registered": "Yes",
+        "Business Description / Occupation(s)": "Lawyer",
+        "Policy Number": "P88329845",
+        "Client Contact Name": "Emma",
+        "Email": "emmaemma33@email.com",
+        "Type of incident / claim": "Theft",
+        "Date of Incident": "2021-06-23",
+        "Time of Incident": "07:44AM",
+        "Location of Incident": "55 terrace house st., York, United Kingdom, Y9 093",
+        "Use of vehicle at time of or prior to incident": "prior to incident",
+        "If Theft, was the vehicle locked and keys removed": "Yes",
+        "If Theft, has the vehicle been recovered": "No",
+        "Please provide a full description of the accident": "Car theft, was parked outside the house.",
+        "Vehicle Make & Model": "Toyota 123",
+        "Details of Damage": "stolen car",
+        "Is Vehicle / Trailer / Agricultural attachment subject to Finance / Lease / Hire": "No",
+        "Is the Vehicle / Trailer / Agricultural attachment still in use / drivable": "No",
+        "Photos of vehicle and damage to follow": "No",
+        "Name of Driver": "Emma Munteri",
+        "Is the driver an employee of the policyholder": "No",
+        "Date of birth": "1981-02-23",
+        "Full Licence": "Yes",
+        "Name of Constabulary": "police branch 104.",
+        "PC in attendance Number": "+44 7384 837483",
+        "Incident Ref": "REF87729842342332",
+        "Did the Fire Brigade attend the incident": "☑ No"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "broker_details",
+        "text": "{'date_of_claim_notification': '2021-06-23', 'claims_handler': 'Gary Liam', 'lycetts_ref': '234567890'}",
+        "attributes": null
+      },
+      {
+        "class": "client_details",
+        "text": "{'client_name': 'Emma Munteri', 'client_address': '55 terrace house st, York, United Kingdom', 'postcode': 'Y9 093', 'vat_registered': 'Yes', 'occupation': 'Lawyer', 'policy_number': 'P88329845', 'client_contact_name': 'Emma', 'email': 'emmaemma33@email.com'}",
+        "attributes": null
+      },
+      {
+        "class": "incident_details",
+        "text": "{'type_of_incident': 'Theft', 'date_of_incident': '2021-06-23', 'time_of_incident': '07:44AM', 'location_of_incident': '55 terrace house st., York, United Kingdom, Y9 093', 'use_of_vehicle': 'prior to incident', 'used_for_contracting': 'No', 'vehicle_locked_and_keys_removed': 'Yes', 'vehicle_recovered': 'No', 'accident_description': 'Car theft, was parked outside the house.', 'who_is_at_fault': 'N/A'}",
+        "attributes": null
+      },
+      {
+        "class": "vehicle_details",
+        "text": "{'make_and_model': 'Toyota 123', 'details_of_damage': 'stolen car', 'subject_to_finance': 'No', 'still_in_use': 'No', 'location_of_vehicle': 'N/A', 'photos_of_vehicle': 'No', 'approved_repairer_network': 'No', 'own_repairer_quotation_to_follow': 'No'}",
+        "attributes": null
+      },
+      {
+        "class": "driver_details",
+        "text": "{'name_of_driver': 'Emma Munteri', 'is_employee': 'No', 'date_of_birth': '1981-02-23', 'full_licence': 'Yes', 'convictions': 'N/A', 'prosecutions_pending': 'N/A', 'accidents_in_last_3_years': 'N/A', 'medical_conditions': 'N/A', 'injuries_sustained': 'N/A', 'passenger_details': 'N/A'}",
+        "attributes": null
+      },
+      {
+        "class": "third_party_details",
+        "text": "{'name': '', 'address': '', 'phone_number': '', 'vehicle_make_and_model': '', 'registration_number': '', 'details_of_damage': '', 'number_of_passengers': '', 'insurers': '', 'details_of_injuries': ''}",
+        "attributes": null
+      },
+      {
+        "class": "witness_details",
+        "text": "[{'name': 'Name 1', 'attributes': {'fields': ['Address', 'Phone Number', 'Email']}}, {'name': 'Name 2', 'attributes': {'fields': ['Address', 'Phone Number', 'Email']}}]",
+        "attributes": null
+      },
+      {
+        "class": "police_details",
+        "text": "{'constabulary': 'police branch 104.', 'pc_in_attendance_number': '+44 7384 837483', 'incident_ref': 'REF87729842342332', 'attributes': {'name_of_constabulary': 'Name of Constabulary', 'pc_attendance_field': 'PC in attendance Number', 'incident_ref_field': 'Incident Ref'}}",
+        "attributes": null
+      },
+      {
+        "class": "fire_brigade_details",
+        "text": "{'did_attend': 'No', 'name_of_brigade': 'N/A', 'attributes': {'attendance_question': 'Did the Fire Brigade attend the incident', 'name_of_brigade_field': 'Name of Brigade'}}",
+        "attributes": null
+      },
+      {
+        "class": "additional_information",
+        "text": "{'section_info': ['Complex accident circumstances or potential recovery action from third party'], 'instructions': ['If the claim involves complex circumstances or is a non-fault accident with potential recovery action from a responsible third party, please provide a written & signed statement from the driver.', 'Please include full details of the incident circumstances and provide a diagram showing the positions of the vehicles prior to the accident and at the point of impact.']}",
+        "attributes": null
+      },
+      {
+        "class": "notes",
+        "text": "{'points': ['To protect your interests, it may be necessary for Insurers to instruct solicitors or other professional people on your behalf. Where it is considered such services are necessary Insurers will pay the cost. The services provided attract VAT.', 'These services are treated as being supplied to a policyholder and not to their Insurer. If you are registered for VAT purposes you will be able to recover VAT or a proportion of it.', 'If you tell us that you can recover VAT, Insurers will ask the solicitors or other professional person instructed, to send their VAT invoice to you when their costs are due. The VAT element should be paid by you and recovered from H.M. Customs and Excise in the usual way.', 'Insurers shall pay the balance of the account including any proportion of VAT which you cannot recover.'], 'information_additional': 'Insurers pass information to the Claims and Underwriting Exchange Register, run by Insurance Database Services (IDS) Ltd and the Motor Insurance Anti-Fraud and Theft Register, run by the Association of British Insurers (ABI). The aim is to help Insurers check information provided and also to prevent fraudulent claims. Under the conditions of your policy, you must tell Insurers about any incident (such as an accident or theft) which may or may not give rise to a claim. Insurers will pass information relating to this incident to the registers.'}",
+        "attributes": null
+      },
+      {
+        "class": "declaration",
+        "text": "{'statements': ['I/We understand that my Insurer will handle this claim on my/our behalf and that I/We give our consent to the claim being handled on this basis.', 'I/We understand that by providing untrue information resulting in a fraudulent claim is a criminal offence likely to lead to prosecution.', 'I/We confirm that the information given on this form is to the best of my knowledge and belief, true in every respect.', 'I/We confirm no amount claimed has been refunded from any other source.'], 'fields_to_complete': ['Print name', 'If not the policyholder, please state your relationship to them', 'Signed']}",
+        "attributes": null
+      },
+      {
+        "class": "claim_info",
+        "text": "2021-06-23",
+        "attributes": {
+          "field": "Date of Claim Notification",
+          "value": "2021-06-23"
+        }
+      },
+      {
+        "class": "claim_info",
+        "text": "Gary Liam",
+        "attributes": {
+          "field": "Lycetts Claims Handler",
+          "value": "Gary Liam"
+        }
+      },
+      {
+        "class": "claim_info",
+        "text": "234567890",
+        "attributes": {
+          "field": "Lycetts Ref",
+          "value": "234567890"
+        }
+      },
+      {
+        "class": "client_details",
+        "text": "Emma Munteri",
+        "attributes": {
+          "field": "Client Name",
+          "value": "Emma Munteri"
+        }
+      },
+      {
+        "class": "client_details",
+        "text": "55 terrace house st, York, United Kingdom",
+        "attributes": {
+          "field": "Client Address",
+          "value": "55 terrace house st, York, United Kingdom"
+        }
+      },
+      {
+        "class": "client_details",
+        "text": "Y9 093",
+        "attributes": {
+          "field": "Postcode",
+          "value": "Y9 093"
+        }
+      },
+      {
+        "class": "client_details",
+        "text": "Yes",
+        "attributes": {
+          "field": "VAT Registered",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "client_details",
+        "text": "Lawyer",
+        "attributes": {
+          "field": "Business Description / Occupation(s)",
+          "value": "Lawyer"
+        }
+      },
+      {
+        "class": "policy_info",
+        "text": "P88329845",
+        "attributes": {
+          "field": "Policy Number",
+          "value": "P88329845"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "Emma",
+        "attributes": {
+          "field": "Client Contact Name",
+          "value": "Emma"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "emmaemma33@email.com",
+        "attributes": {
+          "field": "Email",
+          "value": "emmaemma33@email.com"
+        }
+      },
+      {
+        "class": "incident_details",
+        "text": "Theft",
+        "attributes": {
+          "field": "Type of incident / claim",
+          "value": "Theft"
+        }
+      },
+      {
+        "class": "incident_details",
+        "text": "2021-06-23",
+        "attributes": {
+          "field": "Date of Incident",
+          "value": "2021-06-23"
+        }
+      },
+      {
+        "class": "incident_details",
+        "text": "07:44AM",
+        "attributes": {
+          "field": "Time of Incident",
+          "value": "07:44AM"
+        }
+      },
+      {
+        "class": "incident_details",
+        "text": "55 terrace house st., York, United Kingdom, Y9 093",
+        "attributes": {
+          "field": "Location of Incident",
+          "value": "55 terrace house st., York, United Kingdom, Y9 093"
+        }
+      },
+      {
+        "class": "vehicle_use",
+        "text": "prior to incident",
+        "attributes": {
+          "field": "Use of vehicle at time of or prior to incident",
+          "value": "prior to incident"
+        }
+      },
+      {
+        "class": "vehicle_theft_info",
+        "text": "Yes",
         "attributes": {
           "field": "If Theft, was the vehicle locked and keys removed",
           "value": "Yes"
         }
       },
       {
-        "class": "theft_info",
-        "text": "been recovered",
+        "class": "vehicle_theft_info",
+        "text": "No",
         "attributes": {
           "field": "If Theft, has the vehicle been recovered",
-          "value": "Yes"
+          "value": "No"
         }
       },
       {
-        "class": "vehicle_finance_info",
-        "text": "subject to Finance / Lease / Hire",
+        "class": "accident_details",
+        "text": "Car theft, was parked outside the house.",
+        "attributes": {
+          "field": "Please provide a full description of the accident",
+          "value": "Car theft, was parked outside the house."
+        }
+      },
+      {
+        "class": "vehicle_details",
+        "text": "Toyota 123",
+        "attributes": {
+          "field": "Vehicle Make & Model",
+          "value": "Toyota 123"
+        }
+      },
+      {
+        "class": "damage_details",
+        "text": "stolen car",
+        "attributes": {
+          "field": "Details of Damage",
+          "value": "stolen car"
+        }
+      },
+      {
+        "class": "finance_detail",
+        "text": "No",
         "attributes": {
           "field": "Is Vehicle / Trailer / Agricultural attachment subject to Finance / Lease / Hire",
-          "value": "Yes"
+          "value": "No"
         }
       },
       {
-        "class": "vehicle_use_info",
-        "text": "still in use / drivable",
+        "class": "vehicle_use",
+        "text": "No",
         "attributes": {
           "field": "Is the Vehicle / Trailer / Agricultural attachment still in use / drivable",
-          "value": "Yes"
+          "value": "No"
         }
       },
       {
-        "class": "repair_info",
-        "text": "by your Insurer’s approved repairer network",
+        "class": "repairer_photos",
+        "text": "No",
         "attributes": {
-          "field": "Would you like your vehicle repaired by your Insurer’s approved repairer network",
-          "value": "Yes"
+          "field": "Photos of vehicle and damage to follow",
+          "value": "No"
         }
       },
       {
-        "class": "repair_quote_info",
-        "text": "quotation to follow",
+        "class": "driver_details",
+        "text": "Emma Munteri",
         "attributes": {
-          "field": "Own repairer’s quotation to follow",
-          "value": "Yes"
+          "field": "Name of Driver",
+          "value": "Emma Munteri"
         }
       },
       {
-        "class": "driver_info",
-        "text": "employee of the policyholder",
+        "class": "driver_employment",
+        "text": "No",
         "attributes": {
           "field": "Is the driver an employee of the policyholder",
-          "value": "Yes"
+          "value": "No"
         }
       },
       {
-        "class": "license_info",
-        "text": "Full Licence",
+        "class": "driver_details",
+        "text": "1981-02-23",
+        "attributes": {
+          "field": "Date of birth",
+          "value": "1981-02-23"
+        }
+      },
+      {
+        "class": "driver_licence_info",
+        "text": "Yes",
         "attributes": {
           "field": "Full Licence",
           "value": "Yes"
         }
       },
       {
-        "class": "fire_brigade_details",
-        "text": "Did the Fire Brigade attend the incident",
+        "class": "police_details",
+        "text": "police branch 104",
         "attributes": {
-          "field": "Did the Fire Brigade attend the incident",
-          "value": "Yes"
+          "field": "Name of Constabulary",
+          "value": "police branch 104."
         }
       },
       {
-        "class": "section_title",
-        "text": "General Information",
-        "attributes": null
+        "class": "police_details",
+        "text": "+44 7384 837483",
+        "attributes": {
+          "field": "PC in attendance Number",
+          "value": "+44 7384 837483"
+        }
       },
       {
-        "class": "section_data",
-        "text": "[{'document_info': 'Customs and Excise in the usual way.', 'document_info_attributes': {'field': 'Customs and Excise', 'value': 'Customs and Excise in the usual way.'}}, {'document_info': 'Insurers shall pay the balance of the account including any proportion of VAT which you cannot recover.', 'document_info_attributes': {'field': 'Insurers Payment', 'value': 'Insurers shall pay the balance of the account including any proportion of VAT which you cannot recover.'}}]",
-        "attributes": null
+        "class": "police_details",
+        "text": "REF87729842342332",
+        "attributes": {
+          "field": "Incident Ref",
+          "value": "REF87729842342332"
+        }
       },
       {
-        "class": "section_title",
-        "text": "Information Use",
-        "attributes": null
-      },
-      {
-        "class": "section_data",
-        "text": "[{'document_info': 'Insurers pass information to the Claims and Underwriting Exchange Register, run by Insurance Database Services (IDS) Ltd and the Motor Insurance Anti-Fraud and Theft Register, run by the Association of British Insurers (ABI). The aim is to help Insurers check information provided and also to prevent fraudulent claims.', 'document_info_attributes': {'field': 'Information Registers', 'value': 'Claims and Underwriting Exchange Register, Motor Insurance Anti-Fraud and Theft Register'}}, {'document_info': 'You must tell Insurers about any incident which may or may not give rise to a claim.', 'document_info_attributes': {'field': 'Condition', 'value': 'Inform about any incident'}}]",
-        "attributes": null
-      },
-      {
-        "class": "section_title",
-        "text": "Declaration",
-        "attributes": null
-      },
-      {
-        "class": "section_data",
-        "text": "[{'declaration_info': 'I/We understand that my Insurer will handle this claim on my/our behalf and that I/We give our consent to the claim being handled on this basis.', 'declaration_info_attributes': {'field': 'Claim Handling', 'value': 'Consent given for handling'}}, {'declaration_info': 'Providing untrue information resulting in a fraudulent claim is a criminal offence likely to lead to prosecution.', 'declaration_info_attributes': {'field': 'Fraudulent Claim Warning', 'value': 'Fraud is a criminal offence'}}, {'declaration_info': 'Confirm that the information given on this form is true in every respect and no amount claimed has been refunded from any other source.', 'declaration_info_attributes': {'field': 'Confirmation', 'value': 'Information is true, no refunds from other sources'}}]",
-        "attributes": null
-      },
-      {
-        "class": "section_title",
-        "text": "Privacy Notice",
-        "attributes": null
-      },
-      {
-        "class": "section_data",
-        "text": "[{'privacy_info': 'Your privacy is important to us. We will process your personal data in accordance with data protection laws.', 'privacy_info_attributes': {'field': 'Privacy Statement', 'value': 'Comply with data protection laws'}}, {'privacy_info': 'Sharing personal data with the Insurance company, service providers, advisors, and loss adjusters.', 'privacy_info_attributes': {'field': 'Data Sharing', 'value': 'Shared with company, providers, advisors, adjusters'}}, {'privacy_info': 'Refer to our privacy policy at www.lycetts.co.uk/privacy-policy/ and Terms of Business Agreement.', 'privacy_info_attributes': {'field': 'Further Information', 'value': 'Privacy policy and Terms of Business Agreement available online'}}]",
-        "attributes": null
+        "class": "fire_brigade_details",
+        "text": "No",
+        "attributes": {
+          "field": "Did the Fire Brigade attend the incident",
+          "value": "☑ No"
+        }
       }
     ]
   },
   {
     "filename": "CBZ TOUCH MANUAL REGISTRATION FORM filled.pdf",
-    "timestamp": "2025-09-30T12:41:43.754961",
-    "model": "gpt-4o",
-    "extractions_count": 3,
+    "timestamp": "2025-09-30T13:12:36.489539",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 1,
+    "text_length": 1495,
+    "extractions_count": 8,
     "key_values": {
+      "personal_info": {
+        "Customer Name": "Laura Pulsen",
+        "ID Number": "88729023"
+      },
+      "account_info": {
+        "Account Number": "GM1948218"
+      },
       "other_info": {
-        "Branch": "CBZ Cripps Branch",
-        "City": "HARARE",
-        "Re": "Request for CBZ Touch Registration"
+        "Branch": "London Mansion House",
+        "Address": "99 Truckery Close, High Newbury, UK, K82 123",
+        "Phone Number": "+44 7264 8275214",
+        "Email address": "laura@gmail.com",
+        "Date": "2024/10/23"
       }
     },
     "raw_extractions": [
       {
-        "class": "location_info",
-        "text": "CBZ Cripps Branch",
+        "class": "personal_info",
+        "text": "Laura Pulsen",
+        "attributes": {
+          "field": "Customer Name",
+          "value": "Laura Pulsen"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "GM1948218",
+        "attributes": {
+          "field": "Account Number",
+          "value": "GM1948218"
+        }
+      },
+      {
+        "class": "branch_info",
+        "text": "London Mansion House",
         "attributes": {
           "field": "Branch",
-          "value": "CBZ Cripps Branch"
+          "value": "London Mansion House"
         }
       },
       {
-        "class": "location_info",
-        "text": "HARARE",
+        "class": "address_info",
+        "text": "99 Truckery Close, High Newbury, UK, K82 123",
         "attributes": {
-          "field": "City",
-          "value": "HARARE"
+          "field": "Address",
+          "value": "99 Truckery Close, High Newbury, UK, K82 123"
         }
       },
       {
-        "class": "request",
-        "text": "Request for CBZ Touch Registration",
+        "class": "personal_info",
+        "text": "88729023",
         "attributes": {
-          "field": "Re",
-          "value": "Request for CBZ Touch Registration"
+          "field": "ID Number",
+          "value": "88729023"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "+44 7264 8275214",
+        "attributes": {
+          "field": "Phone Number",
+          "value": "+44 7264 8275214"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "laura@gmail.com",
+        "attributes": {
+          "field": "Email address",
+          "value": "laura@gmail.com"
+        }
+      },
+      {
+        "class": "document_date",
+        "text": "2024/10/23",
+        "attributes": {
+          "field": "Date",
+          "value": "2024/10/23"
         }
       }
     ]
   },
   {
     "filename": "property-loss-form_filled.pdf",
-    "timestamp": "2025-09-30T12:42:01.595058",
-    "model": "gpt-4o",
-    "extractions_count": 25,
+    "timestamp": "2025-09-30T13:13:38.235625",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 2,
+    "text_length": 5638,
+    "extractions_count": 40,
     "key_values": {
+      "personal_info": {
+        "First Name": "Tilly",
+        "Last or Company Name": "Poplier"
+      },
+      "employment_info": {
+        "Job Title": "Cashier"
+      },
       "other_info": {
-        "Did the incident occur on the Insured premises": "YES",
-        "unknown_field": "{'best_time': '', 'best_days': ''}",
-        "Was the location inspected immediately after the incident": "NO",
-        "Were any photos taken": "NO",
-        "Is there mortgage on the property": "YES",
-        "Report Information": null,
-        "Date Reported": null,
-        "Reported by First Name": null,
-        "Reported by Last Name": null,
-        "Job Title": null,
-        "Phone Number": null,
-        "Email Address": null,
-        "Are you the contact for this incident?": "First Name Last Name",
-        "Business Phone Number": null,
-        "Cell Number": null,
-        "Fax Number": null,
-        "What is the best time of contact From/To?": null,
-        "What are the best days to contact you?": null,
-        "What is your preferred method of contact?": null,
-        "Do you have any additional comments regarding this incident?": null
+        "Is this a Notice Only Claim?": "Claim",
+        "Date of Incident": "2019/10/12",
+        "Time of Incident": "12:22 pm",
+        "Date Insured Notified": "2019-12-12",
+        "Incident State": "N/A",
+        "Insured Name": "Milkshake Parlor ltd",
+        "Location Name": "Milkshake Parlor",
+        "Address 1": "4 Westminster street",
+        "City": "London",
+        "State": "N/A",
+        "Zip": "NW1 431",
+        "County": "London",
+        "Telephone Number": "+44 4444 333333",
+        "Policy Number": "P91928302",
+        "Policy Name": "Workers Comp.",
+        "Policy Effective Date": "2019-02-01",
+        "Policy Expiration Date": "2020-02-01",
+        "Did the incident occur on the Insured premises?": "Yes",
+        "Country": "United Kingdom",
+        "Were any photos taken?": "yes",
+        "Is there mortgage on the property?": "no",
+        "Provide a brief description of the incident": "milkshake machine malfunctioned and leaked water on floor",
+        "Category of Loss": "Internal flooding",
+        "Date Reported": "2019-12-10",
+        "Reported by First Name": "Tilly",
+        "Reported by Last Name": "Poplier",
+        "Phone Number": "07234 567897",
+        "Email Address": "tilly_p123@email.com",
+        "Are you the contact for this incident?": "Yes",
+        "What is the best time of contact From/To?": "9.00AM - 6.00PM",
+        "What are the best days to contact you?": "Mon-Fri",
+        "Were authorities contacted?": "no"
       }
     },
     "raw_extractions": [
       {
+        "class": "claim_info",
+        "text": "Notice Only Claim",
+        "attributes": {
+          "field": "Is this a Notice Only Claim?",
+          "value": "Claim"
+        }
+      },
+      {
+        "class": "claim_info",
+        "text": "2019/10/12",
+        "attributes": {
+          "field": "Date of Incident",
+          "value": "2019/10/12"
+        }
+      },
+      {
+        "class": "claim_info",
+        "text": "12:22 pm",
+        "attributes": {
+          "field": "Time of Incident",
+          "value": "12:22 pm"
+        }
+      },
+      {
+        "class": "claim_info",
+        "text": "2019-12-12",
+        "attributes": {
+          "field": "Date Insured Notified",
+          "value": "2019-12-12"
+        }
+      },
+      {
+        "class": "claim_info",
+        "text": "N/A",
+        "attributes": {
+          "field": "Incident State",
+          "value": "N/A"
+        }
+      },
+      {
+        "class": "insured_info",
+        "text": "Milkshake Parlor ltd",
+        "attributes": {
+          "field": "Insured Name",
+          "value": "Milkshake Parlor ltd"
+        }
+      },
+      {
+        "class": "business_location",
+        "text": "Milkshake Parlor",
+        "attributes": {
+          "field": "Location Name",
+          "value": "Milkshake Parlor"
+        }
+      },
+      {
+        "class": "business_location",
+        "text": "4 Westminster street",
+        "attributes": {
+          "field": "Address 1",
+          "value": "4 Westminster street"
+        }
+      },
+      {
+        "class": "business_location",
+        "text": "London",
+        "attributes": {
+          "field": "City",
+          "value": "London"
+        }
+      },
+      {
+        "class": "business_location",
+        "text": "N/A",
+        "attributes": {
+          "field": "State",
+          "value": "N/A"
+        }
+      },
+      {
+        "class": "business_location",
+        "text": "NW1 431",
+        "attributes": {
+          "field": "Zip",
+          "value": "NW1 431"
+        }
+      },
+      {
+        "class": "business_location",
+        "text": "London",
+        "attributes": {
+          "field": "County",
+          "value": "London"
+        }
+      },
+      {
+        "class": "business_location",
+        "text": "+44 4444 333333",
+        "attributes": {
+          "field": "Telephone Number",
+          "value": "+44 4444 333333"
+        }
+      },
+      {
+        "class": "policy_info",
+        "text": "P91928302",
+        "attributes": {
+          "field": "Policy Number",
+          "value": "P91928302"
+        }
+      },
+      {
+        "class": "policy_info",
+        "text": "Workers Comp.",
+        "attributes": {
+          "field": "Policy Name",
+          "value": "Workers Comp."
+        }
+      },
+      {
+        "class": "policy_info",
+        "text": "2019-02-01",
+        "attributes": {
+          "field": "Policy Effective Date",
+          "value": "2019-02-01"
+        }
+      },
+      {
+        "class": "policy_info",
+        "text": "2020-02-01",
+        "attributes": {
+          "field": "Policy Expiration Date",
+          "value": "2020-02-01"
+        }
+      },
+      {
         "class": "incident_info",
-        "text": "YES",
+        "text": "Yes",
         "attributes": {
-          "field": "Did the incident occur on the Insured premises",
-          "value": "YES"
+          "field": "Did the incident occur on the Insured premises?",
+          "value": "Yes"
         }
       },
       {
-        "class": "location_info",
-        "text": "{'address_1': '', 'address_2': '', 'city': '', 'state': '', 'zip': '', 'county': '', 'country': ''}",
+        "class": "incident_info",
+        "text": "4 Westminster street",
         "attributes": {
-          "fields": [
-            "Address 1",
-            "Address 2",
-            "City",
-            "State",
-            "Zip",
-            "County",
-            "Country"
-          ],
-          "values": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-          ]
+          "field": "Address 1",
+          "value": "4 Westminster street"
         }
       },
       {
-        "class": "inspection_info",
-        "text": "NO",
+        "class": "incident_info",
+        "text": "London",
         "attributes": {
-          "field": "Was the location inspected immediately after the incident",
-          "value": "NO"
+          "field": "City",
+          "value": "London"
         }
       },
       {
-        "class": "photograph_evidence",
-        "text": "NO",
+        "class": "incident_info",
+        "text": "N/A",
         "attributes": {
-          "field": "Were any photos taken",
-          "value": "NO"
+          "field": "State",
+          "value": "N/A"
         }
       },
       {
-        "class": "mortgage_info",
-        "text": "YES",
+        "class": "incident_info",
+        "text": "United Kingdom",
         "attributes": {
-          "field": "Is there mortgage on the property",
-          "value": "YES"
+          "field": "Country",
+          "value": "United Kingdom"
         }
       },
       {
-        "class": "contact_info",
-        "text": "{'first_name': '', 'last_or_company_name': '', 'address_1': '', 'address_2': '', 'city': '', 'state': '', 'zip': '', 'county': '', 'country': '', 'telephone_number': '', 'extn': ''}",
+        "class": "incident_info",
+        "text": "yes",
         "attributes": {
-          "fields": [
-            "First Name",
-            "Last or Company Name",
-            "Address 1",
-            "Address 2",
-            "City",
-            "State",
-            "Zip",
-            "County",
-            "Country",
-            "Telephone Number",
-            "Extn"
-          ],
-          "values": [
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            "",
-            ""
-          ]
+          "field": "Were any photos taken?",
+          "value": "yes"
         }
       },
       {
-        "class": "driver_license_info",
-        "text": "{'driver_license_number': '', 'driver_license_state': '', 'license_plate_number': '', 'license_plate_state': ''}",
+        "class": "incident_info",
+        "text": "no",
         "attributes": {
-          "fields": [
-            "Driver's License Number",
-            "Driver's License State",
-            "License Plate Number",
-            "License Plate State"
-          ],
-          "values": [
-            "",
-            "",
-            "",
-            ""
-          ]
+          "field": "Is there mortgage on the property?",
+          "value": "no"
         }
       },
       {
-        "class": "contact_preference",
-        "text": "{'best_time': '', 'best_days': ''}",
+        "class": "personal_info",
+        "text": "Tilly",
         "attributes": {
-          "fields": [
-            "What is the best time of contact From/To",
-            "What are the best days to contact you"
-          ],
-          "values": [
-            "",
-            ""
-          ]
+          "field": "First Name",
+          "value": "Tilly"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "Poplier",
+        "attributes": {
+          "field": "Last or Company Name",
+          "value": "Poplier"
+        }
+      },
+      {
+        "class": "incident_info",
+        "text": "milkshake machine malfunctioned and leaked water on floor",
+        "attributes": {
+          "field": "Provide a brief description of the incident",
+          "value": "milkshake machine malfunctioned and leaked water on floor"
+        }
+      },
+      {
+        "class": "loss_info",
+        "text": "Internal flooding",
+        "attributes": {
+          "field": "Category of Loss",
+          "value": "Internal flooding"
         }
       },
       {
         "class": "report_info",
-        "text": "First Name Last Name Address 1 Address 2 City State Zip County Country Telephone Number Extn",
-        "attributes": {
-          "field": "Report Information",
-          "value": null
-        }
-      },
-      {
-        "class": "report_info",
-        "text": "Date Reported",
+        "text": "2019-12-10",
         "attributes": {
           "field": "Date Reported",
-          "value": null
+          "value": "2019-12-10"
         }
       },
       {
         "class": "report_info",
-        "text": "Reported by First Name",
+        "text": "Tilly",
         "attributes": {
           "field": "Reported by First Name",
-          "value": null
+          "value": "Tilly"
         }
       },
       {
         "class": "report_info",
-        "text": "Reported by Last Name",
+        "text": "Poplier",
         "attributes": {
           "field": "Reported by Last Name",
-          "value": null
+          "value": "Poplier"
         }
       },
       {
-        "class": "report_info",
-        "text": "Job Title",
+        "class": "employment_info",
+        "text": "Cashier",
         "attributes": {
           "field": "Job Title",
-          "value": null
+          "value": "Cashier"
         }
       },
       {
-        "class": "report_info",
-        "text": "Phone Number",
+        "class": "contact_info",
+        "text": "07234 567897",
         "attributes": {
           "field": "Phone Number",
-          "value": null
-        }
-      },
-      {
-        "class": "report_info",
-        "text": "Email Address",
-        "attributes": {
-          "field": "Email Address",
-          "value": null
+          "value": "07234 567897"
         }
       },
       {
         "class": "contact_info",
-        "text": "First Name Last Name",
+        "text": "tilly_p123@email.com",
+        "attributes": {
+          "field": "Email Address",
+          "value": "tilly_p123@email.com"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "Yes",
         "attributes": {
           "field": "Are you the contact for this incident?",
-          "value": null
+          "value": "Yes"
         }
       },
       {
-        "class": "contact_info",
-        "text": "Business Phone Number",
-        "attributes": {
-          "field": "Business Phone Number",
-          "value": null
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "Cell Number",
-        "attributes": {
-          "field": "Cell Number",
-          "value": null
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "Fax Number",
-        "attributes": {
-          "field": "Fax Number",
-          "value": null
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "Email Address",
-        "attributes": {
-          "field": "Email Address",
-          "value": null
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "What is the best time of contact From/To?",
+        "class": "contact_time",
+        "text": "9.00AM - 6.00PM",
         "attributes": {
           "field": "What is the best time of contact From/To?",
-          "value": null
+          "value": "9.00AM - 6.00PM"
         }
       },
       {
-        "class": "contact_info",
-        "text": "What are the best days to contact you?",
+        "class": "contact_days",
+        "text": "Mon-Fri",
         "attributes": {
           "field": "What are the best days to contact you?",
-          "value": null
+          "value": "Mon-Fri"
         }
       },
       {
-        "class": "contact_info",
-        "text": "What is your preferred method of contact?",
+        "class": "incident_info",
+        "text": "no",
         "attributes": {
-          "field": "What is your preferred method of contact?",
-          "value": null
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "Do you have any additional comments regarding this incident?",
-        "attributes": {
-          "field": "Do you have any additional comments regarding this incident?",
-          "value": null
+          "field": "Were authorities contacted?",
+          "value": "no"
         }
       },
       {
         "class": "report_info",
-        "text": "Are you the contact for this incident?",
+        "text": "Tilly",
         "attributes": {
-          "field": "Are you the contact for this incident?",
-          "value": "First Name Last Name"
+          "field": "Reported by First Name",
+          "value": "Tilly"
+        }
+      },
+      {
+        "class": "report_info",
+        "text": "Poplier",
+        "attributes": {
+          "field": "Reported by Last Name",
+          "value": "Poplier"
         }
       }
     ]
   },
   {
     "filename": "notice-of-loss-form_novt2019_axa-xl_filled.pdf",
-    "timestamp": "2025-09-30T12:42:33.867383",
-    "model": "gpt-4o",
-    "extractions_count": 23,
+    "timestamp": "2025-09-30T13:14:38.525298",
+    "vision_model": "gpt-4o",
+    "extraction_model": "gpt-4o",
+    "pages": 4,
+    "text_length": 4744,
+    "extractions_count": 26,
     "key_values": {
       "personal_info": {
-        "Title": "*",
-        "First Name": "*Last Name:",
-        "Role in Relation to Loss": "Insured/Policy Holder"
+        "Title": "Ms.",
+        "First Name": "Jennifer",
+        "Last Name": "Fauler"
       },
       "other_info": {
-        "Insured/Policy Holder Name": "",
-        "Date of Loss (occurrence or claims made date)": "",
-        "What is the best way to contact you?": "Telephone eMail",
+        "Street/Post Office Box": "1 Gordon road",
+        "City": "Gordontown",
+        "Country": "United Kingdom",
+        "Zip/Postal Code": "SE1 123",
+        "What is the best way to contact you": "eMail",
+        "Contact Info": "jenny123@email.co.uk",
+        "Reference Number": "9876543232",
+        "Role in Relation to Loss": "Claimant",
+        "Insured / Policy Holder Name": "Jennifer Fauler",
+        "Policy Number": "AI8138ATE",
+        "Insurance Company Name": "AXA",
+        "Type of policy": "Property",
+        "Date of Loss": "04-Feb-2025",
+        "Loss Description": "A tree fell on a building and damaged the roof.",
+        "Automobile/Motor Vehicle Accident": "No",
+        "Loss Location: Street": "1 Gordon road",
         "Has suit been filed?": "Yes",
-        "unknown_field": "WEBFNOL.APAC@axaxl.com",
-        "Insured / Policy Holder Name": "*",
-        "Automobile/Motor Vehicle Accident": "Yes",
-        "Region/Country Email Address": "South / Central America / All WEBFNOL.EMEA@axaxl.com"
+        "Check if this is the same as insured/policy holder": "Yes"
       }
     },
     "raw_extractions": [
       {
         "class": "personal_info",
-        "text": "Insured/Policy Holder Name:",
+        "text": "Ms.",
         "attributes": {
           "field": "Title",
-          "value": "Insured/Policy Holder"
-        }
-      },
-      {
-        "class": "insurance_info",
-        "text": "Name",
-        "attributes": {
-          "field": "Insured/Policy Holder Name",
-          "value": ""
-        }
-      },
-      {
-        "class": "loss_info",
-        "text": "Date of Loss",
-        "attributes": {
-          "field": "Date of Loss (occurrence or claims made date)",
-          "value": ""
-        }
-      },
-      {
-        "class": "communication_preference",
-        "text": "Telephone eMail",
-        "attributes": {
-          "field": "What is the best way to contact you?",
-          "value": "Telephone eMail"
-        }
-      },
-      {
-        "class": "suit_info",
-        "text": "Yes",
-        "attributes": {
-          "field": "Has suit been filed?",
-          "value": "Yes"
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "WEBFNOL.NA@axaxl.com",
-        "attributes": {
-          "region/country": "North America / All",
-          "email_address": "WEBFNOL.NA@axaxl.com"
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "NEWCLAIMS@axaxl.com",
-        "attributes": {
-          "region/country": "UK / All (Motor Claims)",
-          "email_address": "NEWCLAIMS@axaxl.com"
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "WEBFNOL.EMEA.FRANCE@axaxl.com",
-        "attributes": {
-          "region/country": "EMEA / France",
-          "email_address": "WEBFNOL.EMEA.FRANCE@axaxl.com"
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "WEBFNOL.UK@axaxl.com",
-        "attributes": {
-          "region/country": "UK / All (Non-motor Claims)",
-          "email_address": "WEBFNOL.UK@axaxl.com"
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "WEBFNOL.EMEA.GERMANY@axaxl.com",
-        "attributes": {
-          "region/country": "EMEA / Germany",
-          "email_address": "WEBFNOL.EMEA.GERMANY@axaxl.com"
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "WEBFNOL.EMEA.ITALY@axaxl.com",
-        "attributes": {
-          "region/country": "EMEA / Italy",
-          "email_address": "WEBFNOL.EMEA.ITALY@axaxl.com"
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "WEBFNOL.EMEA@axaxl.com",
-        "attributes": {
-          "region/country": "South / Central America / All",
-          "email_address": "WEBFNOL.EMEA@axaxl.com"
-        }
-      },
-      {
-        "class": "contact_info",
-        "text": "WEBFNOL.APAC@axaxl.com",
-        "attributes": {
-          "region/country": "APAC / All",
-          "email_address": "WEBFNOL.APAC@axaxl.com"
+          "value": "Ms."
         }
       },
       {
         "class": "personal_info",
-        "text": "*",
-        "attributes": {
-          "field": "Title",
-          "value": "*"
-        }
-      },
-      {
-        "class": "personal_info",
-        "text": "*Last Name:",
+        "text": "Jennifer",
         "attributes": {
           "field": "First Name",
-          "value": "*Last Name:"
+          "value": "Jennifer"
         }
       },
       {
         "class": "personal_info",
-        "text": "Insured/Policy Holder",
+        "text": "Fauler",
+        "attributes": {
+          "field": "Last Name",
+          "value": "Fauler"
+        }
+      },
+      {
+        "class": "address_info",
+        "text": "1 Gordon road",
+        "attributes": {
+          "field": "Street/Post Office Box",
+          "value": "1 Gordon road"
+        }
+      },
+      {
+        "class": "address_info",
+        "text": "Godontown",
+        "attributes": {
+          "field": "City",
+          "value": "Godontown"
+        }
+      },
+      {
+        "class": "address_info",
+        "text": "United Kingdom",
+        "attributes": {
+          "field": "Country",
+          "value": "United Kingdom"
+        }
+      },
+      {
+        "class": "address_info",
+        "text": "SE1 123",
+        "attributes": {
+          "field": "Zip/Postal Code",
+          "value": "SE1 123"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "eMail",
+        "attributes": {
+          "field": "What is the best way to contact you",
+          "value": "eMail"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "jenny123@email.co.uk",
+        "attributes": {
+          "field": "Contact Info",
+          "value": "jenny123@email.co.uk"
+        }
+      },
+      {
+        "class": "reference_info",
+        "text": "9876543232",
+        "attributes": {
+          "field": "Reference Number",
+          "value": "9876543232"
+        }
+      },
+      {
+        "class": "role_info",
+        "text": "Claimant",
         "attributes": {
           "field": "Role in Relation to Loss",
-          "value": "Insured/Policy Holder"
+          "value": "Claimant"
         }
       },
       {
-        "class": "insurance_info",
-        "text": "*",
+        "class": "insured_info",
+        "text": "Jennifer Fauler",
         "attributes": {
           "field": "Insured / Policy Holder Name",
-          "value": "*"
+          "value": "Jennifer Fauler"
         }
       },
       {
-        "class": "insurance_info",
-        "text": "Yes",
+        "class": "policy_info",
+        "text": "AI8138ATE",
+        "attributes": {
+          "field": "Policy Number",
+          "value": "AI8138ATE"
+        }
+      },
+      {
+        "class": "insurance_company_info",
+        "text": "AXA",
+        "attributes": {
+          "field": "Insurance Company Name",
+          "value": "AXA"
+        }
+      },
+      {
+        "class": "policy_type",
+        "text": "Property",
+        "attributes": {
+          "field": "Type of policy",
+          "value": "Property"
+        }
+      },
+      {
+        "class": "loss_info",
+        "text": "04-Feb-2025",
+        "attributes": {
+          "field": "Date of Loss",
+          "value": "04-Feb-2025"
+        }
+      },
+      {
+        "class": "loss_description_info",
+        "text": "A tree fell on a building and damaged the roof.",
+        "attributes": {
+          "field": "Loss Description",
+          "value": "A tree fell on a building and damaged the roof."
+        }
+      },
+      {
+        "class": "automobile_accident_info",
+        "text": "No",
         "attributes": {
           "field": "Automobile/Motor Vehicle Accident",
-          "value": "Yes"
+          "value": "No"
         }
       },
       {
-        "class": "loss_info",
-        "text": "{'field': '*Date of Loss (occurr ence or claims made date)', 'value': '(dd/mm/yyyy)'}",
-        "attributes": null
+        "class": "loss_location_info",
+        "text": "1 Gordon road",
+        "attributes": {
+          "field": "Loss Location: Street",
+          "value": "1 Gordon road"
+        }
       },
       {
-        "class": "loss_info",
-        "text": "{'field': '*Loss Description', 'value': ''}",
-        "attributes": null
+        "class": "loss_location_info",
+        "text": "Gordontown",
+        "attributes": {
+          "field": "City",
+          "value": "Gordontown"
+        }
       },
       {
-        "class": "suit_info",
+        "class": "loss_location_info",
+        "text": "United Kingdom",
+        "attributes": {
+          "field": "Country",
+          "value": "United Kingdom"
+        }
+      },
+      {
+        "class": "loss_location_info",
+        "text": "SE1 123",
+        "attributes": {
+          "field": "Zip/Postal Code",
+          "value": "SE1 123"
+        }
+      },
+      {
+        "class": "suit_filed_info",
         "text": "Yes",
         "attributes": {
           "field": "Has suit been filed?",
@@ -2076,20 +3356,25 @@
         }
       },
       {
-        "class": "claim_info",
-        "text": "NEWCLAIMS@axaxl.com",
+        "class": "personal_info",
+        "text": "Ms.",
         "attributes": {
-          "field": "Region/Country Email Address",
-          "value": "UK / All (Motor Claims) NEW CLAIMS@axaxl.com"
+          "field": "Title",
+          "value": "Ms."
         }
       },
       {
-        "class": "claim_info",
-        "text": "WEBFNOL.EMEA@axaxl.com",
+        "class": "claimant_info",
+        "text": "same as insured/policy holder",
         "attributes": {
-          "field": "Region/Country Email Address",
-          "value": "South / Central America / All WEBFNOL.EMEA@axaxl.com"
+          "field": "Check if this is the same as insured/policy holder",
+          "value": "Yes"
         }
+      },
+      {
+        "class": "region_contact_info",
+        "text": "[{'region': 'North America / All', 'email': 'WEBFNOL.NA@axaxl.com'}, {'region': 'EMEA / France', 'email': 'WEBFNOL.EMEA.FRANCE@axaxl.com'}, {'region': 'EMEA / Germany', 'email': 'WEBFNOL.EMEA.GERMANY@axaxl.com'}, {'region': 'EMEA / Italy', 'email': 'WEBFNOL.EMEA.ITALY@axaxl.com'}, {'region': 'EMEA / All Other', 'email': 'WEBFNOL.EMEA@axaxl.com'}, {'region': 'UK / All (Motor Claims)', 'email': 'NEWCLAIMS@axaxl.com'}, {'region': 'UK / All (Non-motor Claims)', 'email': 'WEBFNOL.UK@axaxl.com'}, {'region': 'South / Central America / All', 'email': 'WEBFNOL.EMEA@axaxl.com'}, {'region': 'APAC / All', 'email': 'WEBFNOL.APAC@axaxl.com'}]",
+        "attributes": null
       }
     ]
   }

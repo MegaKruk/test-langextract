@@ -1,92 +1,120 @@
-PDF Key-Value Extraction Summary
+PDF Key-Value Extraction Summary (Multimodal)
 ==================================================
 
 Total files processed: 12
-Timestamp: 2025-09-30T12:42:33.869349
+Timestamp: 2025-09-30T13:14:38.527992
 
 
 File: M-PIN CBZ TOUCH_filled.pdf
 ------------------------------
-Total extractions: 2
+Pages: 1
+Text extracted: 572 chars
+Total extractions: 14
 Key-Value Pairs by Category:
-  other_info: 2 pairs
+account_info: 2 pairs
+other_info: 12 pairs
 
 File: Personal Loan Application Form_filled.pdf
 ------------------------------
-Total extractions: 77
+Pages: 5
+Text extracted: 9844 chars
+Total extractions: 59
 Key-Value Pairs by Category:
-  personal_info: 19 pairs
-  employment_info: 7 pairs
-  financial_info: 3 pairs
-  account_info: 1 pairs
-  other_info: 26 pairs
+personal_info: 14 pairs
+employment_info: 4 pairs
+financial_info: 4 pairs
+account_info: 3 pairs
+other_info: 25 pairs
 
 File: FUNDS RECALL FORM_filled.pdf
 ------------------------------
-Total extractions: 0
+Pages: 2
+Text extracted: 1208 chars
+Total extractions: 14
 Key-Value Pairs by Category:
-  personal_info: 0 pairs
-  employment_info: 0 pairs
-  financial_info: 0 pairs
-  account_info: 0 pairs
-  other_info: 0 pairs
+personal_info: 1 pairs
+account_info: 1 pairs
+other_info: 12 pairs
 
 File: PROOF OF PAYMENT REQUISITION FORM_filled.pdf
 ------------------------------
-Total extractions: 0
+Pages: 1
+Text extracted: 1580 chars
+Total extractions: 13
 Key-Value Pairs by Category:
-  personal_info: 0 pairs
-  employment_info: 0 pairs
-  financial_info: 0 pairs
-  account_info: 0 pairs
-  other_info: 0 pairs
+personal_info: 2 pairs
+account_info: 1 pairs
+other_info: 10 pairs
 
 File: FNOL-form-MOTOR-v10_filled.pdf
 ------------------------------
-Total extractions: 13
+Pages: 6
+Text extracted: 6619 chars
+Total extractions: 53
 Key-Value Pairs by Category:
-  other_info: 3 pairs
+employment_info: 1 pairs
+other_info: 33 pairs
 
 File: INTERNET BANKING REGISTRATION FORM1_filled.pdf
 ------------------------------
-Total extractions: 23
+Pages: 1
+Text extracted: 2103 chars
+Total extractions: 29
 Key-Value Pairs by Category:
-  personal_info: 3 pairs
-  other_info: 10 pairs
+personal_info: 3 pairs
+account_info: 3 pairs
+other_info: 12 pairs
 
 File: INTERNET PASSWORD RESET APPLICATION FORM_filled.pdf
 ------------------------------
-Total extractions: 7
+Pages: 2
+Text extracted: 2297 chars
+Total extractions: 13
 Key-Value Pairs by Category:
-  other_info: 5 pairs
+account_info: 3 pairs
+other_info: 10 pairs
 
 File: MORTGAGE APPLICATION FORM_filled.pdf
 ------------------------------
-Total extractions: 36
+Pages: 5
+Text extracted: 11206 chars
+Total extractions: 56
 Key-Value Pairs by Category:
-  other_info: 10 pairs
+other_info: 51 pairs
 
 File: FNOL-form-MOTOR-v10 filled2.pdf
 ------------------------------
-Total extractions: 24
+Pages: 6
+Text extracted: 6694 chars
+Total extractions: 44
 Key-Value Pairs by Category:
-  other_info: 15 pairs
+other_info: 32 pairs
 
 File: CBZ TOUCH MANUAL REGISTRATION FORM filled.pdf
 ------------------------------
-Total extractions: 3
+Pages: 1
+Text extracted: 1495 chars
+Total extractions: 8
 Key-Value Pairs by Category:
-  other_info: 3 pairs
+personal_info: 2 pairs
+account_info: 1 pairs
+other_info: 5 pairs
 
 File: property-loss-form_filled.pdf
 ------------------------------
-Total extractions: 25
+Pages: 2
+Text extracted: 5638 chars
+Total extractions: 40
 Key-Value Pairs by Category:
-  other_info: 20 pairs
+personal_info: 2 pairs
+employment_info: 1 pairs
+other_info: 32 pairs
 
 File: notice-of-loss-form_novt2019_axa-xl_filled.pdf
 ------------------------------
-Total extractions: 23
+Pages: 4
+Text extracted: 4744 chars
+Total extractions: 26
 Key-Value Pairs by Category:
-  personal_info: 3 pairs
-  other_info: 8 pairs
+personal_info: 3 pairs
+other_info: 18 pairs

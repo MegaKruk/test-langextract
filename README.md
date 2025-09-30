@@ -19,9 +19,13 @@ cp your-pdfs/*.pdf data/
 ```
 
 ## Usage
-Run the extraction:
+Run the extraction for basic, text version (requires text PDFs):
 ```bash
 python main.py
+```
+Or for multimodal version (works for all PDFs):
+```bash
+python main_multimodal.py
 ```
 
 Results will be saved to the `output/` folder:
@@ -32,28 +36,26 @@ Results will be saved to the `output/` folder:
 ## Project Structure
 ```
 project_root/
-├── main.py             # Main script
+├── main.py             # Main script (text version)
+├── main_multimodal.py  # Main script (multimodal version)
 ├── requirements.txt    # Dependencies
 ├── .env                # .env with API key
 ├── data/               # Input PDFs
 └── output/             # Results (auto-created)
 ```
 
-## How It Works
-The script:
-1. Reads all PDFs from the `data/` folder
-2. Extracts text using PyPDF2
-3. Uses LangExtract with OpenAI to identify key-value pairs
-4. Organizes results by category (personal info, financial info, etc.)
-5. Saves structured output to JSON files
-
 ## Configuration
 Default model is `gpt-4o`. To change:
-
 ```python
 extractor = PDFExtractor(model_id="gpt-4o-mini")
 ```
-
+Or:
+```python
+MultimodalPDFExtractor(
+    vision_model="gpt-4o",  # Need vision capabilities
+    extraction_model="gpt-4o-mini"
+)
+```
 ## Requirements
-- Python 3.12+
+- Python 3.11+
 - OpenAI API key
