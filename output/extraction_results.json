@@ -1,0 +1,2096 @@
+[
+  {
+    "filename": "M-PIN CBZ TOUCH_filled.pdf",
+    "timestamp": "2025-09-30T12:40:18.386281",
+    "model": "gpt-4o",
+    "extractions_count": 2,
+    "key_values": {
+      "other_info": {
+        "TO": "CUSTOMER CENTRE",
+        "SUBJECT": "M-PIN RESET"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "form_info",
+        "text": "TO: CUSTOMER CENTRE",
+        "attributes": {
+          "field": "TO",
+          "value": "CUSTOMER CENTRE"
+        }
+      },
+      {
+        "class": "form_info",
+        "text": "M-PIN RESET",
+        "attributes": {
+          "field": "SUBJECT",
+          "value": "M-PIN RESET"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "Personal Loan Application Form_filled.pdf",
+    "timestamp": "2025-09-30T12:40:42.627996",
+    "model": "gpt-4o",
+    "extractions_count": 77,
+    "key_values": {
+      "personal_info": {
+        "Title": "Mr",
+        "Surname": "",
+        "Forename(s)": "",
+        "Date of Birth": "",
+        "I.D Card No.": "",
+        "Passport No.": "",
+        "Level of Education": "",
+        "No of Dependants": "",
+        "Nationality": "",
+        "Residential Address": "",
+        "Period of residence": "",
+        "Tel": "",
+        "Cell": "",
+        "e-mail": "",
+        "Accommodation": "",
+        "Rent/Mortgage Repayment": "",
+        "Postal Address": "",
+        "Bank": "CBZ",
+        "Branch": "Selous"
+      },
+      "employment_info": {
+        "Employer’s name and address": "",
+        "Period in current employment": "",
+        "Tel": "",
+        "Cell": "",
+        "Occupation": "",
+        "unknown_field": "Should I change employment, I must advise my CBZ branch manager of the change within seven working days of such an event and I undertake to obtain the necessary letter of comfort from the new employer confirming that my salary will be deposited direct into my Account with CBZ.",
+        "Position": "HUMAN RESOUCES MANAGER"
+      },
+      "financial_info": {
+        "Gross monthly income": "",
+        "Net monthly income": "",
+        "Other monthly income and source": ""
+      },
+      "account_info": {
+        "Account": "Account number to be debited"
+      },
+      "other_info": {
+        "Current or previous credit facilities with CBZ Bank": "Nil",
+        "Full name": "",
+        "Employer's name and address": "",
+        "Name and residential address of close relative (not spouse)": "",
+        "Section": "Declaration",
+        "Bank Name": "CBZ Bank Limited",
+        "Direct Debit Agreement": "I authorize the Bank to debit my account each month with the amount of interest and loan installments.",
+        "Declaration Agreement": "I hereby certify that the above statements are true and complete and authorize CBZ Bank Limited to make any enquiries which may be considered necessary for confirmation of these facts and credit assessment.",
+        "Instruction": "This instruction/authority is to remain in force until the full loan amount including interest has been satisfactorily repaid.",
+        "Jurisdiction Clause": "I choose domicilium citandi et executandi at the residential address shown above and hereby submit myself to the jurisdiction of the courts of Zimbabwe in any dispute arising from this agreement, notwithstanding that at the time that proceedings are commenced I am domiciled outside Zimbabwe.",
+        "unknown_field": "Monthly Salary payments",
+        "CBZ Bank Limited Banking Details": "None",
+        "Other Bank Account Details": "None",
+        "Spouse Details": "None",
+        "Next of Kin (Other than spouse)": "None",
+        "Documents": "Latest Salary Advice Slip, Latest Water / ZESA Bill, Letter from Employer",
+        "Approving Manager's name and Signature": "Not filled",
+        "Date": "Not filled",
+        "CBZ Loan Scheme Account Terms & Conditions": "I hereby request the CBZ Bank Limited (CBZ or 'the bank') to open a CBZ Loan Scheme Account ('the loan') in my name and I hereby agree to abide by the following terms and conditions as well as any other conditions as may come into being from time to time.",
+        "Monthly interest rate": "interest rate",
+        "Should I change employment": "advise my CBZ branch manager of the change within seven working days",
+        "New employer requirement": "obtain the necessary letter of comfort",
+        "Monthly loan requirements": "debited to my Account each month",
+        "Failure to meet payment": "full outstanding loan balance and accrued interest to become immediately due and payable",
+        "Early repayment": "full loan plus interest accrued may be permitted",
+        "Loan repayment commencement": "salary payday immediately following the loan drawn down date"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "personal_info",
+        "text": "Mr",
+        "attributes": {
+          "field": "Title",
+          "value": "Mr"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Surname",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Forename(s)",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Date of Birth",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "I.D Card No.",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Passport No.",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Level of Education",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "No of Dependants",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Nationality",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Residential Address",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Period of residence",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Tel",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Cell",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "e-mail",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Accommodation",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Rent/Mortgage Repayment",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "",
+        "attributes": {
+          "field": "Postal Address",
+          "value": ""
+        }
+      },
+      {
+        "class": "employment_info",
+        "text": "",
+        "attributes": {
+          "field": "Employer’s name and address",
+          "value": ""
+        }
+      },
+      {
+        "class": "employment_info",
+        "text": "",
+        "attributes": {
+          "field": "Period in current employment",
+          "value": ""
+        }
+      },
+      {
+        "class": "employment_info",
+        "text": "",
+        "attributes": {
+          "field": "Tel",
+          "value": ""
+        }
+      },
+      {
+        "class": "employment_info",
+        "text": "",
+        "attributes": {
+          "field": "Cell",
+          "value": ""
+        }
+      },
+      {
+        "class": "employment_info",
+        "text": "",
+        "attributes": {
+          "field": "Occupation",
+          "value": ""
+        }
+      },
+      {
+        "class": "financial_info",
+        "text": "",
+        "attributes": {
+          "field": "Gross monthly income",
+          "value": ""
+        }
+      },
+      {
+        "class": "financial_info",
+        "text": "",
+        "attributes": {
+          "field": "Net monthly income",
+          "value": ""
+        }
+      },
+      {
+        "class": "financial_info",
+        "text": "",
+        "attributes": {
+          "field": "Other monthly income and source",
+          "value": ""
+        }
+      },
+      {
+        "class": "credit_info",
+        "text": "Nil",
+        "attributes": {
+          "field": "Current or previous credit facilities with CBZ Bank",
+          "value": "Nil"
+        }
+      },
+      {
+        "class": "spouse_details",
+        "text": "",
+        "attributes": {
+          "field": "Full name",
+          "value": ""
+        }
+      },
+      {
+        "class": "employer_info",
+        "text": "",
+        "attributes": {
+          "field": "Employer's name and address",
+          "value": ""
+        }
+      },
+      {
+        "class": "spouse_contact_number",
+        "text": "",
+        "attributes": null
+      },
+      {
+        "class": "spouse_cell_number",
+        "text": "",
+        "attributes": null
+      },
+      {
+        "class": "next_of_kin",
+        "text": "",
+        "attributes": {
+          "field": "Name and residential address of close relative (not spouse)",
+          "value": ""
+        }
+      },
+      {
+        "class": "next_of_kin_home_phone",
+        "text": "",
+        "attributes": null
+      },
+      {
+        "class": "next_of_kin_business_phone",
+        "text": "",
+        "attributes": null
+      },
+      {
+        "class": "next_of_kin_cell_phone",
+        "text": "",
+        "attributes": null
+      },
+      {
+        "class": "next_of_kin_relationship",
+        "text": "",
+        "attributes": null
+      },
+      {
+        "class": "loan_amount",
+        "text": "",
+        "attributes": null
+      },
+      {
+        "class": "loan_term_preferred",
+        "text": "",
+        "attributes": null
+      },
+      {
+        "class": "document_info",
+        "text": "Direct Debit Authority",
+        "attributes": {
+          "field": "Section",
+          "value": "Direct Debit Authority"
+        }
+      },
+      {
+        "class": "document_info",
+        "text": "Declaration",
+        "attributes": {
+          "field": "Section",
+          "value": "Declaration"
+        }
+      },
+      {
+        "class": "document_info",
+        "text": "CBZ Bank Limited",
+        "attributes": {
+          "field": "Bank Name",
+          "value": "CBZ Bank Limited"
+        }
+      },
+      {
+        "class": "account_info",
+        "text": "Account number to be debited",
+        "attributes": {
+          "field": "Account",
+          "value": "Account number to be debited"
+        }
+      },
+      {
+        "class": "statement_info",
+        "text": "I authorize the Bank to debit my account each month with the amount of interest and loan installments.",
+        "attributes": {
+          "field": "Direct Debit Agreement",
+          "value": "I authorize the Bank to debit my account each month with the amount of interest and loan installments."
+        }
+      },
+      {
+        "class": "statement_info",
+        "text": "I hereby certify that the above statements are true and complete and authorize CBZ Bank Limited to make any enquiries which may be considered necessary for confirmation of these facts and credit assessment.",
+        "attributes": {
+          "field": "Declaration Agreement",
+          "value": "I hereby certify that the above statements are true and complete and authorize CBZ Bank Limited to make any enquiries which may be considered necessary for confirmation of these facts and credit assessment."
+        }
+      },
+      {
+        "class": "authority_info",
+        "text": "This instruction/authority is to remain in force until the full loan amount including interest has been satisfactorily repaid.",
+        "attributes": {
+          "field": "Instruction",
+          "value": "This instruction/authority is to remain in force until the full loan amount including interest has been satisfactorily repaid."
+        }
+      },
+      {
+        "class": "jurisdiction_info",
+        "text": "I choose domicilium citandi et executandi at the residential address shown above and hereby submit myself to the jurisdiction of the courts of Zimbabwe in any dispute arising from this agreement, notwithstanding that at the time that proceedings are commenced I am domiciled outside Zimbabwe.",
+        "attributes": {
+          "field": "Jurisdiction Clause",
+          "value": "I choose domicilium citandi et executandi at the residential address shown above and hereby submit myself to the jurisdiction of the courts of Zimbabwe in any dispute arising from this agreement, notwithstanding that at the time that proceedings are commenced I am domiciled outside Zimbabwe."
+        }
+      },
+      {
+        "class": "employment_info",
+        "text": "Should I change employment, I must advise my CBZ branch manager of the change within seven working days of such an event and I undertake to obtain the necessary letter of comfort from the new employer confirming that my salary will be deposited direct into my Account with CBZ.",
+        "attributes": {
+          "section": "Employment Change Advisory",
+          "details": "Requirement to inform CBZ of employment change and obtain a letter from new employer."
+        }
+      },
+      {
+        "class": "loan_info",
+        "text": "[{'term': '4.1', 'condition': 'Loan repayments shall be debited to my Account each month.'}, {'term': '4.2', 'condition': 'Failure to meet any one payment of the loan plus interest on due date shall cause the full outstanding loan balance and accrued interest to become immediately due and payable.'}, {'term': '4.3', 'condition': 'Early repayment of the full loan plus interest accrued may be permitted.'}, {'term': '4.4', 'condition': 'Loan repayments shall commence on the salary payday immediately following the loan drawn down date.'}]",
+        "attributes": {
+          "section": "Monthly Loan Requirements",
+          "description": "Details terms and conditions related to loan repayments and associated responsibilities."
+        }
+      },
+      {
+        "class": "bank_rights",
+        "text": "[{'term': '5.1', 'condition': 'CBZ shall be entitled in its sole discretion and without notice, to reduce or settle the loan account by appropriating any amount held by the bank on my behalf or standing to the credit of any other account I may have with the bank.'}, {'term': '5.2', 'condition': 'The bank shall be entitled in its sole discretion and without notice to realize any security lodged with the bank and use the proceeds thereof towards the reduction or full payment of my loan balance.'}, {'term': '5.3', 'condition': 'A statement or demand signed by the bank’s authorized officer addressed to me, shall for all purposes be conclusive evidence of a sum of money owing by me to the bank.'}]",
+        "attributes": {
+          "section": "Right of Setoff",
+          "description": "Describes CBZ's rights to offset loan balances using customer’s held amounts or securities."
+        }
+      },
+      {
+        "class": "general_conditions",
+        "text": "[{'term': '6.1', 'condition': 'I shall be liable for the payment of all expenses incurred by the bank in exercising any right against me in respect of any breach of these conditions, including all legal charges on the attorney/client scale, debt collection/attorney collection charges and tracing charges.'}, {'term': '6.2', 'condition': 'No delay, indulgence or relaxation in the exercising of any of the bank’s right under these terms and conditions shall constitute a waiver of such rights.'}]",
+        "attributes": {
+          "section": "General",
+          "description": "Outlines liabilities and rights related to expenses and enforcement actions by the bank."
+        }
+      },
+      {
+        "class": "form_type",
+        "text": "Consent Declaration",
+        "attributes": null
+      },
+      {
+        "class": "clauses",
+        "text": "[{'clause_number': 3, 'content': 'I consent to the jurisdiction of the Magistrate’s Court notwithstanding the fact that the bank’s claim at any time may otherwise exceed the jurisdiction of that court.'}]",
+        "attributes": null
+      },
+      {
+        "class": "signature_section",
+        "text": "{'fields': [{'field': 'Full name', 'value': None}, {'field': 'Signature', 'value': None}, {'field': 'Date', 'value': '…………….. 2019'}]}",
+        "attributes": null
+      },
+      {
+        "class": "form_type",
+        "text": "Employment Confirmation and Loan Undertaking",
+        "attributes": null
+      },
+      {
+        "class": "addressee",
+        "text": "{'title': 'Branch Manager', 'bank': 'CBZ Bank', 'branch': 'Selous Branch'}",
+        "attributes": null
+      },
+      {
+        "class": "reference",
+        "text": "{'type': 'Loan Application', 'applicant': {'name': None, 'id_number': None, 'ec_number': None}}",
+        "attributes": null
+      },
+      {
+        "class": "confirmation",
+        "text": "[{'statement': 'We confirm that Mr …………………………………… is permanently employed by …………………………………. as a …………………………….. .'}, {'statement': 'He has been employed by us for ………… … years.'}, {'statement': 'We undertake to direct his/her monthly net salary to the following account until the loan he/she is applying for is paid up.', 'account_details': {'account_name': None, 'account_number': None, 'bank': 'CBZ', 'branch': None}}, {'statement': 'We also confirm that we have no pending disciplinary procedures against him/her.'}, {'statement': \"Should the employee be retrenched/resign due to unforeseen reasons we promise to pay the employee's terminal benefits through the account number stated under section 3 above, unless he/she provides us with a clearance letter from CBZ Bank that he/she is no longer indebted to the bank.\"}]",
+        "attributes": null
+      },
+      {
+        "class": "on_behalf_of",
+        "text": "{'entity': None, 'signatory': 'HUMAN RESOURCES MANAGER'}",
+        "attributes": null
+      },
+      {
+        "class": "bank_details",
+        "text": "None",
+        "attributes": {
+          "field": "CBZ Bank Limited Banking Details",
+          "values": {
+            "Branch": "______________________________",
+            "Account number": "_______________",
+            "Time with current bank": "___________________________________________________ ___"
+          }
+        }
+      },
+      {
+        "class": "other_bank_account_details",
+        "text": "None",
+        "attributes": {
+          "field": "Other Bank Account Details",
+          "values": {
+            "Bank Name": "_______________________",
+            "Account Name & No": "_______________",
+            "Facilities with other Bank": {
+              "Overdraft": "_________",
+              "Loan": "_________",
+              "Credit Card": "______________________"
+            }
+          }
+        }
+      },
+      {
+        "class": "spouse_details",
+        "text": "None",
+        "attributes": {
+          "field": "Spouse Details",
+          "values": {
+            "Full name": "_________________________________________________________________________ _",
+            "Employer's name and address": "_________________________________________________________ __",
+            "Tel No.": "_____________________________________",
+            "Cell": "_____________________________ _____"
+          }
+        }
+      },
+      {
+        "class": "next_of_kin_details",
+        "text": "None",
+        "attributes": {
+          "field": "Next of Kin (Other than spouse)",
+          "values": {
+            "Name and residential address": "__________________________________________________ ______________________",
+            "Tel Nos. Home": "________________",
+            "Bus": "_______ _________",
+            "Cell": "______________________ _____",
+            "Relationship": "_______________________________________________________________________ _",
+            "Employer's name and address": "_________________________________________________________"
+          }
+        }
+      },
+      {
+        "class": "document_info",
+        "text": "Latest Salary Advice Slip, Latest Water / ZESA Bill, Letter from Employer",
+        "attributes": {
+          "field": "Documents",
+          "value": "Latest Salary Advice Slip, Latest Water / ZESA Bill, Letter from Employer"
+        }
+      },
+      {
+        "class": "section_info",
+        "text": "Approving Manager’s name and",
+        "attributes": {
+          "field": "Approving Manager's name and Signature",
+          "value": "Not filled"
+        }
+      },
+      {
+        "class": "section_info",
+        "text": "Date",
+        "attributes": {
+          "field": "Date",
+          "value": "Not filled"
+        }
+      },
+      {
+        "class": "terms_conditions",
+        "text": "terms and conditions",
+        "attributes": {
+          "field": "CBZ Loan Scheme Account Terms & Conditions",
+          "value": "I hereby request the CBZ Bank Limited (CBZ or 'the bank') to open a CBZ Loan Scheme Account ('the loan') in my name and I hereby agree to abide by the following terms and conditions as well as any other conditions as may come into being from time to time."
+        }
+      },
+      {
+        "class": "terms_conditions",
+        "text": "interest rate",
+        "attributes": {
+          "field": "Monthly interest rate",
+          "clauses": [
+            "Interest shall be accrued daily, charged and capitalized monthly at Libor plus a margin to be advised by the Bank in the offer letter and as reviewed from time to time.",
+            "CBZ is hereby authorized to apportion the monthly repayments between interest and capital loan reductions as the bank may desire and to debit my Account with all such monthly repayments."
+          ]
+        }
+      },
+      {
+        "class": "fees",
+        "text": "Establishment/administration fees",
+        "attributes": {
+          "clauses": [
+            "To be recovered upon establishment and/or on re-advancement of the loan at 3.5% or a minimum of USD 17.50.",
+            "The above fees will be paid in cash as a deduction from the loan proceeds.",
+            "A non-refundable loan processing fee of USD7.50 shall be recoverable upfront from applicant’s account upon submission of loan form and the loan processing fee is not a guarantee that the application will be successful."
+          ]
+        }
+      },
+      {
+        "class": "salary_payments",
+        "text": "Monthly Salary payments",
+        "attributes": {
+          "clauses": [
+            "My salary is to be paid directly from my employer into Account on a monthly basis.",
+            "Failure by me to meet the requirements of 3.1 above shall render the outstanding loan balance plus accrued interest immediately due and payable, notwithstanding the fact that my monthly repayments may be up to date at the time the breach is committed."
+          ]
+        }
+      },
+      {
+        "class": "employment_policy",
+        "text": "advise my CBZ branch manager of the change within seven working days",
+        "attributes": {
+          "field": "Should I change employment",
+          "value": "advise my CBZ branch manager of the change within seven working days"
+        }
+      },
+      {
+        "class": "employment_policy",
+        "text": "obtain the necessary letter of comfort from the new employer confirming that my salary will be deposited direct into my Account with CBZ",
+        "attributes": {
+          "field": "New employer requirement",
+          "value": "obtain the necessary letter of comfort"
+        }
+      },
+      {
+        "class": "loan_info",
+        "text": "Loan repayments shall be debited to my Account each month",
+        "attributes": {
+          "field": "Monthly loan requirements",
+          "value": "debited to my Account each month"
+        }
+      },
+      {
+        "class": "loan_info",
+        "text": "Failure by me to meet any one payment of the loan plus interest on due date shall cause the full outstanding loan balance and accrued interest to become immediately due and payable",
+        "attributes": {
+          "field": "Failure to meet payment",
+          "value": "full outstanding loan balance and accrued interest to become immediately due and payable"
+        }
+      },
+      {
+        "class": "loan_info",
+        "text": "Early repayment of the full loan plus interest accrued may be permitted",
+        "attributes": {
+          "field": "Early repayment",
+          "value": "full loan plus interest accrued may be permitted"
+        }
+      },
+      {
+        "class": "loan_info",
+        "text": "My loan repayments shall commence on the salary payday immediately following the loan drawn down date",
+        "attributes": {
+          "field": "Loan repayment commencement",
+          "value": "salary payday immediately following the loan drawn down date"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "CBZ Bank",
+        "attributes": {
+          "field": "Bank",
+          "value": "CBZ"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "Selous",
+        "attributes": {
+          "field": "Branch",
+          "value": "Selous"
+        }
+      },
+      {
+        "class": "employment_info",
+        "text": "HUMAN RESOUCES MANAGER",
+        "attributes": {
+          "field": "Position",
+          "value": "HUMAN RESOUCES MANAGER"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "FUNDS RECALL FORM_filled.pdf",
+    "timestamp": "2025-09-30T12:40:44.032356",
+    "model": "gpt-4o",
+    "extractions_count": 0,
+    "key_values": {
+      "personal_info": {},
+      "employment_info": {},
+      "financial_info": {},
+      "account_info": {},
+      "other_info": {}
+    },
+    "raw_extractions": []
+  },
+  {
+    "filename": "PROOF OF PAYMENT REQUISITION FORM_filled.pdf",
+    "timestamp": "2025-09-30T12:40:46.183163",
+    "model": "gpt-4o",
+    "extractions_count": 0,
+    "key_values": {
+      "personal_info": {},
+      "employment_info": {},
+      "financial_info": {},
+      "account_info": {},
+      "other_info": {}
+    },
+    "raw_extractions": []
+  },
+  {
+    "filename": "FNOL-form-MOTOR-v10_filled.pdf",
+    "timestamp": "2025-09-30T12:40:56.336544",
+    "model": "gpt-4o",
+    "extractions_count": 13,
+    "key_values": {
+      "other_info": {
+        "Full Licence": "Yes",
+        "Did the Fire Brigade attend the incident": "No",
+        "unknown_field": "When you have completed the form please save it and email it to ukclaims@lycetts.co.uk"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "license_info",
+        "text": "Full Licence Yes",
+        "attributes": {
+          "field": "Full Licence",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "fire_brigade_info",
+        "text": "Did the Fire Brigade attend",
+        "attributes": {
+          "field": "Did the Fire Brigade attend the incident",
+          "value": "No"
+        }
+      },
+      {
+        "class": "misc_info",
+        "text": "Customs and Excise in the usual way.",
+        "attributes": {
+          "section": "General Information",
+          "context": "Explanation related to the payment of VAT balance."
+        }
+      },
+      {
+        "class": "misc_info",
+        "text": "Insurers shall pay the balance of the account including any proportion of VAT which you cannot recover.",
+        "attributes": {
+          "section": "Payment Details",
+          "context": "Payment responsibilities of insurers."
+        }
+      },
+      {
+        "class": "info_sharing",
+        "text": "Insurers pass information to the Claims and Underwriting Exchange Register, run by Insurance Database Services (IDS) Ltd and the Motor Insurance Anti-Fraud and Theft Register, run by the Association of British Insurers (ABI).",
+        "attributes": {
+          "reason": "Help Insurers check information provided and prevent fraudulent claims."
+        }
+      },
+      {
+        "class": "policy_conditions",
+        "text": "Under the conditions of your policy, you must tell Insurers about any incident (such as an accident or theft) which may or may not give rise to a claim.",
+        "attributes": {
+          "requirement": "Report any relevant incident to the Insurers."
+        }
+      },
+      {
+        "class": "declaration",
+        "text": "I/We understand that my Insurer will handle this claim on my/our behalf and that I/We give our consent to the claim being handled on this basis.",
+        "attributes": {
+          "statement": "Consent for the insurer to handle the claim."
+        }
+      },
+      {
+        "class": "declaration",
+        "text": "I/We understand that by providing untrue information resulting in a fraudulent claim is a criminal offence likely to lead to prosecution.",
+        "attributes": {
+          "statement": "Warning against providing false information."
+        }
+      },
+      {
+        "class": "confirmation",
+        "text": "I/We confirm that the information given on this form is to the best of my knowledge and belief, true in every respect.",
+        "attributes": {
+          "authenticity": "Claim of truthfulness regarding the information provided."
+        }
+      },
+      {
+        "class": "confirmation",
+        "text": "I/We confirm no amount claimed has been refunded from any other source.",
+        "attributes": {
+          "refund_status": "Claimed amount has not been refunded elsewhere."
+        }
+      },
+      {
+        "class": "personal_data_notice",
+        "text": "Your privacy is important to us. We will process your personal data in accordance with data protection laws.",
+        "attributes": {
+          "data_protection": "Conformance with data protection legislation."
+        }
+      },
+      {
+        "class": "data_processing_notice",
+        "text": "To provide insurance related services we will need to share the personal data collected with your Insurance company, their service providers and professional advisors and loss adjusters.",
+        "attributes": {
+          "sharing_reason": "Necessary for insurance-related services."
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "When you have completed the form please save it and email it to ukclaims@lycetts.co.uk",
+        "attributes": {
+          "instruction": "Submission details for the completed form."
+        }
+      }
+    ]
+  },
+  {
+    "filename": "INTERNET BANKING REGISTRATION FORM1_filled.pdf",
+    "timestamp": "2025-09-30T12:41:04.069550",
+    "model": "gpt-4o",
+    "extractions_count": 23,
+    "key_values": {
+      "personal_info": {
+        "Cell": "",
+        "ID Number": "",
+        "Date of Birth": ""
+      },
+      "other_info": {
+        "Form Type": "Personal Internet Banking Registration Form",
+        "Branch Type": "Individual",
+        "Account Action": "Delete",
+        "Services Required": "Bill Payments (BP)",
+        "Main Account Number": "",
+        "Contact Address": "",
+        "E-mail Address": "",
+        "Fax Number(s)": "",
+        "Customer’s Signature": "__________________ _______",
+        "Signing Arrangement (s)": "___________________ ____________ ________________ _______________"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "form_info",
+        "text": "Personal Internet Banking Registration Form",
+        "attributes": {
+          "field": "Form Type",
+          "value": "Personal Internet Banking Registration Form"
+        }
+      },
+      {
+        "class": "branch_info",
+        "text": "Corporate",
+        "attributes": {
+          "field": "Branch Type",
+          "value": "Corporate"
+        }
+      },
+      {
+        "class": "branch_info",
+        "text": "Individual",
+        "attributes": {
+          "field": "Branch Type",
+          "value": "Individual"
+        }
+      },
+      {
+        "class": "account_action",
+        "text": "New",
+        "attributes": {
+          "field": "Account Action",
+          "value": "New"
+        }
+      },
+      {
+        "class": "account_action",
+        "text": "Amend",
+        "attributes": {
+          "field": "Account Action",
+          "value": "Amend"
+        }
+      },
+      {
+        "class": "account_action",
+        "text": "Delete",
+        "attributes": {
+          "field": "Account Action",
+          "value": "Delete"
+        }
+      },
+      {
+        "class": "service_required",
+        "text": "Statement Request (STR)",
+        "attributes": {
+          "field": "Services Required",
+          "value": "Statement Request (STR)"
+        }
+      },
+      {
+        "class": "service_required",
+        "text": "Inter-Account Transfers (IAT)",
+        "attributes": {
+          "field": "Services Required",
+          "value": "Inter-Account Transfers (IAT)"
+        }
+      },
+      {
+        "class": "service_required",
+        "text": "Inter-Bank Transfers (IBT)",
+        "attributes": {
+          "field": "Services Required",
+          "value": "Inter-Bank Transfers (IBT)"
+        }
+      },
+      {
+        "class": "service_required",
+        "text": "Third Party Payment (TPP)",
+        "attributes": {
+          "field": "Services Required",
+          "value": "Third Party Payment (TPP)"
+        }
+      },
+      {
+        "class": "service_required",
+        "text": "Bill Payments (BP)",
+        "attributes": {
+          "field": "Services Required",
+          "value": "Bill Payments (BP)"
+        }
+      },
+      {
+        "class": "form_info",
+        "text": "Main Account Number",
+        "attributes": {
+          "field": "Main Account Number",
+          "value": ""
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "Contact Address",
+        "attributes": {
+          "field": "Contact Address",
+          "value": ""
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "Email Address",
+        "attributes": {
+          "field": "E-mail Address",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "Cell",
+        "attributes": {
+          "field": "Cell",
+          "value": ""
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "Fax Number(s)",
+        "attributes": {
+          "field": "Fax Number(s)",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "ID Number",
+        "attributes": {
+          "field": "ID Number",
+          "value": ""
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "Date of Birth",
+        "attributes": {
+          "field": "Date of Birth",
+          "value": ""
+        }
+      },
+      {
+        "class": "agreement_info",
+        "text": "I/We agree to the Terms and Conditions for the use of this facility provided herewith, and agree to abide by them and such other rules, which may come into force from time to time. I/We agree to be liable for any unauthorized overdraft or debt, which may arise due to the use of this facility.",
+        "attributes": null
+      },
+      {
+        "class": "signature_info",
+        "text": "Customer’s Signature: _______________ ______ _________",
+        "attributes": {
+          "field": "Customer’s Signature",
+          "value": "_______________ ______ _________"
+        }
+      },
+      {
+        "class": "signature_info",
+        "text": "Customer’s Signature  ___________________ ____________________________________ ___",
+        "attributes": {
+          "field": "Customer’s Signature",
+          "value": "___________________ ____________________________________ ___"
+        }
+      },
+      {
+        "class": "signature_info",
+        "text": "Customer’s Signature __________________ _______",
+        "attributes": {
+          "field": "Customer’s Signature",
+          "value": "__________________ _______"
+        }
+      },
+      {
+        "class": "signing_arrangement",
+        "text": "Signing Arrangement (s) ___________________ ____________ ________________ _______________",
+        "attributes": {
+          "field": "Signing Arrangement (s)",
+          "value": "___________________ ____________ ________________ _______________"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "INTERNET PASSWORD RESET APPLICATION FORM_filled.pdf",
+    "timestamp": "2025-09-30T12:41:09.914956",
+    "model": "gpt-4o",
+    "extractions_count": 7,
+    "key_values": {
+      "other_info": {
+        "TO: THE MANAGER": "CBZ BANK LIMITED",
+        "Location": "HARARE",
+        "SUBJECT": "REQUEST FOR INTERNET BANKING PASSWORD RESET",
+        "DATE": "____/_____/2018",
+        "PASSWORD TO BE RESET": "Second Password"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "bank_info",
+        "text": "CBZ BANK LIMITED",
+        "attributes": {
+          "field": "TO: THE MANAGER",
+          "value": "CBZ BANK LIMITED"
+        }
+      },
+      {
+        "class": "location_info",
+        "text": "HARARE",
+        "attributes": {
+          "field": "Location",
+          "value": "HARARE"
+        }
+      },
+      {
+        "class": "request_info",
+        "text": "REQUEST FOR INTERNET BANKING PASSWORD RESET",
+        "attributes": {
+          "field": "SUBJECT",
+          "value": "REQUEST FOR INTERNET BANKING PASSWORD RESET"
+        }
+      },
+      {
+        "class": "date_info",
+        "text": "____/_____/2018",
+        "attributes": {
+          "field": "DATE",
+          "value": "____/_____/2018"
+        }
+      },
+      {
+        "class": "password_reset_info",
+        "text": "First Password",
+        "attributes": {
+          "field": "PASSWORD TO BE RESET",
+          "value": "First Password"
+        }
+      },
+      {
+        "class": "password_reset_info",
+        "text": "Second Password",
+        "attributes": {
+          "field": "PASSWORD TO BE RESET",
+          "value": "Second Password"
+        }
+      },
+      {
+        "class": "applicant_declaration",
+        "text": "I authorise CBZ Bank to send my new password (one time use) to my registered mobile/cell number or email address and the following terms and conditions will apply...",
+        "attributes": null
+      }
+    ]
+  },
+  {
+    "filename": "MORTGAGE APPLICATION FORM_filled.pdf",
+    "timestamp": "2025-09-30T12:41:26.880396",
+    "model": "gpt-4o",
+    "extractions_count": 36,
+    "key_values": {
+      "other_info": {
+        "Document Title": "APPLICATION FOR A MORTGAGE LOAN",
+        "ARE YOU A PERMANENT RESIDENT OF ZIMBABWE?": "Yes",
+        "Sewerage": "Septic Tank",
+        "Water": "Borehole",
+        "Electricity": "Mains",
+        "Immediate cash resources for": "Yes",
+        "Advance required": "on completion or as building progresses",
+        "Do you have immediate cash resources for transfer fees, bond registration fees and Valuation fees?": "Yes No",
+        "Guarantor information": "Details not provided",
+        "Declaration": "4. Agree to society rules"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "mortgage_application_info",
+        "text": "APPLICATION FOR A MORTGAGE LOAN",
+        "attributes": {
+          "field": "Document Title",
+          "value": "APPLICATION FOR A MORTGAGE LOAN"
+        }
+      },
+      {
+        "class": "personal_details",
+        "text": "Yes",
+        "attributes": {
+          "field": "ARE YOU A PERMANENT RESIDENT OF ZIMBABWE?",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "services_info",
+        "text": "Mains",
+        "attributes": {
+          "field": "Sewerage",
+          "value": "Mains"
+        }
+      },
+      {
+        "class": "services_info",
+        "text": "Mains",
+        "attributes": {
+          "field": "Water",
+          "value": "Mains"
+        }
+      },
+      {
+        "class": "services_info",
+        "text": "Mains",
+        "attributes": {
+          "field": "Electricity",
+          "value": "Mains"
+        }
+      },
+      {
+        "class": "section_info",
+        "text": "Transfer fees, bond registration fees and Valuation fees",
+        "attributes": {
+          "field": "Immediate cash resources for",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "investment_info",
+        "text": "[{'type': 'Unnamed', 'amount': 'Unnamed', 'account_number': 'Unnamed'}, {'type': 'Unnamed', 'amount': 'Unnamed', 'account_number': 'Unnamed'}, {'type': 'Unnamed', 'amount': 'Unnamed', 'account_number': 'Unnamed'}]",
+        "attributes": null
+      },
+      {
+        "class": "personal_references",
+        "text": "[{'name': 'Unnamed', 'position': 'Unnamed', 'address': 'Unnamed', 'tel_no': 'Unnamed'}, {'name': 'Unnamed', 'position': 'Unnamed', 'address': 'Unnamed', 'tel_no': 'Unnamed'}, {'name': 'Unnamed', 'position': 'Unnamed', 'address': 'Unnamed', 'tel_no': 'Unnamed'}, {'name': 'Unnamed', 'position': 'Unnamed', 'address': 'Unnamed', 'tel_no': 'Unnamed'}]",
+        "attributes": null
+      },
+      {
+        "class": "form_section",
+        "text": "Bankers - Borrower",
+        "attributes": null
+      },
+      {
+        "class": "details",
+        "text": "[{'field': 'NAME & BRANCH', 'value': 'Not filled'}, {'field': 'ACCOUNT NO', 'value': 'Not filled'}]",
+        "attributes": null
+      },
+      {
+        "class": "details",
+        "text": "[{'field': 'NAME & BRANCH', 'value': 'Not filled'}, {'field': 'ACCOUNT NO', 'value': 'Not filled'}]",
+        "attributes": null
+      },
+      {
+        "class": "form_section",
+        "text": "Income Declaration Requirements",
+        "attributes": null
+      },
+      {
+        "class": "details",
+        "text": "[{'field': 'Documents required', 'value': ['Salary advice slip', 'Letter from employer confirming your salary', 'Copies of audited financial statements for the last two years if company or self-employed']}]",
+        "attributes": null
+      },
+      {
+        "class": "form_section",
+        "text": "Loan Details",
+        "attributes": null
+      },
+      {
+        "class": "subfields",
+        "text": "[{'field': 'Purchase Price', 'value': 'Not filled'}, {'field': 'Cash deposit available from own resources', 'value': 'Not filled'}, {'field': 'Amount of loan required', 'value': 'Not filled'}, {'field': 'Repayment period required', 'value': 'Not filled'}, {'field': 'Purpose for which loan is required', 'value': 'Not filled'}]",
+        "attributes": null
+      },
+      {
+        "class": "form_section",
+        "text": "Property Details",
+        "attributes": null
+      },
+      {
+        "class": "subfields",
+        "text": "[{'field': 'Exact location of the property to be mortgaged', 'value': 'Not filled'}]",
+        "attributes": null
+      },
+      {
+        "class": "premises_info",
+        "text": "{'nature_of_premises': {'field': 'Nature of premises', 'value': ''}, 'occupation_details': {'field': 'Will you occupy the whole or part of the premises?', 'value': ''}, 'tenancy_details': {'field': 'If the property is let or to be let, give details of tenancies', 'value': ''}}",
+        "attributes": null
+      },
+      {
+        "class": "ownership_info",
+        "text": "{'ownership_type': {'field': 'State if freehold or leasehold', 'value': ''}, 'land_area': {'field': 'Area of land', 'value': ''}, 'storeys_info': {'field': 'No of storeys', 'value': ''}, 'room_description': {'field': 'Number and description of rooms', 'value': ''}, 'wall_construction': {'field': 'Construction of walls', 'value': ''}, 'roof_construction': {'field': 'Construction of roof', 'value': ''}}",
+        "attributes": null
+      },
+      {
+        "class": "road_info",
+        "text": "{'road_status': {'field': 'Are roads made up and tarred', 'value': 'Yes/No'}}",
+        "attributes": null
+      },
+      {
+        "class": "owner_contact_info",
+        "text": "{'owner_name': {'field': 'Name and address of present owner', 'value': ''}, 'telephone_number': {'field': 'Telephone Number', 'value': ''}}",
+        "attributes": null
+      },
+      {
+        "class": "deeds_info",
+        "text": "{'deeds_possession': {'field': 'In whose possessions are the title deeds?', 'value': ''}}",
+        "attributes": null
+      },
+      {
+        "class": "attorneys_info",
+        "text": "{'attorney_name': {'field': 'Name of attorneys passing transfer', 'value': ''}}",
+        "attributes": null
+      },
+      {
+        "class": "property_info",
+        "text": "{'additional_property': {'field': 'What other property do you own in Zimbabwe?', 'value': ''}}",
+        "attributes": null
+      },
+      {
+        "class": "occupation_certificate",
+        "text": "{'certificate_granted': {'field': 'Has an Occupation Certificate been granted?', 'value': ''}}",
+        "attributes": null
+      },
+      {
+        "class": "insurance_info",
+        "text": "{'insurance_details': {'field': 'Is the property insured? Company', 'value': ''}}",
+        "attributes": null
+      },
+      {
+        "class": "alterations_info",
+        "text": "{'alterations_intention': {'field': 'Do you intend to make any structural alterations or additions to the premises?', 'value': ''}}",
+        "attributes": null
+      },
+      {
+        "class": "service_info",
+        "text": "Septic Tank",
+        "attributes": {
+          "field": "Sewerage",
+          "value": "Septic Tank"
+        }
+      },
+      {
+        "class": "service_info",
+        "text": "Borehole",
+        "attributes": {
+          "field": "Water",
+          "value": "Borehole"
+        }
+      },
+      {
+        "class": "construction_info",
+        "text": "on completion or as building progresses",
+        "attributes": {
+          "field": "Advance required",
+          "value": "on completion or as building progresses"
+        }
+      },
+      {
+        "class": "additional_info",
+        "text": "Yes No",
+        "attributes": {
+          "field": "Do you have immediate cash resources for transfer fees, bond registration fees and Valuation fees?",
+          "value": "Yes No"
+        }
+      },
+      {
+        "class": "guarantee_info",
+        "text": "indicating willingness to act as guarantor",
+        "attributes": {
+          "field": "Guarantor information",
+          "value": "Details not provided"
+        }
+      },
+      {
+        "class": "declaration",
+        "text": "shall provide title deeds within 14 days after loan approval",
+        "attributes": {
+          "field": "Declaration",
+          "value": "1. Delivery of necessary title deeds"
+        }
+      },
+      {
+        "class": "declaration",
+        "text": "society's valuer report is confidential",
+        "attributes": {
+          "field": "Declaration",
+          "value": "2. Confidential valuer report"
+        }
+      },
+      {
+        "class": "declaration",
+        "text": "aware of property insurance terms",
+        "attributes": {
+          "field": "Declaration",
+          "value": "3. Society will insure property"
+        }
+      },
+      {
+        "class": "declaration",
+        "text": "agree to be bound by society rules",
+        "attributes": {
+          "field": "Declaration",
+          "value": "4. Agree to society rules"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "FNOL-form-MOTOR-v10 filled2.pdf",
+    "timestamp": "2025-09-30T12:41:39.989975",
+    "model": "gpt-4o",
+    "extractions_count": 24,
+    "key_values": {
+      "other_info": {
+        "Full Licence": "Yes",
+        "Claims and Underwriting Exchange Register": "Insurance Database Services Ltd",
+        "Motor Insurance Anti-Fraud and Theft Register": "Association of British Insurers",
+        "If not the policyholder, please state your relationship to them": "Policyholder",
+        "Email": "ukclaims@lycetts.co.uk",
+        "Type of incident / claim": "Accident",
+        "Use of vehicle at time of or prior to incident": "Yes",
+        "If Theft, was the vehicle locked and keys removed": "Yes",
+        "If Theft, has the vehicle been recovered": "Yes",
+        "Is Vehicle / Trailer / Agricultural attachment subject to Finance / Lease / Hire": "Yes",
+        "Is the Vehicle / Trailer / Agricultural attachment still in use / drivable": "Yes",
+        "Would you like your vehicle repaired by your Insurer’s approved repairer network": "Yes",
+        "Own repairer’s quotation to follow": "Yes",
+        "Is the driver an employee of the policyholder": "Yes",
+        "Did the Fire Brigade attend the incident": "Yes"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "license_info",
+        "text": "Yes",
+        "attributes": {
+          "field": "Full Licence",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "organization",
+        "text": "Insurance Database Services Ltd",
+        "attributes": {
+          "field": "Claims and Underwriting Exchange Register",
+          "value": "Insurance Database Services Ltd"
+        }
+      },
+      {
+        "class": "organization",
+        "text": "Association of British Insurers",
+        "attributes": {
+          "field": "Motor Insurance Anti-Fraud and Theft Register",
+          "value": "Association of British Insurers"
+        }
+      },
+      {
+        "class": "policy_info",
+        "text": "Policyholder",
+        "attributes": {
+          "field": "If not the policyholder, please state your relationship to them",
+          "value": "Policyholder"
+        }
+      },
+      {
+        "class": "communication",
+        "text": "ukclaims@lycetts.co.uk",
+        "attributes": {
+          "field": "Email",
+          "value": "ukclaims@lycetts.co.uk"
+        }
+      },
+      {
+        "class": "incident_info",
+        "text": "Accident",
+        "attributes": {
+          "field": "Type of incident / claim",
+          "value": "Accident"
+        }
+      },
+      {
+        "class": "vehicle_info",
+        "text": "Used for contracting",
+        "attributes": {
+          "field": "Use of vehicle at time of or prior to incident",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "theft_info",
+        "text": "locked and keys removed",
+        "attributes": {
+          "field": "If Theft, was the vehicle locked and keys removed",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "theft_info",
+        "text": "been recovered",
+        "attributes": {
+          "field": "If Theft, has the vehicle been recovered",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "vehicle_finance_info",
+        "text": "subject to Finance / Lease / Hire",
+        "attributes": {
+          "field": "Is Vehicle / Trailer / Agricultural attachment subject to Finance / Lease / Hire",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "vehicle_use_info",
+        "text": "still in use / drivable",
+        "attributes": {
+          "field": "Is the Vehicle / Trailer / Agricultural attachment still in use / drivable",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "repair_info",
+        "text": "by your Insurer’s approved repairer network",
+        "attributes": {
+          "field": "Would you like your vehicle repaired by your Insurer’s approved repairer network",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "repair_quote_info",
+        "text": "quotation to follow",
+        "attributes": {
+          "field": "Own repairer’s quotation to follow",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "driver_info",
+        "text": "employee of the policyholder",
+        "attributes": {
+          "field": "Is the driver an employee of the policyholder",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "license_info",
+        "text": "Full Licence",
+        "attributes": {
+          "field": "Full Licence",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "fire_brigade_details",
+        "text": "Did the Fire Brigade attend the incident",
+        "attributes": {
+          "field": "Did the Fire Brigade attend the incident",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "section_title",
+        "text": "General Information",
+        "attributes": null
+      },
+      {
+        "class": "section_data",
+        "text": "[{'document_info': 'Customs and Excise in the usual way.', 'document_info_attributes': {'field': 'Customs and Excise', 'value': 'Customs and Excise in the usual way.'}}, {'document_info': 'Insurers shall pay the balance of the account including any proportion of VAT which you cannot recover.', 'document_info_attributes': {'field': 'Insurers Payment', 'value': 'Insurers shall pay the balance of the account including any proportion of VAT which you cannot recover.'}}]",
+        "attributes": null
+      },
+      {
+        "class": "section_title",
+        "text": "Information Use",
+        "attributes": null
+      },
+      {
+        "class": "section_data",
+        "text": "[{'document_info': 'Insurers pass information to the Claims and Underwriting Exchange Register, run by Insurance Database Services (IDS) Ltd and the Motor Insurance Anti-Fraud and Theft Register, run by the Association of British Insurers (ABI). The aim is to help Insurers check information provided and also to prevent fraudulent claims.', 'document_info_attributes': {'field': 'Information Registers', 'value': 'Claims and Underwriting Exchange Register, Motor Insurance Anti-Fraud and Theft Register'}}, {'document_info': 'You must tell Insurers about any incident which may or may not give rise to a claim.', 'document_info_attributes': {'field': 'Condition', 'value': 'Inform about any incident'}}]",
+        "attributes": null
+      },
+      {
+        "class": "section_title",
+        "text": "Declaration",
+        "attributes": null
+      },
+      {
+        "class": "section_data",
+        "text": "[{'declaration_info': 'I/We understand that my Insurer will handle this claim on my/our behalf and that I/We give our consent to the claim being handled on this basis.', 'declaration_info_attributes': {'field': 'Claim Handling', 'value': 'Consent given for handling'}}, {'declaration_info': 'Providing untrue information resulting in a fraudulent claim is a criminal offence likely to lead to prosecution.', 'declaration_info_attributes': {'field': 'Fraudulent Claim Warning', 'value': 'Fraud is a criminal offence'}}, {'declaration_info': 'Confirm that the information given on this form is true in every respect and no amount claimed has been refunded from any other source.', 'declaration_info_attributes': {'field': 'Confirmation', 'value': 'Information is true, no refunds from other sources'}}]",
+        "attributes": null
+      },
+      {
+        "class": "section_title",
+        "text": "Privacy Notice",
+        "attributes": null
+      },
+      {
+        "class": "section_data",
+        "text": "[{'privacy_info': 'Your privacy is important to us. We will process your personal data in accordance with data protection laws.', 'privacy_info_attributes': {'field': 'Privacy Statement', 'value': 'Comply with data protection laws'}}, {'privacy_info': 'Sharing personal data with the Insurance company, service providers, advisors, and loss adjusters.', 'privacy_info_attributes': {'field': 'Data Sharing', 'value': 'Shared with company, providers, advisors, adjusters'}}, {'privacy_info': 'Refer to our privacy policy at www.lycetts.co.uk/privacy-policy/ and Terms of Business Agreement.', 'privacy_info_attributes': {'field': 'Further Information', 'value': 'Privacy policy and Terms of Business Agreement available online'}}]",
+        "attributes": null
+      }
+    ]
+  },
+  {
+    "filename": "CBZ TOUCH MANUAL REGISTRATION FORM filled.pdf",
+    "timestamp": "2025-09-30T12:41:43.754961",
+    "model": "gpt-4o",
+    "extractions_count": 3,
+    "key_values": {
+      "other_info": {
+        "Branch": "CBZ Cripps Branch",
+        "City": "HARARE",
+        "Re": "Request for CBZ Touch Registration"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "location_info",
+        "text": "CBZ Cripps Branch",
+        "attributes": {
+          "field": "Branch",
+          "value": "CBZ Cripps Branch"
+        }
+      },
+      {
+        "class": "location_info",
+        "text": "HARARE",
+        "attributes": {
+          "field": "City",
+          "value": "HARARE"
+        }
+      },
+      {
+        "class": "request",
+        "text": "Request for CBZ Touch Registration",
+        "attributes": {
+          "field": "Re",
+          "value": "Request for CBZ Touch Registration"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "property-loss-form_filled.pdf",
+    "timestamp": "2025-09-30T12:42:01.595058",
+    "model": "gpt-4o",
+    "extractions_count": 25,
+    "key_values": {
+      "other_info": {
+        "Did the incident occur on the Insured premises": "YES",
+        "unknown_field": "{'best_time': '', 'best_days': ''}",
+        "Was the location inspected immediately after the incident": "NO",
+        "Were any photos taken": "NO",
+        "Is there mortgage on the property": "YES",
+        "Report Information": null,
+        "Date Reported": null,
+        "Reported by First Name": null,
+        "Reported by Last Name": null,
+        "Job Title": null,
+        "Phone Number": null,
+        "Email Address": null,
+        "Are you the contact for this incident?": "First Name Last Name",
+        "Business Phone Number": null,
+        "Cell Number": null,
+        "Fax Number": null,
+        "What is the best time of contact From/To?": null,
+        "What are the best days to contact you?": null,
+        "What is your preferred method of contact?": null,
+        "Do you have any additional comments regarding this incident?": null
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "incident_info",
+        "text": "YES",
+        "attributes": {
+          "field": "Did the incident occur on the Insured premises",
+          "value": "YES"
+        }
+      },
+      {
+        "class": "location_info",
+        "text": "{'address_1': '', 'address_2': '', 'city': '', 'state': '', 'zip': '', 'county': '', 'country': ''}",
+        "attributes": {
+          "fields": [
+            "Address 1",
+            "Address 2",
+            "City",
+            "State",
+            "Zip",
+            "County",
+            "Country"
+          ],
+          "values": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      },
+      {
+        "class": "inspection_info",
+        "text": "NO",
+        "attributes": {
+          "field": "Was the location inspected immediately after the incident",
+          "value": "NO"
+        }
+      },
+      {
+        "class": "photograph_evidence",
+        "text": "NO",
+        "attributes": {
+          "field": "Were any photos taken",
+          "value": "NO"
+        }
+      },
+      {
+        "class": "mortgage_info",
+        "text": "YES",
+        "attributes": {
+          "field": "Is there mortgage on the property",
+          "value": "YES"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "{'first_name': '', 'last_or_company_name': '', 'address_1': '', 'address_2': '', 'city': '', 'state': '', 'zip': '', 'county': '', 'country': '', 'telephone_number': '', 'extn': ''}",
+        "attributes": {
+          "fields": [
+            "First Name",
+            "Last or Company Name",
+            "Address 1",
+            "Address 2",
+            "City",
+            "State",
+            "Zip",
+            "County",
+            "Country",
+            "Telephone Number",
+            "Extn"
+          ],
+          "values": [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      },
+      {
+        "class": "driver_license_info",
+        "text": "{'driver_license_number': '', 'driver_license_state': '', 'license_plate_number': '', 'license_plate_state': ''}",
+        "attributes": {
+          "fields": [
+            "Driver's License Number",
+            "Driver's License State",
+            "License Plate Number",
+            "License Plate State"
+          ],
+          "values": [
+            "",
+            "",
+            "",
+            ""
+          ]
+        }
+      },
+      {
+        "class": "contact_preference",
+        "text": "{'best_time': '', 'best_days': ''}",
+        "attributes": {
+          "fields": [
+            "What is the best time of contact From/To",
+            "What are the best days to contact you"
+          ],
+          "values": [
+            "",
+            ""
+          ]
+        }
+      },
+      {
+        "class": "report_info",
+        "text": "First Name Last Name Address 1 Address 2 City State Zip County Country Telephone Number Extn",
+        "attributes": {
+          "field": "Report Information",
+          "value": null
+        }
+      },
+      {
+        "class": "report_info",
+        "text": "Date Reported",
+        "attributes": {
+          "field": "Date Reported",
+          "value": null
+        }
+      },
+      {
+        "class": "report_info",
+        "text": "Reported by First Name",
+        "attributes": {
+          "field": "Reported by First Name",
+          "value": null
+        }
+      },
+      {
+        "class": "report_info",
+        "text": "Reported by Last Name",
+        "attributes": {
+          "field": "Reported by Last Name",
+          "value": null
+        }
+      },
+      {
+        "class": "report_info",
+        "text": "Job Title",
+        "attributes": {
+          "field": "Job Title",
+          "value": null
+        }
+      },
+      {
+        "class": "report_info",
+        "text": "Phone Number",
+        "attributes": {
+          "field": "Phone Number",
+          "value": null
+        }
+      },
+      {
+        "class": "report_info",
+        "text": "Email Address",
+        "attributes": {
+          "field": "Email Address",
+          "value": null
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "First Name Last Name",
+        "attributes": {
+          "field": "Are you the contact for this incident?",
+          "value": null
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "Business Phone Number",
+        "attributes": {
+          "field": "Business Phone Number",
+          "value": null
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "Cell Number",
+        "attributes": {
+          "field": "Cell Number",
+          "value": null
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "Fax Number",
+        "attributes": {
+          "field": "Fax Number",
+          "value": null
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "Email Address",
+        "attributes": {
+          "field": "Email Address",
+          "value": null
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "What is the best time of contact From/To?",
+        "attributes": {
+          "field": "What is the best time of contact From/To?",
+          "value": null
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "What are the best days to contact you?",
+        "attributes": {
+          "field": "What are the best days to contact you?",
+          "value": null
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "What is your preferred method of contact?",
+        "attributes": {
+          "field": "What is your preferred method of contact?",
+          "value": null
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "Do you have any additional comments regarding this incident?",
+        "attributes": {
+          "field": "Do you have any additional comments regarding this incident?",
+          "value": null
+        }
+      },
+      {
+        "class": "report_info",
+        "text": "Are you the contact for this incident?",
+        "attributes": {
+          "field": "Are you the contact for this incident?",
+          "value": "First Name Last Name"
+        }
+      }
+    ]
+  },
+  {
+    "filename": "notice-of-loss-form_novt2019_axa-xl_filled.pdf",
+    "timestamp": "2025-09-30T12:42:33.867383",
+    "model": "gpt-4o",
+    "extractions_count": 23,
+    "key_values": {
+      "personal_info": {
+        "Title": "*",
+        "First Name": "*Last Name:",
+        "Role in Relation to Loss": "Insured/Policy Holder"
+      },
+      "other_info": {
+        "Insured/Policy Holder Name": "",
+        "Date of Loss (occurrence or claims made date)": "",
+        "What is the best way to contact you?": "Telephone eMail",
+        "Has suit been filed?": "Yes",
+        "unknown_field": "WEBFNOL.APAC@axaxl.com",
+        "Insured / Policy Holder Name": "*",
+        "Automobile/Motor Vehicle Accident": "Yes",
+        "Region/Country Email Address": "South / Central America / All WEBFNOL.EMEA@axaxl.com"
+      }
+    },
+    "raw_extractions": [
+      {
+        "class": "personal_info",
+        "text": "Insured/Policy Holder Name:",
+        "attributes": {
+          "field": "Title",
+          "value": "Insured/Policy Holder"
+        }
+      },
+      {
+        "class": "insurance_info",
+        "text": "Name",
+        "attributes": {
+          "field": "Insured/Policy Holder Name",
+          "value": ""
+        }
+      },
+      {
+        "class": "loss_info",
+        "text": "Date of Loss",
+        "attributes": {
+          "field": "Date of Loss (occurrence or claims made date)",
+          "value": ""
+        }
+      },
+      {
+        "class": "communication_preference",
+        "text": "Telephone eMail",
+        "attributes": {
+          "field": "What is the best way to contact you?",
+          "value": "Telephone eMail"
+        }
+      },
+      {
+        "class": "suit_info",
+        "text": "Yes",
+        "attributes": {
+          "field": "Has suit been filed?",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "WEBFNOL.NA@axaxl.com",
+        "attributes": {
+          "region/country": "North America / All",
+          "email_address": "WEBFNOL.NA@axaxl.com"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "NEWCLAIMS@axaxl.com",
+        "attributes": {
+          "region/country": "UK / All (Motor Claims)",
+          "email_address": "NEWCLAIMS@axaxl.com"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "WEBFNOL.EMEA.FRANCE@axaxl.com",
+        "attributes": {
+          "region/country": "EMEA / France",
+          "email_address": "WEBFNOL.EMEA.FRANCE@axaxl.com"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "WEBFNOL.UK@axaxl.com",
+        "attributes": {
+          "region/country": "UK / All (Non-motor Claims)",
+          "email_address": "WEBFNOL.UK@axaxl.com"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "WEBFNOL.EMEA.GERMANY@axaxl.com",
+        "attributes": {
+          "region/country": "EMEA / Germany",
+          "email_address": "WEBFNOL.EMEA.GERMANY@axaxl.com"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "WEBFNOL.EMEA.ITALY@axaxl.com",
+        "attributes": {
+          "region/country": "EMEA / Italy",
+          "email_address": "WEBFNOL.EMEA.ITALY@axaxl.com"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "WEBFNOL.EMEA@axaxl.com",
+        "attributes": {
+          "region/country": "South / Central America / All",
+          "email_address": "WEBFNOL.EMEA@axaxl.com"
+        }
+      },
+      {
+        "class": "contact_info",
+        "text": "WEBFNOL.APAC@axaxl.com",
+        "attributes": {
+          "region/country": "APAC / All",
+          "email_address": "WEBFNOL.APAC@axaxl.com"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "*",
+        "attributes": {
+          "field": "Title",
+          "value": "*"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "*Last Name:",
+        "attributes": {
+          "field": "First Name",
+          "value": "*Last Name:"
+        }
+      },
+      {
+        "class": "personal_info",
+        "text": "Insured/Policy Holder",
+        "attributes": {
+          "field": "Role in Relation to Loss",
+          "value": "Insured/Policy Holder"
+        }
+      },
+      {
+        "class": "insurance_info",
+        "text": "*",
+        "attributes": {
+          "field": "Insured / Policy Holder Name",
+          "value": "*"
+        }
+      },
+      {
+        "class": "insurance_info",
+        "text": "Yes",
+        "attributes": {
+          "field": "Automobile/Motor Vehicle Accident",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "loss_info",
+        "text": "{'field': '*Date of Loss (occurr ence or claims made date)', 'value': '(dd/mm/yyyy)'}",
+        "attributes": null
+      },
+      {
+        "class": "loss_info",
+        "text": "{'field': '*Loss Description', 'value': ''}",
+        "attributes": null
+      },
+      {
+        "class": "suit_info",
+        "text": "Yes",
+        "attributes": {
+          "field": "Has suit been filed?",
+          "value": "Yes"
+        }
+      },
+      {
+        "class": "claim_info",
+        "text": "NEWCLAIMS@axaxl.com",
+        "attributes": {
+          "field": "Region/Country Email Address",
+          "value": "UK / All (Motor Claims) NEW CLAIMS@axaxl.com"
+        }
+      },
+      {
+        "class": "claim_info",
+        "text": "WEBFNOL.EMEA@axaxl.com",
+        "attributes": {
+          "field": "Region/Country Email Address",
+          "value": "South / Central America / All WEBFNOL.EMEA@axaxl.com"
+        }
+      }
+    ]
+  }
+]

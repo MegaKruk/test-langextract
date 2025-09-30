@@ -1,0 +1,92 @@
+PDF Key-Value Extraction Summary
+==================================================
+
+Total files processed: 12
+Timestamp: 2025-09-30T12:42:33.869349
+
+
+File: M-PIN CBZ TOUCH_filled.pdf
+------------------------------
+Total extractions: 2
+Key-Value Pairs by Category:
+  other_info: 2 pairs
+
+File: Personal Loan Application Form_filled.pdf
+------------------------------
+Total extractions: 77
+Key-Value Pairs by Category:
+  personal_info: 19 pairs
+  employment_info: 7 pairs
+  financial_info: 3 pairs
+  account_info: 1 pairs
+  other_info: 26 pairs
+
+File: FUNDS RECALL FORM_filled.pdf
+------------------------------
+Total extractions: 0
+Key-Value Pairs by Category:
+  personal_info: 0 pairs
+  employment_info: 0 pairs
+  financial_info: 0 pairs
+  account_info: 0 pairs
+  other_info: 0 pairs
+
+File: PROOF OF PAYMENT REQUISITION FORM_filled.pdf
+------------------------------
+Total extractions: 0
+Key-Value Pairs by Category:
+  personal_info: 0 pairs
+  employment_info: 0 pairs
+  financial_info: 0 pairs
+  account_info: 0 pairs
+  other_info: 0 pairs
+
+File: FNOL-form-MOTOR-v10_filled.pdf
+------------------------------
+Total extractions: 13
+Key-Value Pairs by Category:
+  other_info: 3 pairs
+
+File: INTERNET BANKING REGISTRATION FORM1_filled.pdf
+------------------------------
+Total extractions: 23
+Key-Value Pairs by Category:
+  personal_info: 3 pairs
+  other_info: 10 pairs
+
+File: INTERNET PASSWORD RESET APPLICATION FORM_filled.pdf
+------------------------------
+Total extractions: 7
+Key-Value Pairs by Category:
+  other_info: 5 pairs
+
+File: MORTGAGE APPLICATION FORM_filled.pdf
+------------------------------
+Total extractions: 36
+Key-Value Pairs by Category:
+  other_info: 10 pairs
+
+File: FNOL-form-MOTOR-v10 filled2.pdf
+------------------------------
+Total extractions: 24
+Key-Value Pairs by Category:
+  other_info: 15 pairs
+
+File: CBZ TOUCH MANUAL REGISTRATION FORM filled.pdf
+------------------------------
+Total extractions: 3
+Key-Value Pairs by Category:
+  other_info: 3 pairs
+
+File: property-loss-form_filled.pdf
+------------------------------
+Total extractions: 25
+Key-Value Pairs by Category:
+  other_info: 20 pairs
+
+File: notice-of-loss-form_novt2019_axa-xl_filled.pdf
+------------------------------
+Total extractions: 23
+Key-Value Pairs by Category:
+  personal_info: 3 pairs
+  other_info: 8 pairs
