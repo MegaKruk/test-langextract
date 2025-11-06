@@ -375,7 +375,7 @@ class PDFConverter:
                 
         except Exception as e:
             print(f"DOC extraction failed: {str(e)}")
-            return f"Error: Could not extract content from DOC file.\nError: {str(e)}"
+            return f"Error: Could not extract content from DOC file.\nError msg: {str(e)}"
     
     def _rtf_to_markdown(self, input_path: str) -> str:
         """
@@ -420,7 +420,7 @@ class PDFConverter:
             
         except Exception as e:
             print(f"RTF extraction failed: {str(e)}")
-            return f"Error: Could not extract content from RTF file.\nError: {str(e)}"
+            return f"Error: Could not extract content from RTF file.\nError msg: {str(e)}"
     
     def _text_to_basic_markdown(self, text: str) -> str:
         """
@@ -635,12 +635,9 @@ class PDFConverter:
     
     def _convert_spreadsheet_to_pdf(self, input_path: str, output_path: str) -> bool:
         """
-        IMPROVED: Convert Excel spreadsheet (XLS/XLSX) to PDF with robust error handling.
+        Convert Excel spreadsheet (XLS/XLSX) to PDF using openpyxl/xlrd and reportlab.
         
-        Key improvements:
-        - Don't fail entire file if one sheet fails
-        - Better error messages and tracking
-        - Safer data processing
+        Improvements:
         - Landscape orientation for more width
         - Smaller font sizes for better fit
         - Text wrapping in cells
@@ -656,7 +653,7 @@ class PDFConverter:
             
         Returns:
         --------
-        bool : True if conversion succeeded (even if some sheets failed)
+        bool : True if conversion succeeded, False otherwise
         """
         try:
             from reportlab.lib.pagesizes import letter, landscape, A4
@@ -670,35 +667,28 @@ class PDFConverter:
             print(f"Converting spreadsheet: {os.path.basename(input_path)}")
             
             # Read spreadsheet
-            sheets_data = []
             if ext == '.xlsx':
                 import openpyxl
                 wb = openpyxl.load_workbook(input_path, data_only=True)
+                sheets_data = []
                 for sheet_name in wb.sheetnames:
                     ws = wb[sheet_name]
                     sheet_data = []
                     for row in ws.iter_rows(values_only=True):
-                        # Safe conversion - handle None values
                         row_data = [str(cell) if cell is not None else '' for cell in row]
                         sheet_data.append(row_data)
                     sheets_data.append((sheet_name, sheet_data))
             else:  # .xls
                 import xlrd
                 wb = xlrd.open_workbook(input_path)
+                sheets_data = []
                 for sheet in wb.sheets():
                     sheet_data = []
                     for row_idx in range(sheet.nrows):
                         row = sheet.row_values(row_idx)
-                        # Safe conversion
-                        row_data = [str(cell) if cell is not None else '' for cell in row]
+                        row_data = [str(cell) for cell in row]
                         sheet_data.append(row_data)
                     sheets_data.append((sheet.name, sheet_data))
-            
-            if not sheets_data:
-                print("No sheets found in spreadsheet")
-                return False
-            
-            print(f"Found {len(sheets_data)} sheet(s) to process")
             
             # Create PDF with landscape orientation for more width
             pdf = SimpleDocTemplate(
@@ -715,114 +705,60 @@ class PDFConverter:
             # Calculate available width for tables
             page_width = landscape(letter)[0] - 1*inch  # Account for margins
             
-            # Track success/failure
-            successful_sheets = 0
-            failed_sheets = 0
-            
             # Process each sheet
-            for sheet_idx, (sheet_name, sheet_data) in enumerate(sheets_data):
-                try:
-                    if not sheet_data:
-                        print(f"Sheet '{sheet_name}': No data, skipping")
-                        continue
+            for sheet_name, sheet_data in sheets_data:
+                if not sheet_data:
+                    continue
+                
+                # Add sheet name as heading
+                story.append(Paragraph(f"<b>{sheet_name}</b>", styles['Heading1']))
+                story.append(Spacer(1, 0.2 * inch))
+                
+                # Filter out completely empty rows
+                non_empty_data = [row for row in sheet_data if any(cell.strip() for cell in row)]
+                
+                if non_empty_data:
+                    # Limit rows to prevent huge files
+                    max_rows = 150
+                    if len(non_empty_data) > max_rows:
+                        non_empty_data = non_empty_data[:max_rows]
+                        print(f"Note: Limited to first {max_rows} rows for sheet '{sheet_name}'")
                     
-                    print(f"Processing sheet {sheet_idx + 1}/{len(sheets_data)}: '{sheet_name}'")
+                    # Process the table with smart splitting if needed
+                    success = self._add_table_to_story(
+                        story, 
+                        non_empty_data, 
+                        sheet_name, 
+                        page_width,
+                        styles
+                    )
                     
-                    # Add sheet name as heading
-                    story.append(Paragraph(f"<b>{sheet_name}</b>", styles['Heading1']))
-                    story.append(Spacer(1, 0.2 * inch))
-                    
-                    # Filter out completely empty rows (safe string check)
-                    non_empty_data = [
-                        row for row in sheet_data 
-                        if any(str(cell).strip() for cell in row)
-                    ]
-                    
-                    if non_empty_data:
-                        # Limit rows to prevent huge files
-                        max_rows = 150
-                        if len(non_empty_data) > max_rows:
-                            non_empty_data = non_empty_data[:max_rows]
-                            print(f"Note: Limited to first {max_rows} rows for sheet '{sheet_name}'")
-                        
-                        # Process the table with smart splitting if needed
-                        success = self._add_table_to_story(
-                            story, 
-                            non_empty_data, 
-                            sheet_name, 
-                            page_width,
-                            styles
-                        )
-                        
-                        if success:
-                            successful_sheets += 1
-                            print(f"Sheet '{sheet_name}': Successfully processed")
-                        else:
-                            failed_sheets += 1
-                            print(f"Sheet '{sheet_name}': Failed to process table")
-                            # Add placeholder instead of failing entire conversion
-                            story.append(Paragraph(
-                                f"<i>(Sheet '{sheet_name}' could not be fully rendered)</i>", 
-                                styles['Normal']
-                            ))
-                    else:
-                        print(f"Sheet '{sheet_name}': All rows empty after filtering")
-                        story.append(Paragraph(
-                            f"<i>(Sheet '{sheet_name}' contains no data)</i>", 
-                            styles['Normal']
-                        ))
-                    
-                    # Add page break between sheets (if not last sheet)
-                    if sheet_idx < len(sheets_data) - 1:
-                        story.append(PageBreak())
-                        
-                except Exception as sheet_error:
-                    failed_sheets += 1
-                    print(f"Error processing sheet '{sheet_name}': {str(sheet_error)}")
-                    import traceback
-                    traceback.print_exc()
-                    # Don't fail entire file, just add error note
-                    story.append(Paragraph(
-                        f"<i>(Error processing sheet '{sheet_name}': {str(sheet_error)[:100]})</i>", 
-                        styles['Normal']
-                    ))
-                    if sheet_idx < len(sheets_data) - 1:
-                        story.append(PageBreak())
+                    if not success:
+                        print(f"Warning: Could not add table for sheet '{sheet_name}'")
+                
+                # Add page break between sheets
+                story.append(PageBreak())
             
             # Build PDF
-            print(f"Building PDF: {successful_sheets} sheets successful, {failed_sheets} sheets failed")
             if story:
                 pdf.build(story)
             else:
                 pdf.build([Paragraph("(Empty spreadsheet)", styles['Normal'])])
             
-            # Return True if at least some sheets succeeded or file exists
-            file_exists = os.path.exists(output_path)
-            if file_exists and successful_sheets > 0:
-                print(f"Successfully created PDF with {successful_sheets} sheet(s)")
-                return True
-            elif file_exists and successful_sheets == 0:
-                print(f"Warning: PDF created but all {failed_sheets} sheet(s) failed")
-                return False
-            else:
-                return False
+            return os.path.exists(output_path)
             
         except Exception as e:
             print(f"Error converting spreadsheet: {str(e)}")
-            import traceback
-            traceback.print_exc()
             return False
     
     def _add_table_to_story(self, story, data, sheet_name, page_width, styles):
         """
-        IMPROVED: Add a table to the story with smart handling of wide tables and errors.
+        Add a table to the story with smart handling of wide tables.
         
         Strategy:
-        1. Normalize data (ensure all rows have same column count)
-        2. Truncate excessive cell content
-        3. Calculate optimal column widths
-        4. Try to fit table, split if needed
-        5. Use error recovery if rendering fails
+        1. Try to fit table with calculated column widths
+        2. If too wide, split into multiple tables vertically
+        3. Use smaller fonts and text wrapping
         
         Parameters:
         -----------
@@ -839,7 +775,7 @@ class PDFConverter:
             
         Returns:
         --------
-        bool : True if successful (at least partially)
+        bool : True if successful
         """
         try:
             from reportlab.platypus import Table, TableStyle, Paragraph, Spacer
@@ -847,38 +783,18 @@ class PDFConverter:
             from reportlab.lib.units import inch
             from reportlab.lib.styles import ParagraphStyle
             
-            if not data or len(data) == 0:
-                print(f"No data to process for sheet '{sheet_name}'")
-                return True
-            
-            # Ensure all rows have same number of columns
-            max_cols = max(len(row) for row in data)
-            normalized_data = []
-            for row in data:
-                if len(row) < max_cols:
-                    # Pad with empty strings
-                    row = list(row) + [''] * (max_cols - len(row))
-                elif len(row) > max_cols:
-                    # Truncate if somehow longer
-                    row = row[:max_cols]
-                normalized_data.append(row)
-            data = normalized_data
-            
             num_cols = len(data[0])
-            print(f"Processing table: {len(data)} rows x {num_cols} columns")
             
             # Truncate very long cell content to prevent overflow
-            max_cell_length = 300
+            max_cell_length = 500
             truncated_data = []
-            for row_idx, row in enumerate(data):
+            for row in data:
                 truncated_row = []
                 for cell in row:
-                    # Safe string conversion
-                    cell_str = str(cell) if cell is not None else ''
-                    if len(cell_str) > max_cell_length:
-                        truncated_row.append(cell_str[:max_cell_length] + '...')
+                    if len(cell) > max_cell_length:
+                        truncated_row.append(cell[:max_cell_length] + '...')
                     else:
-                        truncated_row.append(cell_str)
+                        truncated_row.append(cell)
                 truncated_data.append(truncated_row)
             data = truncated_data
             
@@ -886,129 +802,78 @@ class PDFConverter:
             col_widths = self._calculate_column_widths(data, page_width, num_cols)
             
             # Check if we need to split the table
-            total_width = sum(col_widths) if col_widths else 0
+            total_width = sum(col_widths)
             
-            if total_width > page_width * 1.05:  # 5% tolerance
+            if total_width > page_width * 0.80:  # 80% threshold - SPLIT EARLIER!
                 # Split table into multiple parts
-                print(f"Table too wide ({total_width:.0f} pts > {page_width:.0f} pts)")
+                print(f"Note: Table too wide ({total_width:.0f} pts > {page_width:.0f} pts)")
                 print(f"Splitting into multiple parts for sheet '{sheet_name}'")
                 return self._add_split_table(story, data, sheet_name, page_width, col_widths, styles)
             else:
-                # Single table should fit
-                print(f"Table fits in single part ({total_width:.0f} pts)")
+                # Single table fits
                 return self._add_single_table(story, data, col_widths, styles)
                 
         except Exception as e:
-            print(f"Error adding table for '{sheet_name}': {str(e)}")
-            import traceback
-            traceback.print_exc()
-            # Don't fail completely, just skip this table
+            print(f"Error adding table: {str(e)}")
             return False
     
     def _calculate_column_widths(self, data, page_width, num_cols):
         """
-        IMPROVED: Calculate optimal column widths with better null handling.
+        Calculate optimal column widths based on content.
         
         Strategy:
-        - Safely handle None values and empty strings
         - Analyze content length in each column
         - Distribute width proportionally but with limits
         - Ensure minimum and maximum widths
         """
-        try:
-            # Calculate max content length per column
-            col_max_lengths = []
-            for col_idx in range(num_cols):
-                max_len = 0
-                for row in data[:30]:  # Sample first 30 rows
-                    if col_idx < len(row):
-                        cell_value = row[col_idx]
-                        if cell_value is not None:
-                            max_len = max(max_len, len(str(cell_value)))
-                col_max_lengths.append(max_len)
-            
-            # Calculate proportional widths
-            total_chars = sum(col_max_lengths)
-            if total_chars == 0:
-                # All columns empty, distribute equally
-                return [page_width / num_cols] * num_cols
-            
-            # Proportional distribution with limits
-            min_width = 35  # Minimum 35 points per column
-            max_width = page_width * 0.35  # Max 35% of page width per column
-            
-            col_widths = []
-            for max_len in col_max_lengths:
-                if max_len == 0:
-                    # Empty column gets minimum width
-                    width = min_width
-                else:
-                    # Proportional width (character width approximately 5.5 points)
-                    char_width = 5.5
-                    width = max_len * char_width
-                    # Apply limits
-                    width = max(min_width, min(width, max_width))
-                col_widths.append(width)
-            
-            # Normalize to fit page width if needed
-            total_width = sum(col_widths)
-            if total_width > page_width:
-                scale = page_width / total_width
-                col_widths = [w * scale for w in col_widths]
-            
-            return col_widths
-            
-        except Exception as e:
-            print(f"Error calculating column widths: {str(e)}")
-            # Fallback: equal distribution
-            return [page_width / num_cols] * num_cols
-    
-    def _add_single_table(self, story, data, col_widths, styles, font_size=None):
-        """
-        IMPROVED: Add a single table with adaptive formatting and error recovery.
+        # Calculate max content length per column
+        col_max_lengths = []
+        for col_idx in range(num_cols):
+            max_len = 0
+            for row in data[:20]:  # Sample first 20 rows
+                if col_idx < len(row):
+                    max_len = max(max_len, len(row[col_idx]))
+            col_max_lengths.append(max_len)
         
-        Parameters:
-        -----------
-        font_size : int, optional
-            Font size to use. If None, calculated based on number of columns.
-        """
+        # Calculate proportional widths
+        total_chars = sum(col_max_lengths)
+        if total_chars == 0:
+            # Empty columns, distribute equally
+            return [page_width / num_cols] * num_cols
+        
+        # Proportional distribution with limits
+        min_width = 50  # Minimum 50 points per column (IMPROVED FOR READABILITY)
+        max_width = page_width * 0.4  # Max 40% of page width per column
+        
+        col_widths = []
+        for max_len in col_max_lengths:
+            # Proportional width
+            width = (max_len / total_chars) * page_width
+            # Apply limits
+            width = max(min_width, min(width, max_width))
+            col_widths.append(width)
+        
+        # DON'T normalize - let splitting handle wide tables
+        total_width = sum(col_widths)
+        # REMOVED AGGRESSIVE SCALING: Let _add_table_to_story decide whether to split
+        # This prevents millimeter-wide unreadable columns!
+        
+        return col_widths
+    
+    def _add_single_table(self, story, data, col_widths, styles):
+        """Add a single table that fits on the page."""
         try:
             from reportlab.platypus import Table, TableStyle, Paragraph
             from reportlab.lib import colors
             from reportlab.lib.styles import ParagraphStyle
             
-            # Calculate font size if not provided
-            if font_size is None:
-                num_cols = len(data[0]) if data else 1
-                if num_cols <= 5:
-                    font_size = 9
-                elif num_cols <= 10:
-                    font_size = 8
-                elif num_cols <= 15:
-                    font_size = 7
-                elif num_cols <= 20:
-                    font_size = 6
-                else:
-                    font_size = 5  # Minimum readable size
-            
             # Wrap long text in cells using Paragraph
             cell_style = ParagraphStyle(
                 'CellStyle',
                 parent=styles['Normal'],
-                fontSize=max(font_size, 5),
-                leading=max(font_size + 2, 7),
-                wordWrap='CJK',
-                alignment=0
-            )
-            
-            header_style = ParagraphStyle(
-                'HeaderStyle',
-                parent=styles['Normal'],
-                fontSize=min(font_size + 1, 10),
-                leading=min(font_size + 3, 12),
-                wordWrap='CJK',
-                alignment=0,
-                textColor=colors.whitesmoke
+                fontSize=7,
+                leading=9,
+                wordWrap='CJK'
             )
             
             # Convert cells to Paragraphs for text wrapping
@@ -1016,26 +881,14 @@ class PDFConverter:
             for row_idx, row in enumerate(data):
                 wrapped_row = []
                 for cell in row:
-                    # Safe string conversion
-                    cell_str = str(cell) if cell is not None else ''
-                    
-                    # Use header style for first row
-                    style = header_style if row_idx == 0 else cell_style
-                    
-                    # Wrap long content or content with line breaks
-                    if len(cell_str) > 40 or '\n' in cell_str:
-                        wrapped_row.append(Paragraph(cell_str, style))
+                    if len(cell) > 50:  # Wrap long cells
+                        wrapped_row.append(Paragraph(cell, cell_style))
                     else:
-                        wrapped_row.append(cell_str)
-                
+                        wrapped_row.append(cell)
                 wrapped_data.append(wrapped_row)
             
             # Create table with calculated column widths
-            table = Table(
-                wrapped_data, 
-                colWidths=col_widths,
-                repeatRows=1  # Repeat header on each page
-            )
+            table = Table(wrapped_data, colWidths=col_widths)
             
             # Apply styling
             table.setStyle(TableStyle([
@@ -1044,62 +897,28 @@ class PDFConverter:
                 ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
                 ('VALIGN', (0, 0), (-1, -1), 'TOP'),
                 ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                ('FONTSIZE', (0, 0), (-1, 0), min(font_size + 1, 10)),
-                ('BOTTOMPADDING', (0, 0), (-1, 0), 6),
-                ('TOPPADDING', (0, 0), (-1, -1), 3),
-                ('BOTTOMPADDING', (0, 0), (-1, -1), 3),
-                ('LEFTPADDING', (0, 0), (-1, -1), 4),
-                ('RIGHTPADDING', (0, 0), (-1, -1), 4),
+                ('FONTSIZE', (0, 0), (-1, 0), 8),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
+                ('TOPPADDING', (0, 0), (-1, -1), 4),
+                ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
                 ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
                 ('GRID', (0, 0), (-1, -1), 0.5, colors.black),
-                ('FONTSIZE', (0, 1), (-1, -1), font_size),
+                ('FONTSIZE', (0, 1), (-1, -1), 7),
                 ('WORDWRAP', (0, 0), (-1, -1), True),
             ]))
             
-            # Try to add table, catch "too large" errors
-            try:
-                story.append(table)
-                return True
-            except Exception as table_error:
-                error_msg = str(table_error)
-                if 'too large' in error_msg.lower() or 'flowable' in error_msg.lower():
-                    print(f"Table rendering error: {error_msg[:200]}")
-                    print(f"Attempting recovery with reduced content...")
-                    
-                    # Retry with more aggressive truncation
-                    max_cell_length = 150  # Reduced from 500/300
-                    reduced_data = []
-                    for row in data:
-                        reduced_row = []
-                        for cell in row:
-                            cell_str = str(cell) if cell is not None else ''
-                            if len(cell_str) > max_cell_length:
-                                reduced_row.append(cell_str[:max_cell_length] + '...')
-                            else:
-                                reduced_row.append(cell_str)
-                        reduced_data.append(reduced_row)
-                    
-                    # Retry with reduced data and smaller font
-                    smaller_font = max(font_size - 1, 5)
-                    print(f"Retrying with font size {smaller_font} and truncated content...")
-                    return self._add_single_table(
-                        story, reduced_data, col_widths, styles, smaller_font
-                    )
-                else:
-                    # Different error, re-raise
-                    raise
+            story.append(table)
+            return True
             
         except Exception as e:
             print(f"Error creating single table: {str(e)}")
-            import traceback
-            traceback.print_exc()
             return False
     
     def _add_split_table(self, story, data, sheet_name, page_width, col_widths, styles):
         """
-        IMPROVED: Split a wide table into multiple parts with row indices for context.
+        Split a wide table into multiple parts stacked vertically.
         
-        Each part shows a subset of columns plus a row index column.
+        Each part shows a subset of columns.
         """
         try:
             from reportlab.platypus import Table, TableStyle, Paragraph, Spacer
@@ -1108,86 +927,55 @@ class PDFConverter:
             
             num_cols = len(data[0])
             
-            # Add row index column width (40 points)
-            row_index_width = 40
-            
             # Determine how many columns fit in one part
             cols_per_part = []
-            current_width = row_index_width  # Start with row index column
+            current_width = 0
             current_cols = []
             
             for col_idx, width in enumerate(col_widths):
-                if current_width + width <= page_width * 0.90:  # 90% to be safe
+                if current_width + width <= page_width * 0.95:  # 95% to be safe
                     current_width += width
                     current_cols.append(col_idx)
                 else:
                     if current_cols:
                         cols_per_part.append(current_cols)
-                    current_width = row_index_width + width
+                    current_width = width
                     current_cols = [col_idx]
             
             if current_cols:
                 cols_per_part.append(current_cols)
             
-            print(f"Splitting into {len(cols_per_part)} parts")
-            
-            # Calculate adaptive font size for split tables
-            max_cols_per_part = max(len(cols) for cols in cols_per_part) + 1  # +1 for row index
-            if max_cols_per_part <= 6:
-                font_size = 8
-            elif max_cols_per_part <= 12:
-                font_size = 7
-            elif max_cols_per_part <= 18:
-                font_size = 6
-            else:
-                font_size = 5
-            
             # Create separate table for each part
             for part_idx, col_indices in enumerate(cols_per_part):
-                # Extract data for these columns, prepend row index
+                # Extract data for these columns
                 part_data = []
-                for row_idx, row in enumerate(data):
-                    # Add row index as first column
-                    if row_idx == 0:
-                        row_index_cell = 'Row'
-                    else:
-                        row_index_cell = str(row_idx)
-                    
-                    # Extract columns for this part
-                    part_row = [row_index_cell] + [
-                        row[i] if i < len(row) else '' for i in col_indices
-                    ]
+                for row in data:
+                    part_row = [row[i] if i < len(row) else '' for i in col_indices]
                     part_data.append(part_row)
                 
-                # Get column widths for this part (add row index width)
-                part_widths = [row_index_width] + [col_widths[i] for i in col_indices]
+                # Get column widths for this part
+                part_widths = [col_widths[i] for i in col_indices]
                 
                 # Add part label
                 story.append(Paragraph(
-                    f"<i>Part {part_idx + 1} of {len(cols_per_part)}: Columns {col_indices[0]+1} to {col_indices[-1]+1}</i>",
+                    f"<i>Columns {col_indices[0]+1}-{col_indices[-1]+1}</i>",
                     styles['Normal']
                 ))
                 story.append(Spacer(1, 0.1 * inch))
                 
                 # Add the table part
-                success = self._add_single_table(story, part_data, part_widths, styles, font_size)
+                success = self._add_single_table(story, part_data, part_widths, styles)
                 if not success:
-                    print(f"Failed to add part {part_idx + 1}, continuing anyway...")
-                    # Don't fail the whole table, just skip this part
-                    story.append(Paragraph(
-                        f"<i>(Part {part_idx + 1} could not be rendered)</i>",
-                        styles['Normal']
-                    ))
+                    return False
                 
                 # Space between parts
                 story.append(Spacer(1, 0.3 * inch))
             
+            print(f"Split into {len(cols_per_part)} parts")
             return True
             
         except Exception as e:
             print(f"Error splitting table: {str(e)}")
-            import traceback
-            traceback.print_exc()
             return False
     
     def _convert_image_to_pdf(self, input_path: str, output_path: str) -> bool:
