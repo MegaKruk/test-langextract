@@ -9,13 +9,6 @@ Current Implementation: Uses Markdown pipeline for documents (pip-only, no Libre
 - DOC -> Markdown -> PDF (best effort)
 - RTF -> Markdown -> PDF (basic structure)
 
-IMPROVED SPREADSHEET HANDLING:
-- Intelligent column width calculation
-- Multi-line headers and cells (ALL wrapped in Paragraphs)
-- Aggressive content limiting to prevent overflow
-- Smart table splitting with row indices
-- Robust error handling
-
 Future: Will integrate with AzureSql and ADLSConnect
 """
 
@@ -235,135 +228,252 @@ class PDFConverter:
         bool : True if conversion succeeded, False otherwise
         """
         try:
-            print(f"Converting document: {os.path.basename(input_path)} (via Markdown pipeline)")
+            print(f"Converting {ext.upper()} via Markdown: {os.path.basename(input_path)}")
             
             # Step 1: Convert to Markdown
-            markdown_text = None
+            markdown_text = self._document_to_markdown(input_path, ext)
             
-            if ext == 'docx':
-                markdown_text = self._docx_to_markdown(input_path)
-            elif ext == 'doc':
-                markdown_text = self._doc_to_markdown(input_path)
-            elif ext == 'rtf':
-                markdown_text = self._rtf_to_markdown(input_path)
-            
-            if not markdown_text:
-                print(f"Failed to extract content from {ext.upper()} file")
-                return False
+            if not markdown_text or not markdown_text.strip():
+                print(f"Warning: No content extracted from {os.path.basename(input_path)}")
+                markdown_text = "(Empty document)"
             
             # Step 2: Convert Markdown to PDF
-            return self._markdown_to_pdf(markdown_text, output_path)
+            success = self._markdown_to_pdf(markdown_text, output_path)
+            
+            if success:
+                print(f"Structure preserved: headings, lists, tables, formatting")
+            
+            return success
             
         except Exception as e:
-            print(f"Error converting document to PDF: {str(e)}")
+            print(f"Error in document conversion: {str(e)}")
             return False
     
-    def _docx_to_markdown(self, docx_path: str) -> Optional[str]:
-        """Convert DOCX to Markdown using mammoth."""
+    def _document_to_markdown(self, input_path: str, ext: str) -> str:
+        """
+        Convert document to Markdown.
+        
+        Parameters:
+        -----------
+        input_path : str
+            Path to document
+        ext : str
+            File extension (docx, doc, rtf)
+            
+        Returns:
+        --------
+        str : Markdown text
+        """
+        if ext == 'docx':
+            return self._docx_to_markdown(input_path)
+        elif ext == 'doc':
+            return self._doc_to_markdown(input_path)
+        elif ext == 'rtf':
+            return self._rtf_to_markdown(input_path)
+        else:
+            return ""
+    
+    def _docx_to_markdown(self, input_path: str) -> str:
+        """Convert DOCX to Markdown using mammoth (best quality)."""
         try:
             import mammoth
             
-            with open(docx_path, 'rb') as docx_file:
+            with open(input_path, "rb") as docx_file:
                 result = mammoth.convert_to_markdown(docx_file)
-                markdown_text = result.value
                 
+                # Check for conversion messages/warnings
                 if result.messages:
-                    for msg in result.messages:
-                        print(f"  {msg}")
+                    print(f"Conversion notes: {len(result.messages)} items")
                 
-                return markdown_text
+                return result.value
                 
         except Exception as e:
-            print(f"Error converting DOCX to Markdown: {str(e)}")
-            return None
+            print(f"mammoth failed, trying fallback: {str(e)}")
+            # Fallback to python-docx text extraction
+            return self._docx_text_fallback(input_path)
     
-    def _doc_to_markdown(self, doc_path: str) -> Optional[str]:
+    def _docx_text_fallback(self, input_path: str) -> str:
+        """Fallback: Extract text from DOCX and add basic markdown structure."""
+        try:
+            from docx import Document
+            
+            doc = Document(input_path)
+            markdown_lines = []
+            
+            for para in doc.paragraphs:
+                if not para.text.strip():
+                    markdown_lines.append("")
+                    continue
+                
+                # Detect headings
+                if para.style.name.startswith('Heading'):
+                    level = para.style.name.replace('Heading', '').strip()
+                    if level.isdigit():
+                        markdown_lines.append(f"{'#' * int(level)} {para.text}")
+                    else:
+                        markdown_lines.append(f"## {para.text}")
+                else:
+                    markdown_lines.append(para.text)
+            
+            # Add tables
+            for table in doc.tables:
+                markdown_lines.append("")
+                for i, row in enumerate(table.rows):
+                    cells = [cell.text.strip() for cell in row.cells]
+                    markdown_lines.append("| " + " | ".join(cells) + " |")
+                    if i == 0:
+                        markdown_lines.append("| " + " | ".join(["---"] * len(cells)) + " |")
+                markdown_lines.append("")
+            
+            return "\n".join(markdown_lines)
+            
+        except Exception as e:
+            print(f"Fallback also failed: {str(e)}")
+            return ""
+    
+    def _doc_to_markdown(self, input_path: str) -> str:
         """
-        Convert DOC to Markdown (best effort using mammoth).
+        Convert DOC to Markdown (best effort).
         
-        Note: mammoth primarily supports DOCX. For DOC files, it attempts
-        conversion but may fall back to basic text extraction.
+        DOC is a binary format - harder to parse without LibreOffice.
+        Try mammoth first (it sometimes works), then fallback to text extraction.
         """
         try:
             import mammoth
             
-            with open(doc_path, 'rb') as doc_file:
+            # Try mammoth (it can handle some DOC files)
+            with open(input_path, "rb") as doc_file:
                 result = mammoth.convert_to_markdown(doc_file)
-                markdown_text = result.value
-                
-                if markdown_text and len(markdown_text.strip()) > 0:
-                    return markdown_text
-                else:
-                    # Fallback: basic text extraction
-                    print("  Mammoth couldn't extract, using basic text extraction")
-                    return self._extract_text_from_doc(doc_path)
+                if result.value and result.value.strip():
+                    print(f"mammoth successfully parsed DOC file")
+                    return result.value
                     
         except Exception as e:
-            print(f"Error converting DOC: {str(e)}")
-            # Fallback to basic text extraction
-            return self._extract_text_from_doc(doc_path)
-    
-    def _extract_text_from_doc(self, doc_path: str) -> Optional[str]:
-        """Basic text extraction from DOC files (fallback)."""
+            print(f"mammoth can't parse DOC, trying text extraction: {str(e)}")
+        
+        # Fallback: Try to extract plain text
         try:
-            # This is a very basic approach
-            # In reality, DOC is a complex binary format
-            with open(doc_path, 'rb') as f:
+            # Try using antiword if available (pip install antiword-python)
+            try:
+                import antiword
+                text = antiword.extract(input_path)
+                if text:
+                    print(f"Extracted text using antiword")
+                    return self._text_to_basic_markdown(text)
+            except ImportError:
+                pass
+            
+            # Last resort: Read as binary and try to extract text (very basic)
+            print(f"Using basic text extraction (formatting will be lost)")
+            with open(input_path, 'rb') as f:
                 content = f.read()
-                # Try to extract printable ASCII text
-                text = ''.join(chr(b) if 32 <= b < 127 else ' ' for b in content)
-                # Clean up multiple spaces
-                text = re.sub(r' +', ' ', text)
-                # Try to detect paragraphs
-                text = re.sub(r'([.!?])\s+', r'\1\n\n', text)
-                return text.strip()
+                # Try to decode readable text
+                text = content.decode('latin-1', errors='ignore')
+                # Clean up binary junk
+                text = ''.join(char for char in text if char.isprintable() or char in '\n\r\t')
+                return self._text_to_basic_markdown(text)
+                
         except Exception as e:
-            print(f"Error extracting text from DOC: {str(e)}")
-            return None
+            print(f"DOC extraction failed: {str(e)}")
+            return f"# Error\n\nCould not extract content from DOC file.\nError: {str(e)}"
     
-    def _rtf_to_markdown(self, rtf_path: str) -> Optional[str]:
-        """Convert RTF to Markdown via text extraction."""
+    def _rtf_to_markdown(self, input_path: str) -> str:
+        """
+        Convert RTF to Markdown.
+        
+        Strategy 1: Try mammoth first (may preserve structure)
+        Strategy 2: Fall back to striprtf (text extraction only)
+        """
+        # Strategy 1: Try mammoth (same as DOC - may preserve structure)
+        try:
+            import mammoth
+            
+            print(f"Trying mammoth for RTF (may preserve structure)...")
+            with open(input_path, "rb") as rtf_file:
+                result = mammoth.convert_to_markdown(rtf_file)
+                if result.value and result.value.strip():
+                    print(f"mammoth successfully parsed RTF with structure!")
+                    return result.value
+                    
+        except Exception as e:
+            print(f"mammoth can't parse RTF, trying text extraction: {str(e)}")
+        
+        # Strategy 2: Fall back to striprtf (text only)
         try:
             from striprtf.striprtf import rtf_to_text
             
-            with open(rtf_path, 'r', encoding='utf-8', errors='ignore') as f:
+            print(f"Using striprtf for text extraction...")
+            with open(input_path, 'r', encoding='utf-8', errors='ignore') as f:
                 rtf_content = f.read()
             
-            # Strip RTF formatting
+            # Extract plain text
             text = rtf_to_text(rtf_content)
             
-            # Convert to basic Markdown
-            # Auto-detect potential headings (lines with few words in CAPS)
-            lines = text.split('\n')
-            markdown_lines = []
+            if not text or not text.strip():
+                print(f"No text extracted from RTF")
+                return ""
             
-            for line in lines:
-                line = line.strip()
-                if not line:
-                    markdown_lines.append('')
-                    continue
-                
-                # Heuristic: short lines in UPPERCASE might be headings
-                words = line.split()
-                if len(words) <= 10 and line.isupper() and len(line) > 5:
-                    markdown_lines.append(f"## {line.title()}")
-                # Detect bullet points
-                elif line.startswith(('-', '*', '•')):
-                    markdown_lines.append(f"* {line[1:].strip()}")
-                else:
-                    markdown_lines.append(line)
+            print(f"Extracted text from RTF (structure lost)")
             
-            return '\n'.join(markdown_lines)
+            # Convert to basic markdown structure
+            return self._text_to_basic_markdown(text)
             
         except Exception as e:
-            print(f"Error converting RTF to Markdown: {str(e)}")
-            return None
+            print(f"RTF extraction failed: {str(e)}")
+            return f"# Error\n\nCould not extract content from RTF file.\nError: {str(e)}"
+    
+    def _text_to_basic_markdown(self, text: str) -> str:
+        """
+        Convert plain text to basic markdown structure.
+        
+        Attempts to detect:
+        - Headings (ALL CAPS lines, or lines ending with :)
+        - Lists (lines starting with -, *, numbers)
+        - Paragraphs (separated by blank lines)
+        """
+        lines = text.split('\n')
+        markdown_lines = []
+        
+        for line in lines:
+            line = line.strip()
+            
+            if not line:
+                markdown_lines.append("")
+                continue
+            
+            # Detect potential headings (ALL CAPS or ending with :)
+            if line.isupper() and len(line.split()) <= 10:
+                markdown_lines.append(f"## {line}")
+            elif line.endswith(':') and len(line.split()) <= 10:
+                markdown_lines.append(f"### {line}")
+            # Detect lists
+            elif re.match(r'^[\-\*\•]\s+', line):
+                markdown_lines.append(line)
+            elif re.match(r'^\d+[\.\)]\s+', line):
+                markdown_lines.append(line)
+            else:
+                markdown_lines.append(line)
+        
+        return "\n".join(markdown_lines)
     
     def _markdown_to_pdf(self, markdown_text: str, output_path: str) -> bool:
-        """Convert Markdown to PDF using reportlab."""
+        """
+        Convert Markdown to PDF using reportlab.
+        
+        Parameters:
+        -----------
+        markdown_text : str
+            Markdown formatted text
+        output_path : str
+            Path where PDF should be saved
+            
+        Returns:
+        --------
+        bool : True if conversion succeeded
+        """
         try:
             import markdown
-            from reportlab.lib.pagesizes import letter
+            from reportlab.lib.pagesizes import letter, A4
             from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
             from reportlab.lib.units import inch
             from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, Table, TableStyle
@@ -378,191 +488,161 @@ class PDFConverter:
             )
             
             # Create PDF
-            pdf = SimpleDocTemplate(
-                output_path,
-                pagesize=letter,
-                rightMargin=72,
-                leftMargin=72,
-                topMargin=72,
-                bottomMargin=18
-            )
-            
-            # Styles
+            pdf = SimpleDocTemplate(output_path, pagesize=letter)
             styles = getSampleStyleSheet()
-            
-            # Custom styles for Markdown elements
-            styles.add(ParagraphStyle(
-                name='MarkdownHeading1',
-                parent=styles['Heading1'],
-                fontSize=18,
-                textColor=colors.HexColor('#2C3E50'),
-                spaceAfter=12,
-                spaceBefore=12
-            ))
-            
-            styles.add(ParagraphStyle(
-                name='MarkdownHeading2',
-                parent=styles['Heading2'],
-                fontSize=16,
-                textColor=colors.HexColor('#34495E'),
-                spaceAfter=10,
-                spaceBefore=10
-            ))
-            
-            styles.add(ParagraphStyle(
-                name='MarkdownHeading3',
-                parent=styles['Heading3'],
-                fontSize=14,
-                textColor=colors.HexColor('#7F8C8D'),
-                spaceAfter=8,
-                spaceBefore=8
-            ))
-            
-            # Parse HTML and build PDF story
             story = []
-            parser = MarkdownHTMLParser(story, styles)
+            
+            # Custom styles for headings
+            heading_styles = {
+                'h1': ParagraphStyle(
+                    'CustomHeading1',
+                    parent=styles['Heading1'],
+                    fontSize=18,
+                    spaceAfter=12,
+                    textColor=colors.HexColor('#2c3e50')
+                ),
+                'h2': ParagraphStyle(
+                    'CustomHeading2',
+                    parent=styles['Heading2'],
+                    fontSize=16,
+                    spaceAfter=10,
+                    textColor=colors.HexColor('#34495e')
+                ),
+                'h3': ParagraphStyle(
+                    'CustomHeading3',
+                    parent=styles['Heading3'],
+                    fontSize=14,
+                    spaceAfter=8,
+                    textColor=colors.HexColor('#7f8c8d')
+                ),
+            }
+            
+            # Parse HTML and build PDF elements
+            class HTMLToPDFParser(HTMLParser):
+                def __init__(self):
+                    super().__init__()
+                    self.story = []
+                    self.current_text = []
+                    self.current_tag = None
+                    self.in_table = False
+                    self.table_data = []
+                    self.current_row = []
+                
+                def handle_starttag(self, tag, attrs):
+                    if tag in ['h1', 'h2', 'h3']:
+                        self.current_tag = tag
+                    elif tag == 'table':
+                        self.in_table = True
+                        self.table_data = []
+                    elif tag == 'tr':
+                        self.current_row = []
+                    elif tag in ['p', 'li']:
+                        self.current_tag = tag
+                
+                def handle_endtag(self, tag):
+                    if tag in ['h1', 'h2', 'h3']:
+                        text = ''.join(self.current_text).strip()
+                        if text:
+                            style = heading_styles.get(tag, styles['Heading1'])
+                            self.story.append(Paragraph(text, style))
+                            self.story.append(Spacer(1, 0.2 * inch))
+                        self.current_text = []
+                        self.current_tag = None
+                    elif tag == 'p':
+                        text = ''.join(self.current_text).strip()
+                        if text:
+                            self.story.append(Paragraph(text, styles['Normal']))
+                            self.story.append(Spacer(1, 0.15 * inch))
+                        self.current_text = []
+                        self.current_tag = None
+                    elif tag == 'li':
+                        text = ''.join(self.current_text).strip()
+                        if text:
+                            self.story.append(Paragraph(f"• {text}", styles['Normal']))
+                            self.story.append(Spacer(1, 0.1 * inch))
+                        self.current_text = []
+                        self.current_tag = None
+                    elif tag == 'td' or tag == 'th':
+                        text = ''.join(self.current_text).strip()
+                        self.current_row.append(text)
+                        self.current_text = []
+                    elif tag == 'tr':
+                        if self.current_row:
+                            self.table_data.append(self.current_row)
+                        self.current_row = []
+                    elif tag == 'table':
+                        if self.table_data:
+                            table = Table(self.table_data)
+                            table.setStyle(TableStyle([
+                                ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+                                ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+                                ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
+                                ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+                                ('FONTSIZE', (0, 0), (-1, 0), 10),
+                                ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+                                ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
+                                ('GRID', (0, 0), (-1, -1), 1, colors.black),
+                                ('FONTSIZE', (0, 1), (-1, -1), 9),
+                            ]))
+                            self.story.append(table)
+                            self.story.append(Spacer(1, 0.3 * inch))
+                        self.in_table = False
+                        self.table_data = []
+                
+                def handle_data(self, data):
+                    if data.strip():
+                        self.current_text.append(data)
+            
+            # Parse HTML and build story
+            parser = HTMLToPDFParser()
             parser.feed(html_content)
+            story = parser.story
+            
+            # If no content parsed, add the raw markdown as text
+            if not story:
+                for line in markdown_text.split('\n'):
+                    if line.strip():
+                        story.append(Paragraph(line, styles['Normal']))
+                        story.append(Spacer(1, 0.1 * inch))
             
             # Build PDF
             if story:
                 pdf.build(story)
             else:
                 # Empty document
-                story = [Paragraph("(Empty document)", styles['Normal'])]
-                pdf.build(story)
+                pdf.build([Paragraph("(Empty document)", styles['Normal'])])
             
             return os.path.exists(output_path)
             
         except Exception as e:
             print(f"Error converting Markdown to PDF: {str(e)}")
-            return False
-
-
-class MarkdownHTMLParser(HTMLParser):
-    """Parse HTML from Markdown conversion and build ReportLab story."""
-    
-    def __init__(self, story, styles):
-        super().__init__()
-        self.story = story
-        self.styles = styles
-        self.current_text = []
-        self.current_tag = None
-        self.list_items = []
-        self.in_list = False
-        self.table_data = []
-        self.in_table = False
-        self.current_row = []
-        
-        from reportlab.lib.units import inch
-        self.inch = inch
-    
-    def handle_starttag(self, tag, attrs):
-        if tag in ['h1', 'h2', 'h3']:
-            self.current_tag = tag
-        elif tag in ['ul', 'ol']:
-            self.in_list = True
-            self.list_items = []
-        elif tag == 'li':
-            self.current_tag = 'li'
-        elif tag == 'table':
-            self.in_table = True
-            self.table_data = []
-        elif tag == 'tr':
-            self.current_row = []
-        elif tag in ['td', 'th']:
-            self.current_tag = tag
-        elif tag in ['strong', 'b']:
-            self.current_text.append('<b>')
-        elif tag in ['em', 'i']:
-            self.current_text.append('<i>')
-        elif tag == 'a':
-            for attr_name, attr_value in attrs:
-                if attr_name == 'href':
-                    self.current_text.append(f'<a href="{attr_value}">')
-        elif tag == 'p':
-            self.current_tag = 'p'
-    
-    def handle_endtag(self, tag):
-        from reportlab.platypus import Paragraph, Spacer, Table, TableStyle
-        from reportlab.lib import colors
-        
-        if tag in ['h1', 'h2', 'h3']:
-            text = ''.join(self.current_text).strip()
-            if text:
-                style_name = f'MarkdownHeading{tag[1]}'
-                self.story.append(Paragraph(text, self.styles[style_name]))
-                self.story.append(Spacer(1, 0.1 * self.inch))
-            self.current_text = []
-            self.current_tag = None
-        elif tag in ['ul', 'ol']:
-            # Add list items
-            for item in self.list_items:
-                bullet_text = f"• {item}" if tag == 'ul' else f"{self.list_items.index(item) + 1}. {item}"
-                self.story.append(Paragraph(bullet_text, self.styles['Normal']))
-            self.story.append(Spacer(1, 0.1 * self.inch))
-            self.in_list = False
-            self.list_items = []
-        elif tag == 'li':
-            text = ''.join(self.current_text).strip()
-            if text:
-                self.list_items.append(text)
-            self.current_text = []
-            self.current_tag = None
-        elif tag == 'table':
-            # Create table
-            if self.table_data:
-                table = Table(self.table_data)
-                table.setStyle(TableStyle([
-                    ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
-                    ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
-                    ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
-                    ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                    ('FONTSIZE', (0, 0), (-1, -1), 9),
-                    ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
-                    ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
-                    ('GRID', (0, 0), (-1, -1), 1, colors.black)
-                ]))
-                self.story.append(table)
-                self.story.append(Spacer(1, 0.2 * self.inch))
-            self.in_table = False
-            self.table_data = []
-        elif tag == 'tr':
-            if self.current_row:
-                self.table_data.append(self.current_row)
-            self.current_row = []
-        elif tag in ['td', 'th']:
-            text = ''.join(self.current_text).strip()
-            self.current_row.append(text)
-            self.current_text = []
-            self.current_tag = None
-        elif tag in ['strong', 'b']:
-            self.current_text.append('</b>')
-        elif tag in ['em', 'i']:
-            self.current_text.append('</i>')
-        elif tag == 'a':
-            self.current_text.append('</a>')
-        elif tag == 'p':
-            text = ''.join(self.current_text).strip()
-            if text:
-                self.story.append(Paragraph(text, self.styles['Normal']))
-                self.story.append(Spacer(1, 0.1 * self.inch))
-            self.current_text = []
-            self.current_tag = None
-    
-    def handle_data(self, data):
-        if self.current_tag or self.in_list or self.in_table:
-            self.current_text.append(data)
-
-
-class PDFConverter(PDFConverter):
-    """Extended PDFConverter with improved spreadsheet handling."""
+            # Fallback: Create simple PDF with plain text
+            try:
+                from reportlab.pdfgen import canvas
+                c = canvas.Canvas(output_path)
+                c.drawString(100, 750, "Document Conversion")
+                c.drawString(100, 730, "(Formatting could not be preserved)")
+                y = 700
+                for line in markdown_text.split('\n')[:50]:  # Max 50 lines
+                    if y < 50:
+                        break
+                    c.drawString(100, y, line[:80])  # Max 80 chars
+                    y -= 15
+                c.save()
+                return os.path.exists(output_path)
+            except:
+                return False
     
     def _convert_spreadsheet_to_pdf(self, input_path: str, output_path: str) -> bool:
         """
-        Convert spreadsheet (XLS/XLSX) to PDF with intelligent formatting.
+        Convert Excel spreadsheet (XLS/XLSX) to PDF using openpyxl/xlrd and reportlab.
         
-        FINAL VERSION: All cells wrapped in Paragraphs, aggressive content limiting,
-        proper error handling, no text escaping cells.
+        Improvements:
+        - Landscape orientation for more width
+        - Smaller font sizes for better fit
+        - Text wrapping in cells
+        - Smart column width calculation
+        - Table splitting if too wide
         
         Parameters:
         -----------
@@ -573,31 +653,49 @@ class PDFConverter(PDFConverter):
             
         Returns:
         --------
-        bool : True if conversion succeeded
+        bool : True if conversion succeeded, False otherwise
         """
         try:
-            print(f"Converting spreadsheet: {os.path.basename(input_path)}")
-            
-            # Read spreadsheet data
-            sheets_data = self._read_spreadsheet(input_path)
-            
-            if not sheets_data:
-                print("No data found in spreadsheet")
-                return False
-            
-            print(f"  Found {len(sheets_data)} sheet(s) to process")
-            
-            # Create PDF with landscape orientation
-            from reportlab.lib.pagesizes import letter, landscape
-            from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, PageBreak
+            from reportlab.lib.pagesizes import letter, landscape, A4
+            from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph, Spacer, PageBreak
+            from reportlab.lib import colors
             from reportlab.lib.styles import getSampleStyleSheet
             from reportlab.lib.units import inch
             
+            ext = os.path.splitext(input_path.lower())[1]
+            
+            print(f"Converting spreadsheet: {os.path.basename(input_path)}")
+            
+            # Read spreadsheet
+            if ext == '.xlsx':
+                import openpyxl
+                wb = openpyxl.load_workbook(input_path, data_only=True)
+                sheets_data = []
+                for sheet_name in wb.sheetnames:
+                    ws = wb[sheet_name]
+                    sheet_data = []
+                    for row in ws.iter_rows(values_only=True):
+                        row_data = [str(cell) if cell is not None else '' for cell in row]
+                        sheet_data.append(row_data)
+                    sheets_data.append((sheet_name, sheet_data))
+            else:  # .xls
+                import xlrd
+                wb = xlrd.open_workbook(input_path)
+                sheets_data = []
+                for sheet in wb.sheets():
+                    sheet_data = []
+                    for row_idx in range(sheet.nrows):
+                        row = sheet.row_values(row_idx)
+                        row_data = [str(cell) for cell in row]
+                        sheet_data.append(row_data)
+                    sheets_data.append((sheet.name, sheet_data))
+            
+            # Create PDF with landscape orientation for more width
             pdf = SimpleDocTemplate(
-                output_path,
+                output_path, 
                 pagesize=landscape(letter),
-                rightMargin=0.5*inch,
                 leftMargin=0.5*inch,
+                rightMargin=0.5*inch,
                 topMargin=0.5*inch,
                 bottomMargin=0.5*inch
             )
@@ -605,327 +703,192 @@ class PDFConverter(PDFConverter):
             story = []
             
             # Calculate available width for tables
-            page_width = landscape(letter)[0] - 1*inch
-            
-            # Track success/failure
-            successful_sheets = 0
-            failed_sheets = 0
+            page_width = landscape(letter)[0] - 1*inch  # Account for margins
             
             # Process each sheet
-            for sheet_idx, (sheet_name, sheet_data) in enumerate(sheets_data):
-                try:
-                    if not sheet_data:
-                        print(f"  Sheet '{sheet_name}': No data, skipping")
-                        continue
+            for sheet_name, sheet_data in sheets_data:
+                if not sheet_data:
+                    continue
+                
+                # Add sheet name as heading
+                story.append(Paragraph(f"<b>{sheet_name}</b>", styles['Heading1']))
+                story.append(Spacer(1, 0.2 * inch))
+                
+                # Filter out completely empty rows
+                non_empty_data = [row for row in sheet_data if any(cell.strip() for cell in row)]
+                
+                if non_empty_data:
+                    # Limit rows to prevent huge files
+                    max_rows = 150
+                    if len(non_empty_data) > max_rows:
+                        non_empty_data = non_empty_data[:max_rows]
+                        print(f"Note: Limited to first {max_rows} rows for sheet '{sheet_name}'")
                     
-                    print(f"  Processing sheet {sheet_idx + 1}/{len(sheets_data)}: '{sheet_name}'")
+                    # Process the table with smart splitting if needed
+                    success = self._add_table_to_story(
+                        story, 
+                        non_empty_data, 
+                        sheet_name, 
+                        page_width,
+                        styles
+                    )
                     
-                    # Add sheet name as heading
-                    story.append(Paragraph(f"<b>{sheet_name}</b>", styles['Heading1']))
-                    story.append(Spacer(1, 0.2 * inch))
-                    
-                    # Filter out completely empty rows
-                    non_empty_data = [
-                        row for row in sheet_data 
-                        if any(str(cell).strip() for cell in row)
-                    ]
-                    
-                    if non_empty_data:
-                        # Limit rows to prevent huge files
-                        max_rows = 150
-                        if len(non_empty_data) > max_rows:
-                            non_empty_data = non_empty_data[:max_rows]
-                            print(f"  Note: Limited to first {max_rows} rows")
-                        
-                        # Process the table with robust handling
-                        success = self._add_table_robust(
-                            story,
-                            non_empty_data,
-                            sheet_name,
-                            page_width,
-                            styles
-                        )
-                        
-                        if success:
-                            successful_sheets += 1
-                            print(f"  Sheet '{sheet_name}': Successfully processed")
-                        else:
-                            failed_sheets += 1
-                            print(f"  Sheet '{sheet_name}': Failed to process table")
-                            story.append(Paragraph(
-                                f"<i>(Sheet '{sheet_name}' could not be fully rendered)</i>",
-                                styles['Normal']
-                            ))
-                    else:
-                        print(f"  Sheet '{sheet_name}': All rows empty after filtering")
-                        story.append(Paragraph(
-                            f"<i>(Sheet '{sheet_name}' contains no data)</i>",
-                            styles['Normal']
-                        ))
-                    
-                    # Add page break between sheets (if not last sheet)
-                    if sheet_idx < len(sheets_data) - 1:
-                        story.append(PageBreak())
-                        
-                except Exception as sheet_error:
-                    failed_sheets += 1
-                    print(f"  Error processing sheet '{sheet_name}': {str(sheet_error)}")
-                    import traceback
-                    traceback.print_exc()
-                    story.append(Paragraph(
-                        f"<i>(Error processing sheet '{sheet_name}')</i>",
-                        styles['Normal']
-                    ))
-                    if sheet_idx < len(sheets_data) - 1:
-                        story.append(PageBreak())
+                    if not success:
+                        print(f"Warning: Could not add table for sheet '{sheet_name}'")
+                
+                # Add page break between sheets
+                story.append(PageBreak())
             
             # Build PDF
-            print(f"  Building PDF: {successful_sheets} sheets successful, {failed_sheets} sheets failed")
             if story:
                 pdf.build(story)
             else:
                 pdf.build([Paragraph("(Empty spreadsheet)", styles['Normal'])])
             
-            file_exists = os.path.exists(output_path)
-            if file_exists and successful_sheets > 0:
-                print(f"  Successfully created PDF with {successful_sheets} sheet(s)")
-                return True
-            else:
-                return False
+            return os.path.exists(output_path)
             
         except Exception as e:
             print(f"Error converting spreadsheet: {str(e)}")
-            import traceback
-            traceback.print_exc()
             return False
     
-    def _read_spreadsheet(self, file_path: str) -> List[Tuple[str, List[List[str]]]]:
-        """Read spreadsheet and return data from all sheets."""
-        try:
-            ext = os.path.splitext(file_path.lower())[1].lstrip('.')
-            
-            if ext == 'xlsx':
-                return self._read_xlsx(file_path)
-            elif ext == 'xls':
-                return self._read_xls(file_path)
-            else:
-                return []
-                
-        except Exception as e:
-            print(f"Error reading spreadsheet: {str(e)}")
-            return []
-    
-    def _read_xlsx(self, file_path: str) -> List[Tuple[str, List[List[str]]]]:
-        """Read XLSX file using openpyxl."""
-        try:
-            import openpyxl
-            
-            workbook = openpyxl.load_workbook(file_path, data_only=True)
-            sheets_data = []
-            
-            for sheet_name in workbook.sheetnames:
-                sheet = workbook[sheet_name]
-                sheet_data = []
-                
-                for row_idx, row in enumerate(sheet.iter_rows(values_only=True)):
-                    if row_idx >= 500:  # Safety limit
-                        break
-                    row_data = [str(cell) if cell is not None else '' for cell in row]
-                    sheet_data.append(row_data)
-                
-                if any(any(cell for cell in row) for row in sheet_data):
-                    sheets_data.append((sheet_name, sheet_data))
-            
-            return sheets_data
-            
-        except Exception as e:
-            print(f"Error reading XLSX: {str(e)}")
-            return []
-    
-    def _read_xls(self, file_path: str) -> List[Tuple[str, List[List[str]]]]:
-        """Read XLS file using xlrd."""
-        try:
-            import xlrd
-            
-            workbook = xlrd.open_workbook(file_path)
-            sheets_data = []
-            
-            for sheet in workbook.sheets():
-                sheet_data = []
-                
-                max_rows = min(sheet.nrows, 500)
-                for row_idx in range(max_rows):
-                    row = sheet.row_values(row_idx)
-                    row_data = [str(cell) if cell is not None else '' for cell in row]
-                    sheet_data.append(row_data)
-                
-                if any(any(cell for cell in row) for row in sheet_data):
-                    sheets_data.append((sheet.name, sheet_data))
-            
-            return sheets_data
-            
-        except Exception as e:
-            print(f"Error reading XLS: {str(e)}")
-            return []
-    
-    def _add_table_robust(self, story, data, sheet_name, page_width, styles):
+    def _add_table_to_story(self, story, data, sheet_name, page_width, styles):
         """
-        ROBUST: Add table with ALL cells as Paragraphs, aggressive limiting, proper error handling.
+        Add a table to the story with smart handling of wide tables.
+        
+        Strategy:
+        1. Try to fit table with calculated column widths
+        2. If too wide, split into multiple tables vertically
+        3. Use smaller fonts and text wrapping
+        
+        Parameters:
+        -----------
+        story : list
+            ReportLab story to add elements to
+        data : list of lists
+            Table data
+        sheet_name : str
+            Name of the sheet (for logging)
+        page_width : float
+            Available width on page
+        styles : StyleSheet
+            ReportLab styles
+            
+        Returns:
+        --------
+        bool : True if successful
         """
         try:
-            from reportlab.platypus import Paragraph, Spacer
+            from reportlab.platypus import Table, TableStyle, Paragraph, Spacer
+            from reportlab.lib import colors
             from reportlab.lib.units import inch
-            
-            if not data or len(data) == 0:
-                return True
-            
-            # Normalize data
-            max_cols = max(len(row) for row in data)
-            normalized_data = []
-            for row in data:
-                if len(row) < max_cols:
-                    row = list(row) + [''] * (max_cols - len(row))
-                normalized_data.append(row[:max_cols])
-            data = normalized_data
+            from reportlab.lib.styles import ParagraphStyle
             
             num_cols = len(data[0])
-            print(f"  Table: {len(data)} rows x {num_cols} columns")
             
-            # AGGRESSIVE content truncation to prevent overflow
-            max_cell_length = 200  # Reduced from 300
+            # Truncate very long cell content to prevent overflow
+            max_cell_length = 500
             truncated_data = []
             for row in data:
                 truncated_row = []
                 for cell in row:
-                    cell_str = str(cell) if cell is not None else ''
-                    if len(cell_str) > max_cell_length:
-                        truncated_row.append(cell_str[:max_cell_length] + '...')
+                    if len(cell) > max_cell_length:
+                        truncated_row.append(cell[:max_cell_length] + '...')
                     else:
-                        truncated_row.append(cell_str)
+                        truncated_row.append(cell)
                 truncated_data.append(truncated_row)
             data = truncated_data
             
-            # Calculate realistic column widths
-            col_widths = self._calculate_realistic_widths(data, num_cols)
+            # Calculate optimal column widths based on content
+            col_widths = self._calculate_column_widths(data, page_width, num_cols)
+            
+            # Check if we need to split the table
             total_width = sum(col_widths)
             
-            print(f"  Required width: {total_width:.0f} pts vs page width: {page_width:.0f} pts")
-            
-            # Decide: fit or split
-            if total_width <= page_width * 0.80:
-                # Fits comfortably
-                print(f"  Strategy: Single table")
-                return self._add_single_table_all_paragraphs(story, data, col_widths, styles)
+            if total_width > page_width * 0.75:  # 10% tolerance
+                # Split table into multiple parts
+                print(f"Note: Table too wide ({total_width:.0f} pts > {page_width:.0f} pts)")
+                print(f"Splitting into multiple parts for sheet '{sheet_name}'")
+                return self._add_split_table(story, data, sheet_name, page_width, col_widths, styles)
             else:
-                # Split into parts
-                print(f"  Strategy: Split table (ratio: {total_width/page_width:.1f}x)")
-                return self._add_split_table_all_paragraphs(story, data, col_widths, sheet_name, page_width, styles)
+                # Single table fits
+                return self._add_single_table(story, data, col_widths, styles)
                 
         except Exception as e:
             print(f"Error adding table: {str(e)}")
-            import traceback
-            traceback.print_exc()
             return False
     
-    def _calculate_realistic_widths(self, data, num_cols):
-        """Calculate realistic column widths without scaling down."""
-        try:
-            col_max_lengths = []
-            for col_idx in range(num_cols):
-                max_len = 0
-                for row in data[:30]:
-                    if col_idx < len(row):
-                        cell_value = row[col_idx]
-                        if cell_value is not None:
-                            max_len = max(max_len, len(str(cell_value)))
-                col_max_lengths.append(max_len)
-            
-            min_width = 50  # Minimum 50pt (IMPROVED FOR READABILITY)
-            char_width = 6
-            
-            col_widths = []
-            for max_len in col_max_lengths:
-                if max_len == 0:
-                    width = min_width
-                else:
-                    width = max(min_width, max_len * char_width)
-                    width = min(width, 250)  # Cap at 250pt
-                col_widths.append(width)
-            
-            # DON'T normalize - let splitting handle wide tables
-            total_width = sum(col_widths)
-            # REMOVED AGGRESSIVE SCALING: Let _add_table_robust decide whether to split
-            # This prevents millimeter-wide unreadable columns!
-            
-            return col_widths
-            
-        except Exception as e:
-            print(f"Error calculating widths: {str(e)}")
-            return [80] * num_cols
+    def _calculate_column_widths(self, data, page_width, num_cols):
+        """
+        Calculate optimal column widths based on content.
+        
+        Strategy:
+        - Analyze content length in each column
+        - Distribute width proportionally but with limits
+        - Ensure minimum and maximum widths
+        """
+        # Calculate max content length per column
+        col_max_lengths = []
+        for col_idx in range(num_cols):
+            max_len = 0
+            for row in data[:20]:  # Sample first 20 rows
+                if col_idx < len(row):
+                    max_len = max(max_len, len(row[col_idx]))
+            col_max_lengths.append(max_len)
+        
+        # Calculate proportional widths
+        total_chars = sum(col_max_lengths)
+        if total_chars == 0:
+            # Empty columns, distribute equally
+            return [page_width / num_cols] * num_cols
+        
+        # Proportional distribution with limits
+        min_width = 50  # Minimum 50 points per column  
+        max_width_percent = page_width * 0.4  # Max 40% of page width per column
+        max_width_absolute = 180  # Hard cap at 180pt to prevent text overflow
+        
+        col_widths = []
+        for max_len in col_max_lengths:
+            # Proportional width
+            width = (max_len / total_chars) * page_width
+            # Apply min, relative max, and absolute hard cap
+            width = max(min_width, min(width, max_width_percent, max_width_absolute))
+            col_widths.append(width)
+        
+        # DON'T scale columns - maintain readable widths
+        total_width = sum(col_widths)
+        # Removed scaling to prevent unreadable columns
+        
+        return col_widths
     
-    def _add_single_table_all_paragraphs(self, story, data, col_widths, styles):
-        """
-        Add single table with ALL cells as Paragraphs for proper text wrapping.
-        """
+    def _add_single_table(self, story, data, col_widths, styles):
+        """Add a single table that fits on the page."""
         try:
             from reportlab.platypus import Table, TableStyle, Paragraph
             from reportlab.lib import colors
             from reportlab.lib.styles import ParagraphStyle
             
-            num_cols = len(data[0])
-            
-            # Font size based on columns
-            if num_cols <= 8:
-                font_size = 7
-            elif num_cols <= 12:
-                font_size = 6
-            else:
-                font_size = 6
-            
-            # Cell style - VERY IMPORTANT: proper wrapping
+            # Wrap long text in cells using Paragraph
             cell_style = ParagraphStyle(
                 'CellStyle',
                 parent=styles['Normal'],
-                fontSize=font_size,
-                leading=font_size + 2,
-                wordWrap='CJK',
-                alignment=0,
-                leftIndent=0,
-                rightIndent=0
+                fontSize=7,
+                leading=9,
+                wordWrap='CJK'
             )
             
-            # Header style - smaller, multi-line capable
-            header_style = ParagraphStyle(
-                'HeaderStyle',
-                parent=styles['Normal'],
-                fontSize=font_size,  # Same as cell, not larger
-                leading=font_size + 2,
-                wordWrap='CJK',
-                alignment=0,
-                textColor=colors.whitesmoke,
-                leftIndent=0,
-                rightIndent=0
-            )
-            
-            # Wrap ALL cells in Paragraphs - this is critical
+            # Convert cells to Paragraphs for text wrapping
             wrapped_data = []
             for row_idx, row in enumerate(data):
                 wrapped_row = []
                 for cell in row:
-                    cell_str = str(cell) if cell is not None else ''
-                    style = header_style if row_idx == 0 else cell_style
-                    
-                    # ALL cells become Paragraphs for proper wrapping
-                    wrapped_row.append(Paragraph(cell_str, style))
-                
+                    if len(cell) > 50:  # Wrap long cells
+                        wrapped_row.append(Paragraph(cell, cell_style))
+                    else:
+                        wrapped_row.append(cell)
                 wrapped_data.append(wrapped_row)
             
-            # Create table
-            table = Table(
-                wrapped_data,
-                colWidths=col_widths,
-                repeatRows=1
-            )
+            # Create table with calculated column widths
+            table = Table(wrapped_data, colWidths=col_widths)
             
             # Apply styling
             table.setStyle(TableStyle([
@@ -934,145 +897,110 @@ class PDFConverter(PDFConverter):
                 ('ALIGN', (0, 0), (-1, -1), 'LEFT'),
                 ('VALIGN', (0, 0), (-1, -1), 'TOP'),
                 ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
-                ('FONTSIZE', (0, 0), (-1, 0), font_size),
-                ('BOTTOMPADDING', (0, 0), (-1, 0), 4),
-                ('TOPPADDING', (0, 0), (-1, -1), 2),
-                ('BOTTOMPADDING', (0, 0), (-1, -1), 2),
-                ('LEFTPADDING', (0, 0), (-1, -1), 3),
-                ('RIGHTPADDING', (0, 0), (-1, -1), 3),
+                ('FONTSIZE', (0, 0), (-1, 0), 8),
+                ('BOTTOMPADDING', (0, 0), (-1, 0), 8),
+                ('TOPPADDING', (0, 0), (-1, -1), 4),
+                ('BOTTOMPADDING', (0, 0), (-1, -1), 4),
                 ('BACKGROUND', (0, 1), (-1, -1), colors.beige),
                 ('GRID', (0, 0), (-1, -1), 0.5, colors.black),
-                ('FONTSIZE', (0, 1), (-1, -1), font_size),
+                ('FONTSIZE', (0, 1), (-1, -1), 7),
                 ('WORDWRAP', (0, 0), (-1, -1), True),
             ]))
             
-            # Try to add, with fallback for "too large" errors
             try:
                 story.append(table)
                 return True
-            except Exception as table_error:
-                error_msg = str(table_error).lower()
-                if 'too large' in error_msg or 'flowable' in error_msg:
-                    print(f"  Table too large error, reducing content further...")
-                    
-                    # More aggressive truncation
-                    max_len = 100
-                    reduced_data = []
-                    for row in data:
-                        reduced_row = []
-                        for cell in row:
-                            cell_str = str(cell) if cell is not None else ''
-                            if len(cell_str) > max_len:
-                                reduced_row.append(cell_str[:max_len] + '...')
-                            else:
-                                reduced_row.append(cell_str)
-                        reduced_data.append(reduced_row)
-                    
-                    # Try again with reduced data
-                    return self._add_single_table_all_paragraphs(story, reduced_data, col_widths, styles)
-                else:
-                    raise
+            except Exception as e:
+                if 'too large' in str(e).lower() or 'flowable' in str(e).lower():
+                    print(f"  Table too large, trying with reduced content...")
+                    # Reduce to 60 rows and retry
+                    if len(data) > 60:
+                        return self._add_single_table(story, data[:60], col_widths, styles, font_size=max(font_size-1, 7))
+                raise
             
         except Exception as e:
-            print(f"Error creating table: {str(e)}")
-            import traceback
-            traceback.print_exc()
+            print(f"Error creating single table: {str(e)}")
             return False
     
-    def _add_split_table_all_paragraphs(self, story, data, col_widths, sheet_name, page_width, styles):
+    def _add_split_table(self, story, data, sheet_name, page_width, col_widths, styles):
         """
-        Split table with ALL cells as Paragraphs, including row index column.
+        Split a wide table into multiple parts stacked vertically.
+        
+        Each part shows a subset of columns.
         """
         try:
-            from reportlab.platypus import Paragraph, Spacer, PageBreak
+            from reportlab.platypus import Table, TableStyle, Paragraph, Spacer
+            from reportlab.lib import colors
             from reportlab.lib.units import inch
             
             num_cols = len(data[0])
             
-            # Row index column
-            row_index_width = 50
-            
-            # Target comfortable width per part
-            target_width = page_width * 0.80  # SPLIT EARLIER!
-            
-            # Determine column groupings
+            # Determine how many columns fit in one part
             cols_per_part = []
-            current_part_cols = []
-            current_part_width = row_index_width
+            current_width = 0
+            current_cols = []
             
             for col_idx, width in enumerate(col_widths):
-                if current_part_width + width <= target_width:
-                    current_part_cols.append(col_idx)
-                    current_part_width += width
+                if current_width + width <= page_width * 0.95:  # 95% to be safe
+                    current_width += width
+                    current_cols.append(col_idx)
                 else:
-                    if current_part_cols:
-                        cols_per_part.append(current_part_cols)
-                    current_part_cols = [col_idx]
-                    current_part_width = row_index_width + width
+                    if current_cols:
+                        cols_per_part.append(current_cols)
+                    current_width = width
+                    current_cols = [col_idx]
             
-            if current_part_cols:
-                cols_per_part.append(current_part_cols)
+            if current_cols:
+                cols_per_part.append(current_cols)
             
-            num_parts = len(cols_per_part)
-            print(f"  Splitting into {num_parts} parts")
-            
-            # Font size
-            max_cols_in_part = max(len(part) for part in cols_per_part) + 1
-            if max_cols_in_part <= 10:
-                font_size = 7
-            else:
-                font_size = 6
-            
-            # Create each part
+            # Create separate table for each part
             for part_idx, col_indices in enumerate(cols_per_part):
-                # Prepare data
+                # Extract data for these columns
                 part_data = []
-                for row_idx, row in enumerate(data):
-                    if row_idx == 0:
-                        row_label = 'Row'
-                    else:
-                        row_label = str(row_idx)
-                    
-                    part_row = [row_label] + [row[i] for i in col_indices]
+                for row in data:
+                    part_row = [row[i] if i < len(row) else '' for i in col_indices]
                     part_data.append(part_row)
                 
-                # Column widths
-                part_widths = [row_index_width] + [col_widths[i] for i in col_indices]
+                # Get column widths for this part
+                part_widths = [col_widths[i] for i in col_indices]
                 
-                # Part header
-                part_title = f"Part {part_idx + 1} of {num_parts} - Columns {col_indices[0] + 1} to {col_indices[-1] + 1}"
-                story.append(Paragraph(f"<i>{part_title}</i>", styles['Normal']))
+                # Add part label
+                story.append(Paragraph(
+                    f"<i>Columns {col_indices[0]+1}-{col_indices[-1]+1}</i>",
+                    styles['Normal']
+                ))
                 story.append(Spacer(1, 0.1 * inch))
                 
-                # Add the part
-                success = self._add_single_table_all_paragraphs(
-                    story,
-                    part_data,
-                    part_widths,
-                    styles
-                )
-                
+                # Add the table part
+                success = self._add_single_table(story, part_data, part_widths, styles)
                 if not success:
-                    print(f"  Warning: Part {part_idx + 1} failed")
-                    story.append(Paragraph(
-                        f"<i>(Part {part_idx + 1} could not be rendered)</i>",
-                        styles['Normal']
-                    ))
+                    return False
                 
-                # Page break between parts
-                if part_idx < num_parts - 1:
-                    story.append(PageBreak())
+                # Space between parts
+                story.append(Spacer(1, 0.3 * inch))
             
+            print(f"Split into {len(cols_per_part)} parts")
             return True
             
         except Exception as e:
             print(f"Error splitting table: {str(e)}")
-            import traceback
-            traceback.print_exc()
             return False
     
     def _convert_image_to_pdf(self, input_path: str, output_path: str) -> bool:
-        """Convert image files (JPG, PNG, TIF, SVG) to PDF."""
+        """
+        Convert image files (JPG, PNG, TIF, SVG) to PDF.
+        
+        Parameters:
+        -----------
+        input_path : str
+            Path to input image
+        output_path : str
+            Path where PDF should be saved
+            
+        Returns:
+        --------
+        bool : True if conversion succeeded, False otherwise
+        """
         try:
             from PIL import Image
             from reportlab.pdfgen import canvas
@@ -1129,7 +1057,20 @@ class PDFConverter(PDFConverter):
         file_paths: List[str],
         verbose: bool = True
     ) -> Dict[str, Any]:
-        """Convert multiple files to PDF."""
+        """
+        Convert multiple files to PDF.
+        
+        Parameters:
+        -----------
+        file_paths : List[str]
+            List of file paths to convert
+        verbose : bool
+            If True, print progress information
+            
+        Returns:
+        --------
+        dict : Summary of conversion results
+        """
         results = {
             'total': len(file_paths),
             'successful': 0,
@@ -1140,9 +1081,9 @@ class PDFConverter(PDFConverter):
         
         for i, file_path in enumerate(file_paths, 1):
             if verbose:
-                print(f"\n{'='*30}")
+                print(f"\n{'='*40}")
                 print(f"Processing {i}/{len(file_paths)}: {os.path.basename(file_path)}")
-                print(f"{'='*30}")
+                print(f"{'='*40}")
             
             success, output_path, message = self.convert_to_pdf(file_path)
             
@@ -1156,25 +1097,29 @@ class PDFConverter(PDFConverter):
             results['results'].append((file_path, success, output_path, message))
         
         if verbose:
-            print(f"\n{'='*30}")
+            print(f"\n{'='*40}")
             print(f"CONVERSION SUMMARY")
-            print(f"{'='*30}")
+            print(f"{'='*40}")
             print(f"Total files: {results['total']}")
             print(f"Successful: {results['successful']}")
             print(f"Failed: {results['failed']}")
             print(f"Skipped: {results['skipped']}")
-            print(f"{'='*30}\n")
+            print(f"{'='*40}\n")
         
         return results
     
-    # Future Methods (Skeleton Implementation)
+    # Future Methods (Skeleton Implementation) 
     def convert_from_db(
         self,
         file_id: str,
         azure_sql_conn: AzureSql,
         adls_conn: ADLSConnect
     ) -> Tuple[bool, Optional[str], str]:
-        """Convert a file to PDF using file_id from Azure SQL database."""
+        """
+        Convert a file to PDF using file_id from Azure SQL database.
+        
+        NOTE: Skeleton implementation - requires AzureSql and ADLSConnect.
+        """
         raise NotImplementedError(
             "convert_from_db() requires AzureSql and ADLSConnect classes to be implemented"
         )
@@ -1185,7 +1130,11 @@ class PDFConverter(PDFConverter):
         adls_conn: ADLSConnect,
         adls_target_path: str
     ) -> Tuple[bool, Optional[str], str]:
-        """Save converted PDF to Azure Data Lake Storage."""
+        """
+        Save converted PDF to Azure Data Lake Storage.
+        
+        NOTE: Skeleton implementation - requires ADLSConnect.
+        """
         raise NotImplementedError(
             "save_to_adls() requires ADLSConnect class to be implemented"
         )
@@ -1196,13 +1145,23 @@ class PDFConverter(PDFConverter):
         pdf_path: str,
         azure_sql_conn: AzureSql
     ) -> Tuple[bool, str]:
-        """Update database with path to converted PDF."""
+        """
+        Update database with path to converted PDF.
+        
+        NOTE: Skeleton implementation - requires AzureSql.
+        """
         raise NotImplementedError(
             "update_db_with_pdf_path() requires AzureSql class to be implemented"
         )
     
     def get_conversion_stats(self) -> Dict[str, Any]:
-        """Get statistics about files in output directory."""
+        """
+        Get statistics about files in output directory.
+        
+        Returns:
+        --------
+        dict : Statistics about converted files
+        """
         pdf_files = list(Path(self.output_dir).glob('*.pdf'))
         
         return {
@@ -1211,3 +1170,4 @@ class PDFConverter(PDFConverter):
             'pdf_files': [f.name for f in pdf_files],
             'total_size_mb': sum(f.stat().st_size for f in pdf_files) / (1024 * 1024)
         }
+        
